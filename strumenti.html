@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Strumenti che Uso | Movimento e Salute</title>
+  <meta name="description" content="I tre pilastri che hanno guidato la trasformazione di Carlo: nutrizione, integrazione e movimento. Cosa funziona davvero per gli uomini over 40.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Strumenti che Uso | Movimento e Salute">
+  <meta property="og:description" content="I tre pilastri che hanno guidato la trasformazione di Carlo: nutrizione, integrazione e movimento. Cosa funziona davvero per gli uomini over 40.">
+  <meta property="og:url" content="https://www.movimentoesalute.eu/strumenti.html">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://www.movimentoesalute.eu/strumenti.html">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --verde: #2D6A4F; --verde-chiaro: #52B788; --verde-pallido: #D8F3DC;
+      --arancio: #E07A00; --crema: #FAF7F2; --grigio-scuro: #1A1A1A; --grigio: #555;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: #FAF7F2; }
+    body { font-family: 'DM Sans', sans-serif; background: #FAF7F2 !important; color: #1A1A1A; overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 5%;
+      background: rgba(250,247,242,0.92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(45,106,79,0.1);
+    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--verde); text-decoration: none; }
+    .logo span { color: var(--arancio); }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+    nav ul a { text-decoration: none; color: var(--grigio); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    nav ul a:hover, nav ul a.active { color: var(--verde); }
+    .nav-cta { background: var(--arancio); color: white !important; padding: 0.6rem 1.4rem; border-radius: 50px; }
+    .nav-cta:hover { background: #c46d00 !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 55vh; background: #FAF7F2;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 10rem 5% 5rem; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 0; right: 0;
+      width: 50%; height: 100%;
+      background: linear-gradient(135deg, transparent, rgba(82,183,136,0.08));
+    }
+    .hero-badge {
+      display: inline-block; background: var(--verde-pallido); color: var(--verde);
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 0.5rem 1.2rem; border-radius: 50px;
+      margin-bottom: 1.5rem; width: fit-content;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900;
+      color: var(--grigio-scuro); line-height: 1.1; max-width: 700px; margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--verde); }
+    .hero p { color: var(--grigio); font-size: 1.1rem; font-weight: 300; max-width: 560px; line-height: 1.7; }
+
+    /* PREMESSA ONESTÀ */
+    .premessa {
+      background: white; border-left: 5px solid var(--verde-chiaro);
+      margin: 4rem 5%; border-radius: 0 20px 20px 0;
+      padding: 2.5rem 3rem; display: flex; gap: 2rem; align-items: flex-start;
+    }
+    .premessa-icon { font-size: 2.5rem; flex-shrink: 0; }
+    .premessa h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.7rem; }
+    .premessa p { color: var(--grigio); font-size: 0.95rem; line-height: 1.7; font-weight: 300; }
+
+    /* PILASTRI */
+    .pilastri { padding: 5rem 0; background: #FAF7F2; }
+    .pilastri-header { text-align: center; margin-bottom: 4rem; padding: 0 5%; }
+    .pilastri-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; margin-bottom: 1rem; color: #1A1A1A;
+    }
+    .pilastri-header p { color: #444; font-size: 1rem; font-weight: 400; max-width: 480px; margin: 0 auto; line-height: 1.6; }
+
+    .pilastro-wrap:nth-child(odd)  { background: #ffffff; }
+    .pilastro-wrap:nth-child(even) { background: #F0FAF4; }
+
+    .pilastro-wrap { padding: 5rem 5%; }
+
+    .pilastro { 
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; 
+      align-items: center; max-width: 1100px; margin: 0 auto;
+      background: #ffffff; border-radius: 20px; padding: 3rem;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+      margin-bottom: 2rem;
+    }
+    .pilastro-wrap:nth-child(even) .pilastro-visual { order: -1; }
+
+    .pilastro-label {
+      display: inline-block; background: var(--verde-pallido); color: var(--verde);
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+    .pilastro h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 900;
+      line-height: 1.2; margin-bottom: 1.2rem; color: #1A1A1A;
+    }
+    .pilastro h3 em { font-style: italic; color: var(--verde); }
+    .pilastro p { color: #444; font-size: 1rem; line-height: 1.8; font-weight: 400; margin-bottom: 1rem; }
+    .pilastro p strong { color: #1A1A1A; font-weight: 600; }
+
+    .pilastro-visual {
+      background: white; border-radius: 24px;
+      padding: 2.5rem; box-shadow: 0 6px 30px rgba(0,0,0,0.07);
+      border: 1px solid rgba(45,106,79,0.08);
+    }
+    .pilastro-visual .icona { font-size: 4rem; margin-bottom: 1.5rem; display: block; }
+    .pilastro-visual h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: #1A1A1A; }
+    .benefit-list { list-style: none; }
+    .benefit-list li {
+      padding: 0.75rem 0; border-bottom: 1px solid rgba(45,106,79,0.08);
+      font-size: 0.92rem; color: #444; font-weight: 400;
+      display: flex; align-items: center; gap: 0.8rem; line-height: 1.4;
+    }
+    .benefit-list li:last-child { border-bottom: none; }
+    .benefit-list li::before { content: '✓'; color: var(--verde-chiaro); font-weight: 700; flex-shrink: 0; font-size: 1rem; }
+
+    /* CTA PRODOTTI */
+    .cta-prodotti {
+      background: linear-gradient(135deg, #1A2E22, var(--verde));
+      padding: 6rem 5%; text-align: center;
+    }
+    .cta-prodotti h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900;
+      color: white; line-height: 1.2; margin-bottom: 1.2rem;
+    }
+    .cta-prodotti h2 em { font-style: italic; color: var(--verde-chiaro); }
+    .cta-prodotti p {
+      color: rgba(255,255,255,0.7); font-size: 1rem; font-weight: 300;
+      max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.6;
+    }
+    .btn-light {
+      background: white; color: var(--verde); padding: 1.1rem 2.5rem;
+      border-radius: 50px; text-decoration: none; font-weight: 600;
+      font-size: 1rem; display: inline-block;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .btn-light:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+    .btn-whatsapp {
+      background: transparent; color: white; padding: 1.1rem 2.5rem;
+      border-radius: 50px; text-decoration: none; font-weight: 500;
+      font-size: 1rem; border: 2px solid rgba(255,255,255,0.4);
+      display: inline-block; margin-left: 1rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-whatsapp:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+    footer {
+      background: var(--grigio-scuro); color: rgba(255,255,255,0.5);
+      text-align: center; padding: 2rem 5%; font-size: 0.82rem;
+    }
+    footer a { color: var(--verde-chiaro); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      .pilastro { grid-template-columns: 1fr; }
+      .pilastro:nth-child(even) .pilastro-visual { order: 0; }
+      .premessa { flex-direction: column; margin: 2rem 5%; }
+      nav ul { display: none; }
+      .btn-whatsapp { margin-left: 0; margin-top: 1rem; display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">movimento<span>&</span>salute</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="storia.html">La Mia Storia</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="strumenti.html" class="active">Strumenti</a></li>
+    <li><a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="nav-cta">Scopri i Prodotti</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Strumenti che uso</div>
+  <h1>Non una lista di prodotti. <em>Quello che funziona</em> nella mia vita reale.</h1>
+  <p>Tre pilastri che hanno guidato la mia trasformazione. Li condivido perché hanno funzionato per me — con la stessa onestà con cui parlerei a un collega o a un amico.</p>
+</section>
+
+<div class="premessa">
+  <div class="premessa-icon">💬</div>
+  <div>
+    <h3>Una premessa importante</h3>
+    <p>Quello che trovi in questa pagina è quello che ho integrato nel mio percorso personale. Non è una prescrizione medica né una promessa di risultati. I miei miglioramenti — fisici e nei valori del sangue — sono il risultato di un approccio integrato: nutrizione, attività fisica e un cambiamento reale delle abitudini. Nessun singolo prodotto fa miracoli. Ma la combinazione giusta può fare una differenza enorme.</p>
+  </div>
+</div>
+
+<section class="pilastri">
+  <div class="pilastri-header">
+    <h2>I tre pilastri del mio percorso</h2>
+    <p>Nutrizione, movimento e abitudini quotidiane. Semplice sulla carta, potente nella pratica.</p>
+  </div>
+
+  <!-- PILASTRO 1: NUTRIZIONE -->
+  <div class="pilastro">
+    <div class="pilastro-content">
+      <span class="pilastro-label">Pilastro 1 · Nutrizione</span>
+      <h3>La colazione che ha <em>cambiato tutto.</em></h3>
+      <p>Il primo cambiamento concreto è stato la colazione. Per anni l'avevo saltata o gestita male — biscotti, caffè, niente. Poi ho iniziato a usare un pasto sostitutivo ad alto contenuto proteico che mi garantisse tutti i macronutrienti necessari.</p>
+      <p>Il risultato più sorprendente? <strong>Non sentivo più la fame a metà mattina.</strong> Non avevo voglia di dolci. Non stavo contando calorie o pesando grammi — stavo semplicemente dando al corpo quello di cui aveva bisogno, e lui smetteva di chiedere di più.</p>
+      <p>Per me, che lavoro in ospedale con turni lunghi, avere un pasto completo, veloce e buono è stata una svolta pratica oltre che nutrizionale.</p>
+    </div>
+    <div class="pilastro-visual">
+      <span class="icona">🥤</span>
+      <h4>Cosa cerco in un pasto sostitutivo</h4>
+      <ul class="benefit-list">
+        <li>Alto contenuto proteico (almeno 20g per porzione)</li>
+        <li>Bilanciato in macro e micronutrienti</li>
+        <li>Senso di sazietà prolungato</li>
+        <li>Pratico da preparare in pochi minuti</li>
+        <li>Buono — perché se non ti piace, non lo usi</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PILASTRO 2: INTEGRAZIONE -->
+  <div class="pilastro">
+    <div class="pilastro-content">
+      <span class="pilastro-label">Pilastro 2 · Integrazione mirata</span>
+      <h3>Supportare il corpo, <em>non sostituire l'impegno.</em></h3>
+      <p>Da infermiere so bene che gli integratori non fanno miracoli. Ma so anche che, quando il corpo è sotto stress — fisico o lavorativo — alcune carenze si accumulano in modo silenzioso.</p>
+      <p>Ho integrato al mio percorso prodotti specifici per il supporto metabolico e l'idratazione. <strong>Non per sostituire il cibo o l'allenamento, ma per supportarli.</strong> La differenza in termini di recupero e di energia durante la giornata è stata misurabile.</p>
+      <p>Oggi i miei valori di colesterolo e trigliceridi sono rientrati nella norma. Attribuirlo solo agli integratori sarebbe disonesto — il merito è della combinazione: prodotti + attività fisica + alimentazione diversa.</p>
+    </div>
+    <div class="pilastro-visual">
+      <span class="icona">⚗️</span>
+      <h4>Cosa valuto in un integratore</h4>
+      <ul class="benefit-list">
+        <li>Ingredienti trasparenti e tracciabili</li>
+        <li>Studi a supporto delle formulazioni</li>
+        <li>Assenza di sostanze inutili o dannose</li>
+        <li>Compatibilità con uno stile di vita attivo</li>
+        <li>Risultati misurabili nel tempo</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PILASTRO 3: MOVIMENTO -->
+  <div class="pilastro">
+    <div class="pilastro-content">
+      <span class="pilastro-label">Pilastro 3 · Movimento</span>
+      <h3>Tornare ad allenarsi <em>con intelligenza.</em></h3>
+      <p>Dopo un anno di stop, non potevo ricominciare come se niente fosse. Ho reimpostato tutto: frequenza, intensità, tipologia di allenamento. Con due figli piccoli e i turni in ospedale, <strong>la costanza vale più dell'intensità.</strong></p>
+      <p>Tre sessioni a settimana, un mix di forza e cardio, progressivo. Niente di eroico — ma continuativo. Ed è la continuità che ha cambiato la composizione corporea: −14 kg di grasso, +5 kg di massa muscolare (misurati con la Tanita).</p>
+      <p>Il movimento non è punizione. È il modo in cui il corpo si rigenera, si mantiene, e ti permette di essere presente — per te e per i tuoi figli.</p>
+    </div>
+    <div class="pilastro-visual">
+      <span class="icona">🏋️‍♂️</span>
+      <h4>Il mio approccio all'allenamento</h4>
+      <ul class="benefit-list">
+        <li>3 sessioni settimanali — costanti, non eroiche</li>
+        <li>Mix di forza e cardio funzionale</li>
+        <li>Progressione graduale per evitare infortuni</li>
+        <li>Recupero attivo nei giorni di riposo</li>
+        <li>Flessibilità: si adatta ai turni di lavoro</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- CTA PRODOTTI -->
+<section class="cta-prodotti">
+  <h2>Vuoi provare gli stessi <em>prodotti che uso?</em></h2>
+  <p>Puoi acquistarli direttamente online, con la consulenza di Gaia che ti aiuta a scegliere il percorso più adatto a te.</p>
+  <div>
+    <a href="strumenti.html" class="btn-light">Vai alla pagina prodotti →</a>
+    <a href="https://wa.me/393357547386" target="_blank" class="btn-whatsapp">💬 Hai domande? Scrivimi</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Movimento & Salute · <a href="#">Privacy Policy</a> · <a href="#">Contatti</a></p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">I contenuti di questo sito hanno scopo informativo e non sostituiscono il parere medico o nutrizionale.</p>
+</footer>
+
+</body>
+</html>
