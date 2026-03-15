@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Rivincita dei 40: perché questo è il momento migliore per rimetterti in forma | Movimento e Salute</title>
+  <meta name="description" content="Dopo i 40 anni il corpo non è finito — è pronto per la sua versione migliore. Scopri la fisiologia dietro la trasformazione maschile over 40: testosterone, neuroplasticità e abitudini.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="La Rivincita dei 40: perché questo è il momento migliore per rimetterti in forma">
+  <meta property="og:description" content="Dopo i 40 anni il corpo non è finito — è pronto per la sua versione migliore. La fisiologia della trasformazione maschile over 40.">
+  <meta property="og:url" content="https://www.movimentoesalute.eu/articolo-rivincita-40.html">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://www.movimentoesalute.eu/articolo-rivincita-40.html">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --verde: #2D6A4F; --verde-chiaro: #52B788; --verde-pallido: #D8F3DC;
+      --arancio: #E07A00; --crema: #FAF7F2; --grigio-scuro: #1A1A1A; --grigio: #444;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: #FAF7F2; }
+    body { font-family: 'DM Sans', sans-serif; background: #FAF7F2 !important; color: #1A1A1A; overflow-x: hidden; line-height: 1.8; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 5%;
+      background: rgba(250,247,242,0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(45,106,79,0.1);
+    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--verde); text-decoration: none; }
+    .logo span { color: var(--arancio); }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+    nav ul a { text-decoration: none; color: #444; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    nav ul a:hover { color: var(--verde); }
+    .nav-cta { background: var(--arancio); color: white !important; padding: 0.6rem 1.4rem; border-radius: 50px; }
+
+    /* HERO ARTICOLO */
+    .hero-articolo {
+      background: linear-gradient(135deg, #1A2E22, var(--verde));
+      padding: 10rem 5% 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-articolo::before {
+      content: ''; position: absolute; bottom: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(82,183,136,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .categoria-badge {
+      display: inline-block; background: rgba(255,255,255,0.12);
+      color: var(--verde-chiaro); font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 1.5rem;
+    }
+    .hero-articolo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 900;
+      color: white; line-height: 1.15; max-width: 800px; margin-bottom: 1.5rem;
+    }
+    .hero-articolo h1 em { font-style: italic; color: var(--verde-chiaro); }
+    .meta-articolo {
+      display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;
+      color: rgba(255,255,255,0.65); font-size: 0.85rem;
+    }
+    .meta-articolo span { display: flex; align-items: center; gap: 0.4rem; }
+
+    /* CORPO ARTICOLO */
+    .articolo-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 5%;
+    }
+
+    .articolo-corpo h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900;
+      color: #1A1A1A; line-height: 1.2;
+      margin: 3rem 0 1.2rem; padding-top: 1rem;
+      border-top: 2px solid var(--verde-pallido);
+    }
+    .articolo-corpo h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--verde); margin: 2rem 0 0.8rem;
+    }
+    .articolo-corpo p {
+      font-size: 1.05rem; color: #444;
+      line-height: 1.85; font-weight: 400;
+      margin-bottom: 1.4rem;
+    }
+    .articolo-corpo strong { color: #1A1A1A; font-weight: 600; }
+    .articolo-corpo em { color: var(--verde); font-style: italic; }
+
+    /* CITAZIONE */
+    .citazione {
+      border-left: 4px solid var(--verde-chiaro);
+      padding: 1.5rem 2rem; margin: 2.5rem 0;
+      background: white; border-radius: 0 16px 16px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .citazione p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: #1A1A1A !important; line-height: 1.6; margin: 0 !important;
+    }
+    .citazione cite {
+      display: block; margin-top: 0.8rem;
+      font-size: 0.82rem; color: var(--verde-chiaro);
+      font-style: normal; font-weight: 500;
+    }
+
+    /* TABELLA DATI */
+    .tabella-dati {
+      width: 100%; border-collapse: collapse;
+      margin: 2rem 0; background: white;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .tabella-dati th {
+      background: var(--verde); color: white;
+      padding: 1rem 1.5rem; text-align: left;
+      font-size: 0.85rem; font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .tabella-dati td {
+      padding: 0.9rem 1.5rem; font-size: 0.9rem; color: #444;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .tabella-dati tr:last-child td { border-bottom: none; }
+    .tabella-dati tr:nth-child(even) td { background: #F0FAF4; }
+
+    /* BOX EVIDENZA */
+    .box-evidenza {
+      background: var(--verde-pallido);
+      border-radius: 16px; padding: 2rem;
+      margin: 2rem 0;
+    }
+    .box-evidenza h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--verde); margin-bottom: 1rem;
+    }
+    .box-evidenza ul { list-style: none; }
+    .box-evidenza ul li {
+      padding: 0.5rem 0; font-size: 0.95rem; color: #333;
+      display: flex; align-items: flex-start; gap: 0.8rem; line-height: 1.5;
+    }
+    .box-evidenza ul li::before {
+      content: '✓'; color: var(--verde); font-weight: 700;
+      flex-shrink: 0; margin-top: 0.1rem;
+    }
+
+    /* SIDEBAR */
+    .articolo-sidebar { position: sticky; top: 100px; height: fit-content; }
+    .sidebar-card {
+      background: white; border-radius: 20px;
+      padding: 2rem; margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid rgba(45,106,79,0.08);
+    }
+    .sidebar-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700;
+      margin-bottom: 1rem; color: #1A1A1A;
+    }
+    .sidebar-card p { font-size: 0.88rem; color: #444; line-height: 1.6; margin-bottom: 1rem; }
+    .btn-sidebar {
+      display: block; background: var(--verde); color: white;
+      padding: 0.8rem 1.2rem; border-radius: 50px;
+      text-decoration: none; font-size: 0.88rem; font-weight: 500;
+      text-align: center; transition: background 0.2s;
+      margin-bottom: 0.8rem;
+    }
+    .btn-sidebar:hover { background: #1e4d38; }
+    .btn-sidebar-wa {
+      display: block; background: #25D366; color: white;
+      padding: 0.8rem 1.2rem; border-radius: 50px;
+      text-decoration: none; font-size: 0.88rem; font-weight: 500;
+      text-align: center; transition: background 0.2s;
+    }
+    .btn-sidebar-wa:hover { background: #1ebe5d; }
+    .indice { list-style: none; }
+    .indice li { padding: 0.4rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .indice li:last-child { border-bottom: none; }
+    .indice a { color: var(--verde); text-decoration: none; font-size: 0.88rem; font-weight: 400; transition: color 0.2s; }
+    .indice a:hover { color: var(--arancio); }
+
+    /* AUTORE */
+    .box-autore {
+      background: white; border-radius: 20px;
+      padding: 2.5rem; margin: 4rem 0 2rem;
+      display: flex; gap: 2rem; align-items: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid rgba(45,106,79,0.08);
+    }
+    .autore-foto {
+      width: 80px; height: 80px; border-radius: 50%;
+      object-fit: cover; object-position: top; flex-shrink: 0;
+      border: 3px solid var(--verde-pallido);
+    }
+    .autore-info h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .autore-info p { font-size: 0.88rem; color: #444; line-height: 1.5; }
+
+    /* CTA FINE ARTICOLO */
+    .cta-articolo {
+      background: linear-gradient(135deg, #1A2E22, var(--verde));
+      border-radius: 24px; padding: 3rem;
+      text-align: center; margin: 2rem 0 4rem;
+    }
+    .cta-articolo h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 900;
+      color: white; margin-bottom: 1rem;
+    }
+    .cta-articolo p { color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .btn-cta-light {
+      background: white; color: var(--verde);
+      padding: 0.9rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      display: inline-block; margin: 0.4rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-cta-light:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+    .btn-cta-wa {
+      background: #25D366; color: white;
+      padding: 0.9rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      display: inline-block; margin: 0.4rem;
+      transition: transform 0.2s;
+    }
+    .btn-cta-wa:hover { transform: translateY(-2px); }
+
+    footer {
+      background: #1A1A1A; color: rgba(255,255,255,0.5);
+      text-align: center; padding: 2rem 5%; font-size: 0.82rem;
+    }
+    footer a { color: var(--verde-chiaro); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      .articolo-wrapper { grid-template-columns: 1fr; }
+      .articolo-sidebar { position: static; }
+      .box-autore { flex-direction: column; text-align: center; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">movimento<span>&</span>salute</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="storia.html">La Mia Storia</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="strumenti.html">Strumenti</a></li>
+    <li><a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="nav-cta">Scopri i Prodotti</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero-articolo" style="position:relative; background:#000;">
+  <img src="copertina-rivincita.jpg" alt="Carlo Barbieri - La Rivincita dei 40" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center top; opacity:0.45;">
+  <div style="position:relative; z-index:1;">
+  <div class="categoria-badge">🧠 Abitudini & Mentalità</div>
+  <h1>La rivincita dei 40: perché questo è il momento <em>migliore</em> per rimetterti in forma (non il peggiore)</h1>
+  <div class="meta-articolo">
+    <span>✍️ Carlo Barbieri</span>
+    <span>📅 Marzo 2026</span>
+    <span>⏱️ 8 min di lettura</span>
+    <span>🏷️ Motivazione · Fisiologia · Over 40</span>
+  </div>
+  </div>
+</section>
+
+<!-- CORPO -->
+<div class="articolo-wrapper">
+
+  <article class="articolo-corpo">
+
+    <p>Se sei arrivato su questa pagina, probabilmente hai sentito almeno una volta questa frase: <strong>"Ormai hai passato i 40, è normale essere così."</strong> Forse te l'ha detto qualcuno. Forse te lo sei detto da solo, guardandoti allo specchio dopo anni di doppi turni, stress e stanchezza accumulata.</p>
+
+    <p>Io ci ho creduto anche. Per un periodo mi ero convinto che quella fosse la mia nuova normalità — 96 kg, colesterolo a 295, trigliceridi a 499, zero energia quando tornavo a casa. Eppure ero un infermiere con vent'anni di palestra alle spalle e una qualifica da personal trainer. Conoscevo ogni regola. E mi ero perso lo stesso.</p>
+
+    <p>Quello che ho scoperto dopo, però, mi ha cambiato la prospettiva completamente: <em>i 40 anni non sono la fine della forma fisica. Sono, fisiologicamente parlando, un momento di enorme potenziale.</em> Se sai come usarli.</p>
+
+    <h2 id="mito">Il mito del "declino inevitabile"</h2>
+
+    <p>Partiamo da un fatto: sì, dopo i 35-40 anni alcune cose cambiano nel corpo maschile. Il testosterone inizia un calo graduale — circa l'1-2% annuo secondo gli studi. La massa muscolare tende a ridursi se non viene stimolata. Il metabolismo basale rallenta leggermente.</p>
+
+    <p>Tutto vero. Ma c'è una differenza enorme tra <strong>cambiamento fisiologico naturale</strong> e <strong>declino inevitabile</strong>. Il primo è reale. Il secondo è un racconto che ci facciamo — e che il corpo smentisce ogni volta che lo sfidiamo in modo intelligente.</p>
+
+    <div class="citazione">
+      <p>"Il problema non è l'età. È quello che smetti di fare quando pensi che l'età sia il problema."</p>
+      <cite>— Carlo Barbieri, Movimento e Salute</cite>
+    </div>
+
+    <p>La ricerca scientifica è chiara: uomini di 40, 50 e anche 60 anni che iniziano o riprendono un programma di allenamento strutturato ottengono risultati paragonabili — e in alcuni casi superiori — a quelli di uomini più giovani. La ragione è semplice: il punto di partenza è più basso, quindi il margine di miglioramento è maggiore.</p>
+
+    <h2 id="testosterone">Testosterone: il nemico immaginario</h2>
+
+    <p>Il testosterone è diventato il capro espiatorio di ogni difficoltà fisica maschile dopo i 40. "Ho il testosterone basso" è diventata la risposta automatica a qualsiasi problema di forma, energia o umore.</p>
+
+    <p>La realtà è più interessante. Il calo del testosterone dopo i 40 è reale, ma è <strong>fortemente influenzato dallo stile di vita</strong>. Quello che molti uomini sperimentano non è un calo ormonale inevitabile — è il risultato diretto di sedentarietà, cattiva alimentazione, sonno insufficiente e stress cronico. In altre parole: non è l'età che abbassa il testosterone, è quello che fai (o non fai) con il tuo corpo.</p>
+
+    <table class="tabella-dati">
+      <thead>
+        <tr>
+          <th>Fattore</th>
+          <th>Effetto sul Testosterone</th>
+          <th>Controllabile?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Allenamento con i pesi</td>
+          <td>Aumento significativo</td>
+          <td>✅ Sì</td>
+        </tr>
+        <tr>
+          <td>Sonno 7-8 ore</td>
+          <td>Aumento del 10-15%</td>
+          <td>✅ Sì</td>
+        </tr>
+        <tr>
+          <td>Riduzione del grasso corporeo</td>
+          <td>Aumento diretto</td>
+          <td>✅ Sì</td>
+        </tr>
+        <tr>
+          <td>Stress cronico elevato</td>
+          <td>Calo significativo (cortisolo)</td>
+          <td>⚠️ Parzialmente</td>
+        </tr>
+        <tr>
+          <td>Sedentarietà prolungata</td>
+          <td>Calo progressivo</td>
+          <td>✅ Sì</td>
+        </tr>
+        <tr>
+          <td>Età biologica (40+)</td>
+          <td>Calo graduale ~1-2%/anno</td>
+          <td>❌ No</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>La conclusione pratica è che la maggior parte dei fattori che influenzano il testosterone è sotto il tuo controllo diretto. L'età è uno su sei — e il meno rilevante di tutti se gli altri sono ottimizzati.</p>
+
+    <h2 id="neuroplasticita">Neuroplasticità: il cervello che gioca dalla tua parte</h2>
+
+    <p>C'è un aspetto della trasformazione over 40 che non viene quasi mai citato, e che invece è cruciale: <strong>la neuroplasticità</strong>.</p>
+
+    <p>Il cervello adulto mantiene una capacità straordinaria di formare nuovi collegamenti neurali — di imparare, adattarsi, cambiare abitudini. Anzi, ricerche recenti suggeriscono che la capacità di consolidare abitudini complesse migliora con l'età matura, perché il cervello ha sviluppato maggiori risorse esecutive di controllo e pianificazione.</p>
+
+    <p>In termini pratici: a 40 anni sei <em>più bravo</em> a costruire routine stabili di quanto lo fossi a 25. Hai più pazienza, più disciplina, più consapevolezza del tuo corpo. Queste non sono qualità secondarie — sono esattamente quello che serve per trasformarsi in modo duraturo.</p>
+
+    <div class="box-evidenza">
+      <h4>I vantaggi fisiologici dei 40+ che nessuno ti dice</h4>
+      <ul>
+        <li>Maggiore capacità di consolidare abitudini stabili (neuroplasticità adulta)</li>
+        <li>Risposta anabolica muscolare ancora molto efficiente se stimolata</li>
+        <li>Motivazione più profonda — sai perché stai facendo quello che fai</li>
+        <li>Migliore gestione del recupero rispetto ai 20 anni (quando si esagerava sempre)</li>
+        <li>Consapevolezza corporea superiore — senti cosa funziona e cosa no</li>
+        <li>Stabilità di vita che permette routine costanti</li>
+      </ul>
+    </div>
+
+    <h2 id="abitudini">Le abitudini: il vero campo da gioco</h2>
+
+    <p>Quando ho ricominciato il mio percorso, la cosa che mi ha sorpreso di più non è stato il cambiamento fisico. È stata la <strong>facilità con cui le nuove abitudini si sono consolidate</strong>, una volta che avevo trovato gli strumenti giusti.</p>
+
+    <p>Non sentivo la fame. Non avevo voglia di dolci. Avevo energia per giocare con i miei figli quando tornavo a casa dopo sette ore in sala operatoria. Questo non era magia — era il risultato di aver finalmente dato al corpo quello di cui aveva bisogno, in modo consistente.</p>
+
+    <p>La ricerca sulle abitudini è chiara: non serve forza di volontà infinita. Serve un sistema che renda il comportamento desiderato il più semplice e automatico possibile. A 40 anni, con la struttura di vita che abbiamo, questo è più fattibile che mai.</p>
+
+    <h3>Le tre abitudini che cambiano tutto</h3>
+
+    <p><strong>1. La colazione proteica.</strong> Non la classica colazione italiana — caffè e biscotti — che crea un picco insulinico immediato e ti lascia con una fame devastante entro un'ora. Una colazione con 25-30g di proteine stabilizza la glicemia, riduce i craving per tutto il giorno e supporta la sintesi muscolare. È il singolo cambiamento con il maggiore impatto sul resto della giornata.</p>
+
+    <p><strong>2. Il movimento consistente.</strong> Non eroico — consistente. Tre sessioni a settimana, anche brevi, valgono infinitamente più di due ore il sabato e poi niente per dieci giorni. Il corpo over 40 risponde meglio alla stimolazione frequente e moderata che agli eccessi sporadici.</p>
+
+    <p><strong>3. Il sonno come priorità.</strong> È il fattore più sottovalutato. Dormi poco? Il testosterone scende, il cortisolo sale, la glicemia si destabilizza, e il cervello cerca zuccheri per compensare. Ogni altra abitudine è amplificata o sabotata dalla qualità del tuo sonno.</p>
+
+    <h2 id="conclusione">La rivincita vera</h2>
+
+    <p>La "rivincita dei 40" non è una metafora motivazionale vuota. È una realtà fisiologica: il corpo maschile adulto, stimolato in modo intelligente, risponde in modo straordinario. I miei 14 kg di grasso persi, i 5 kg di massa muscolare guadagnati, il colesterolo e i trigliceridi tornati nella norma — non sono il risultato di un sacrificio eroico. Sono il risultato di aver finalmente capito come funziona il corpo a questa età.</p>
+
+    <p>Non è tardi. È esattamente il momento giusto.</p>
+
+    <div class="citazione">
+      <p>"A 40 anni hai qualcosa che non avevi a 25: sai esattamente perché vuoi farlo. E quella consapevolezza vale più di qualsiasi supplemento."</p>
+      <cite>— Carlo Barbieri, Infermiere e Personal Trainer</cite>
+    </div>
+
+    <!-- BOX AUTORE -->
+    <div class="box-autore">
+      <img src="carlo.jpg" alt="Carlo Barbieri" class="autore-foto">
+      <div class="autore-info">
+        <h4>Carlo Barbieri</h4>
+        <p>Infermiere di sala operatoria e personal trainer qualificato. Ha vissuto in prima persona la trasformazione di cui scrive: da 96 kg con colesterolo 295 e trigliceridi 499 a ritrovare forma, energia e salute. Padre di due figli, appassionato di sport da sempre.</p>
+      </div>
+    </div>
+
+    <!-- CTA FINALE -->
+    <div class="cta-articolo">
+      <h3>Pronto per iniziare la tua rivincita?</h3>
+      <p>Leggi la mia storia completa oppure scopri gli strumenti che ho usato nel mio percorso.</p>
+      <a href="storia.html" class="btn-cta-light">Leggi la mia storia</a>
+      <a href="https://wa.me/393357547386" target="_blank" class="btn-cta-wa">💬 Scrivimi su WhatsApp</a>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="articolo-sidebar">
+
+    <div class="sidebar-card">
+      <h4>In questo articolo</h4>
+      <ul class="indice">
+        <li><a href="#mito">Il mito del declino inevitabile</a></li>
+        <li><a href="#testosterone">Testosterone: il nemico immaginario</a></li>
+        <li><a href="#neuroplasticita">Neuroplasticità e abitudini</a></li>
+        <li><a href="#abitudini">Le 3 abitudini che cambiano tutto</a></li>
+        <li><a href="#conclusione">La rivincita vera</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Vuoi iniziare il tuo percorso?</h4>
+      <p>Scopri gli strumenti che ho usato nella mia trasformazione — o scrivimi direttamente.</p>
+      <a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="btn-sidebar">Scopri i prodotti →</a>
+      <a href="https://wa.me/393357547386" target="_blank" class="btn-sidebar-wa">💬 Scrivimi su WhatsApp</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>La mia storia</h4>
+      <p>Da 96 kg e valori fuori scala a ritrovare me stesso. Leggi come è andata davvero.</p>
+      <a href="storia.html" class="btn-sidebar">Leggi la storia →</a>
+    </div>
+
+  </aside>
+
+</div>
+
+<footer>
+  <p>© 2026 Movimento & Salute · <a href="#">Privacy Policy</a> · <a href="#">Contatti</a></p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">I contenuti di questo sito hanno scopo informativo e non sostituiscono il parere medico.</p>
+</footer>
+
+</body>
+</html>
