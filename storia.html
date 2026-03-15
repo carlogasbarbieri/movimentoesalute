@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Mia Storia | Movimento e Salute</title>
+  <meta name="description" content="La storia di Carlo: infermiere, padre di due figli, ex sportivo. Da colesterolo 295, trigliceridi 499 e 96kg a ritrovare salute ed energia. Una trasformazione vera.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="La Mia Storia | Movimento e Salute">
+  <meta property="og:description" content="La storia di Carlo: infermiere, padre di due figli, ex sportivo. Da colesterolo 295, trigliceridi 499 e 96kg a ritrovare salute ed energia. Una trasformazione vera.">
+  <meta property="og:url" content="https://www.movimentoesalute.eu/storia.html">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://www.movimentoesalute.eu/storia.html">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --verde: #2D6A4F;
+      --verde-chiaro: #52B788;
+      --verde-pallido: #D8F3DC;
+      --arancio: #E07A00;
+      --crema: #FAF7F2;
+      --grigio-scuro: #1A1A1A;
+      --grigio: #555;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: #FAF7F2; }
+    body { font-family: 'DM Sans', sans-serif; background: #FAF7F2 !important; color: #1A1A1A; overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 5%;
+      background: rgba(250,247,242,0.92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(45,106,79,0.1);
+    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--verde); text-decoration: none; }
+    .logo span { color: var(--arancio); }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+    nav ul a { text-decoration: none; color: var(--grigio); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    nav ul a:hover, nav ul a.active { color: var(--verde); }
+    .nav-cta { background: var(--arancio); color: white !important; padding: 0.6rem 1.4rem; border-radius: 50px; transition: background 0.2s !important; }
+    .nav-cta:hover { background: #c46d00 !important; }
+
+    /* HERO STORIA */
+    .hero-storia {
+      min-height: 60vh;
+      background: linear-gradient(135deg, #1A2E22, var(--verde));
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 10rem 5% 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-storia::before {
+      content: ''; position: absolute; bottom: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(82,183,136,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-badge {
+      display: inline-block; background: rgba(255,255,255,0.12);
+      color: var(--verde-chiaro); font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 0.5rem 1.2rem; border-radius: 50px; margin-bottom: 1.5rem;
+      width: fit-content;
+    }
+    .hero-storia h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 900; color: white; line-height: 1.1;
+      max-width: 700px; margin-bottom: 1.5rem;
+    }
+    .hero-storia h1 em { font-style: italic; color: var(--verde-chiaro); }
+    .hero-storia p {
+      color: rgba(255,255,255,0.7); font-size: 1.1rem;
+      font-weight: 300; max-width: 560px; line-height: 1.7;
+    }
+
+    /* NUMERI PRIMA/DOPO */
+    .confronto {
+      background: white;
+      padding: 5rem 5%;
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 3rem; align-items: center;
+    }
+    .confronto-lato { text-align: center; }
+    .confronto-lato h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 2rem;
+    }
+    .prima h3 { color: #C0392B; }
+    .dopo h3 { color: var(--verde); }
+    .metric {
+      margin-bottom: 1.5rem;
+    }
+    .metric .valore {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 900; line-height: 1;
+    }
+    .prima .metric .valore { color: #C0392B; }
+    .dopo .metric .valore { color: var(--verde); }
+    .metric .etichetta { font-size: 0.82rem; color: var(--grigio); margin-top: 0.3rem; font-weight: 300; }
+    .freccia {
+      font-size: 3rem; color: var(--verde-chiaro);
+      font-family: 'Playfair Display', serif; font-weight: 900;
+    }
+    .disclaimer-numeri {
+      text-align: center; padding: 1.5rem 5%; background: var(--verde-pallido);
+      font-size: 0.82rem; color: var(--verde); font-weight: 300; line-height: 1.6;
+    }
+
+    /* CORPO STORIA */
+    .storia-corpo { max-width: 740px; margin: 0 auto; padding: 6rem 5%; background: #FAF7F2; }
+
+    .capitolo { margin-bottom: 5rem; }
+    .capitolo-label {
+      display: inline-block; background: var(--verde-pallido); color: var(--verde);
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+    .capitolo h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 900;
+      line-height: 1.2; margin-bottom: 1.5rem; color: #1A1A1A;
+    }
+    .capitolo h2 em { font-style: italic; color: var(--verde); }
+    .capitolo p {
+      font-size: 1.05rem; color: #444; line-height: 1.85;
+      font-weight: 400; margin-bottom: 1.2rem;
+    }
+    .capitolo p strong { color: #1A1A1A; font-weight: 600; }
+    .capitolo p em { color: #333; }
+
+    .pull-quote {
+      border-left: 4px solid var(--verde-chiaro);
+      padding: 1.5rem 2rem; margin: 2.5rem 0;
+      background: #F0FAF4; border-radius: 0 16px 16px 0;
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-style: italic;
+      color: #1A1A1A !important; line-height: 1.6;
+      margin: 0 !important;
+    }
+
+    /* CHI SONO */
+    .chi-sono {
+      background: #F0FAF4;
+      padding: 5rem 5%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+      border-top: 1px solid rgba(45,106,79,0.1);
+      border-bottom: 1px solid rgba(45,106,79,0.1);
+    }
+    .chi-sono-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 900;
+      color: #1A1A1A; line-height: 1.2; margin-bottom: 1.5rem;
+    }
+    .chi-sono-content p { color: #444; font-size: 1rem; line-height: 1.7; font-weight: 400; margin-bottom: 1rem; }
+    .ruoli { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+    .ruolo-pill {
+      background: white; color: var(--verde);
+      border: 1.5px solid rgba(45,106,79,0.2);
+      padding: 0.5rem 1.2rem; border-radius: 50px;
+      font-size: 0.85rem; font-weight: 500;
+    }
+    .chi-sono-foto {
+      background: white; border-radius: 24px;
+      height: 380px; display: flex; align-items: center; justify-content: center;
+      font-size: 6rem; border: 1px solid rgba(45,106,79,0.12);
+      box-shadow: 0 6px 30px rgba(0,0,0,0.05);
+    }
+
+    /* CTA */
+    .cta-storia {
+      padding: 6rem 5%; text-align: center; background: var(--crema);
+    }
+    .cta-storia h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 900;
+      margin-bottom: 1rem; line-height: 1.2;
+    }
+    .cta-storia h2 span { color: var(--verde); }
+    .cta-storia p {
+      color: var(--grigio); font-size: 1rem; font-weight: 300;
+      max-width: 460px; margin: 0 auto 2.5rem; line-height: 1.6;
+    }
+    .cta-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--verde); color: white; padding: 1rem 2rem;
+      border-radius: 50px; text-decoration: none; font-weight: 500;
+      font-size: 0.95rem; transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 4px 20px rgba(45,106,79,0.25);
+    }
+    .btn-primary:hover { background: #1e4d38; transform: translateY(-2px); }
+    .btn-arancio {
+      background: var(--arancio); color: white; padding: 1rem 2rem;
+      border-radius: 50px; text-decoration: none; font-weight: 500;
+      font-size: 0.95rem; transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 4px 20px rgba(224,122,0,0.25);
+    }
+    .btn-arancio:hover { background: #c46d00; transform: translateY(-2px); }
+
+    footer {
+      background: var(--grigio-scuro); color: rgba(255,255,255,0.5);
+      text-align: center; padding: 2rem 5%; font-size: 0.82rem;
+    }
+    footer a { color: var(--verde-chiaro); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      .confronto { grid-template-columns: 1fr; }
+      .freccia { transform: rotate(90deg); }
+      .chi-sono { grid-template-columns: 1fr; }
+      .chi-sono-foto { display: none; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">movimento<span>&</span>salute</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="storia.html" class="active">La Mia Storia</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="strumenti.html">Strumenti</a></li>
+    <li><a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="nav-cta">Scopri i Prodotti</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero-storia">
+  <div class="hero-badge">La Mia Storia</div>
+  <h1>Da 96 kg e valori fuori scala a <em>ritrovare me stesso.</em></h1>
+  <p>Non è una storia di diete miracolose. È la storia di un infermiere e personal trainer qualificato, padre di due figli, che conosceva ogni regola — e si era perso lo stesso. E ha deciso di ricominciare davvero.</p>
+</section>
+
+<!-- CONFRONTO NUMERI -->
+<section class="confronto">
+  <div class="confronto-lato prima">
+    <h3>Prima</h3>
+    <div class="metric"><div class="valore">96 kg</div><div class="etichetta">Peso corporeo</div></div>
+    <div class="metric"><div class="valore">295</div><div class="etichetta">Colesterolo totale (mg/dL)</div></div>
+    <div class="metric"><div class="valore">499</div><div class="etichetta">Trigliceridi (mg/dL)</div></div>
+    <div class="metric"><div class="valore">0</div><div class="etichetta">Attività fisica settimanale</div></div>
+  </div>
+  <div style="display:flex; flex-direction:column; align-items:center; gap:1rem;"><img src="prima.jpg" alt="Prima - Carlo 96kg" style="width:140px; height:180px; object-fit:cover; object-position:top; border-radius:12px; border:3px solid #C0392B;"><div style="font-size:2rem; color:#52B788; font-weight:900;">↓</div><img src="dopo.jpg" alt="Dopo - Carlo 82kg" style="width:140px; height:180px; object-fit:cover; object-position:top; border-radius:12px; border:3px solid #2D6A4F;"></div>
+  <div class="confronto-lato dopo">
+    <h3>Dopo</h3>
+    <div class="metric"><div class="valore">82 kg</div><div class="etichetta">Peso corporeo</div></div>
+    <div class="metric"><div class="valore">✓</div><div class="etichetta">Colesterolo rientrato nei range</div></div>
+    <div class="metric"><div class="valore">✓</div><div class="etichetta">Trigliceridi rientrati nei range</div></div>
+    <div class="metric"><div class="valore">+5 kg</div><div class="etichetta">Massa muscolare guadagnata (Tanita)</div></div>
+  </div>
+</section>
+<div class="disclaimer-numeri">
+  Questi risultati sono personali e frutto di un percorso integrato: nutrizione, attività fisica e cambiamento delle abitudini quotidiane. I risultati individuali variano da persona a persona.
+</div>
+
+<!-- CORPO DELLA STORIA -->
+<div class="storia-corpo">
+
+  <div class="capitolo">
+    <span class="capitolo-label">Il punto di partenza</span>
+    <h2>Ero uno sportivo. Poi la vita ha preso <em>un'altra direzione.</em></h2>
+    <p>Ho sempre avuto un rapporto stretto con lo sport. Per anni l'allenamento è stato parte della mia identità, un momento sacro. Oltre al lavoro in sala operatoria, ho conseguito la qualifica di <strong>personal trainer</strong> — insieme a Gaia, che ne ha fatto la sua professione. Sapevo come funziona il corpo, come si costruisce la forma fisica, come si gestisce la nutrizione. Almeno credevo di saperlo.</p>
+    <p>Gaia e io ci allenavamo insieme da sempre. Era il nostro momento. Ma con la seconda gravidanza allenarsi era diventato difficile per lei — e io, dopo sette ore in sala operatoria, non me la sentivo di dirle <em>"resto ancora fuori due ore per andare in palestra."</em> Così ho smesso.</p>
+    <p>Il problema è che nella mia testa da ex sportivo, <strong>quando non mi allenavo era come se ogni giorno fosse un day off.</strong> E un day off per uno sportivo significa: mangi quello che vuoi. Solo che non mi allenavo più. E i day off si accumulavano.</p>
+    <div class="pull-quote">
+      <p>"Conoscevo ogni regola dell'allenamento e della nutrizione. Eppure non riuscivo a smettere di andare nella direzione sbagliata."</p>
+    </div>
+    <p>Ci si aggiungeva la frustrazione: volevo ricominciare, ma non riuscivo. Ogni tentativo durava qualche giorno. La stanchezza dopo i turni in ospedale, la famiglia, il senso di colpa — tutto pesava.</p>
+  </div>
+
+  <div class="capitolo">
+    <span class="capitolo-label">Il momento di svolta</span>
+    <h2>Degli esami di routine. <em>Quei numeri non mentono.</em></h2>
+    <p>Colesterolo a 295. Trigliceridi a 499. Peso 96 kg. Io, che ero sempre stato sportivo, mi ritrovavo con valori che non avrei mai immaginato di vedere accanto al mio nome.</p>
+    <p>In quel periodo, un'amica di Gaia ci parla di Herbalife. La mia reazione istintiva? <strong>Scetticismo totale.</strong> Anni di palestra mi avevano dato un'idea precisa di quel mondo — roba per chi non vuole fare fatica, soluzioni facili per chi non si impegna. Non faceva per me.</p>
+    <p>Ma ero in un angolo. Quei numeri mi dicevano che dovevo fare qualcosa, e presto. Così ho deciso di provare — con l'atteggiamento di chi vuole smontare una cosa, non di chi ci crede.</p>
+    <div class="pull-quote">
+      <p>"Non avevo nulla da perdere. Ho deciso di mettere alla prova il prodotto, con lo stesso rigore con cui un infermiere osserva un paziente."</p>
+    </div>
+  </div>
+
+  <div class="capitolo">
+    <span class="capitolo-label">La scoperta</span>
+    <h2>Non era quello che mi aspettavo. <em>Era meglio.</em></h2>
+    <p>Il primo mese: 4 kg in meno. Ma non è stata quella la cosa che mi ha colpito di più.</p>
+    <p>La cosa che mi ha sorpreso è stata la <strong>semplicità</strong>. In passato, quando mi mettevo in forma, dovevo lottare con la fame, resistere ai dolci, contare tutto. Questa volta non sentivo la fame. Non avevo voglia di dolci — non perché mi imponessi di non mangiarli, ma perché il corpo aveva quello di cui aveva bisogno.</p>
+    <p>Ma la vera sorpresa è arrivata dopo pochi giorni: <strong>la lucidità mentale e l'energia.</strong> Tornavo a casa dopo il turno e avevo voglia di giocare con i miei figli. Cosa che prima, spesso, semplicemente non accadeva.</p>
+    <p>Ho abbinato da subito l'attività fisica — parte fondamentale del percorso. Non i prodotti da soli, ma un cambiamento integrato: nutrizione, movimento, abitudini. È questa combinazione che ha fatto la differenza nei valori del sangue, nella composizione corporea, nell'energia quotidiana.</p>
+    <div class="pull-quote">
+      <p>"Avevo l'energia per giocare con i miei figli quando tornavo a casa. Dopo anni, questo per me valeva più di qualsiasi numero sulla bilancia."</p>
+    </div>
+  </div>
+
+  <div class="capitolo">
+    <span class="capitolo-label">Oggi</span>
+    <h2>82 kg, valori nella norma, <em>e una vita diversa.</em></h2>
+    <p>Oggi peso 82 kg. Ma la bilancia racconta solo una parte: la Tanita mi dice che ho guadagnato 5 kg di massa muscolare. Colesterolo e trigliceridi sono rientrati nei range normali. Dormo meglio, penso più chiaramente, ho più pazienza con i miei figli.</p>
+    <p>Ho smesso di fare doppi turni e libera professione — non perché fossi costretto, ma perché ho trovato un modo per stare più presente in famiglia senza sacrificare la stabilità. <strong>Ho riacquistato tempo.</strong> E il tempo è l'unica cosa che non si può comprare.</p>
+    <p>Questo blog nasce da qui. Non per vendere qualcosa, ma per raccontare cosa funziona davvero — con onestà, con i numeri, con la mia faccia.</p>
+  </div>
+
+</div>
+
+<!-- CHI SONO -->
+<section class="chi-sono">
+  <div class="chi-sono-content">
+    <h2>Infermiere, personal trainer, padre. <em>E ci sono passato davvero.</em></h2>
+    <p>Lavoro in sala operatoria da anni. So cosa significano i numeri del sangue — non come teoria, ma come realtà quotidiana. Ho conseguito la qualifica di personal trainer e conosco il corpo dall'interno, in ogni senso.</p>
+    <p>Eppure mi sono ritrovato a 96 kg, con colesterolo e trigliceridi fuori scala. Proprio io, che avrei dovuto sapere come evitarlo. Questa è la ragione per cui quello che condivido qui non è teoria — è esperienza diretta, con tutti i suoi errori.</p>
+    <div class="ruoli">
+      <span class="ruolo-pill">🏥 Infermiere di sala operatoria</span>
+      <span class="ruolo-pill">💪 Personal Trainer qualificato</span>
+      <span class="ruolo-pill">👨‍👧‍👦 Padre di due figli</span>
+      <span class="ruolo-pill">📍 Italia</span>
+    </div>
+  </div>
+  <img src="carlo.jpg" alt="Carlo Barbieri" style="width:100%; height:380px; object-fit:cover; object-position:top; border-radius:24px; box-shadow:0 6px 30px rgba(0,0,0,0.1);">
+</section>
+
+<!-- CTA -->
+<section class="cta-storia">
+  <h2>Vuoi sapere <span>cosa ho usato</span> nel mio percorso?</h2>
+  <p>Nessuna lista di integratori infinita. Solo gli strumenti che ho integrato nella mia routine e che hanno fatto la differenza.</p>
+  <div class="cta-group">
+    <a href="strumenti.html" class="btn-primary">Vedi gli strumenti che uso</a>
+    <a href="strumenti.html" class="btn-arancio">Scopri i prodotti →</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Movimento & Salute · <a href="#">Privacy Policy</a> · <a href="#">Contatti</a></p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">I contenuti di questo sito hanno scopo informativo e non sostituiscono il parere medico.</p>
+</footer>
+
+</body>
+</html>
