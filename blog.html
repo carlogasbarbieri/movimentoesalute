@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | Movimento e Salute</title>
+  <meta name="description" content="Articoli pratici su nutrizione, allenamento e abitudini per uomini over 40. Consigli reali, scientificamente fondati, da chi ci e passato.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Blog | Movimento e Salute">
+  <meta property="og:description" content="Articoli pratici su nutrizione, allenamento e abitudini per uomini over 40. Consigli reali, scientificamente fondati, da chi ci e passato.">
+  <meta property="og:url" content="https://www.movimentoesalute.eu/blog.html">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://www.movimentoesalute.eu/blog.html">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --verde: #2D6A4F; --verde-chiaro: #52B788; --verde-pallido: #D8F3DC;
+      --arancio: #E07A00; --crema: #FAF7F2; --grigio-scuro: #1A1A1A; --grigio: #555;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: #FAF7F2; }
+    body { font-family: 'DM Sans', sans-serif; background: #FAF7F2 !important; color: #1A1A1A; overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 5%;
+      background: rgba(250,247,242,0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(45,106,79,0.1);
+    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--verde); text-decoration: none; }
+    .logo span { color: var(--arancio); }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+    nav ul a { text-decoration: none; color: var(--grigio); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    nav ul a:hover, nav ul a.active { color: var(--verde); }
+    .nav-cta { background: var(--arancio); color: white !important; padding: 0.6rem 1.4rem; border-radius: 50px; }
+
+    /* HERO */
+    .hero {
+      padding: 10rem 5% 5rem; background: #FAF7F2;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .hero-badge {
+      display: inline-block; background: var(--verde-pallido); color: var(--verde);
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 0.5rem 1.2rem; border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900;
+      line-height: 1.1; max-width: 700px; margin-bottom: 1.2rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--verde); }
+    .hero p { color: #444; font-size: 1.05rem; font-weight: 400; max-width: 540px; line-height: 1.7; }
+
+    /* FILTRI */
+    .filtri {
+      padding: 2rem 5%; display: flex; gap: 1rem; flex-wrap: wrap;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .filtro {
+      padding: 0.5rem 1.3rem; border-radius: 50px; font-size: 0.85rem;
+      font-weight: 500; cursor: pointer; border: 2px solid transparent;
+      transition: all 0.2s; text-decoration: none;
+    }
+    .filtro-tutti { background: var(--verde); color: white; }
+    .filtro-altri { background: white; color: var(--grigio); border-color: rgba(0,0,0,0.1); }
+    .filtro-altri:hover { border-color: var(--verde); color: var(--verde); }
+
+    /* ARTICOLO FEATURED */
+    .featured { padding: 4rem 5%; }
+    .featured-label {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--arancio); margin-bottom: 1.5rem;
+    }
+    .featured-card {
+      background: white; border-radius: 24px;
+      display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.07);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .featured-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
+    .featured-image {
+      background: linear-gradient(135deg, var(--verde-pallido), #b7e4c7);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 7rem; min-height: 320px;
+    }
+    .featured-content { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+    .article-meta { display: flex; gap: 1rem; align-items: center; margin-bottom: 1.2rem; }
+    .tag {
+      background: var(--verde-pallido); color: var(--verde);
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 1px;
+      text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 50px;
+    }
+    .data { color: var(--grigio); font-size: 0.82rem; font-weight: 300; }
+    .featured-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 900;
+      line-height: 1.2; margin-bottom: 1rem;
+    }
+    .featured-content p { color: #444; font-size: 0.95rem; line-height: 1.7; font-weight: 400; margin-bottom: 1.5rem; }
+    .leggi-link {
+      color: var(--verde); font-weight: 500; font-size: 0.9rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;
+      transition: gap 0.2s;
+    }
+    .leggi-link:hover { gap: 0.8rem; }
+
+    /* GRIGLIA ARTICOLI */
+    .articoli { padding: 2rem 5% 6rem; background: #FAF7F2; }
+    .articoli h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 700; margin-bottom: 2rem; color: #1A1A1A;
+    }
+    .griglia { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .card-articolo {
+      background: white; border-radius: 20px; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .card-articolo:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+    .card-img {
+      height: 180px; display: flex; align-items: center;
+      justify-content: center; font-size: 4rem;
+    }
+    .card-img-nutri { background: linear-gradient(135deg, #fff8e7, #ffeaa7); }
+    .card-img-sport { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
+    .card-img-mente { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
+    .card-img-sonno { background: linear-gradient(135deg, #f3e5f5, #e1bee7); }
+    .card-img-abitudini { background: linear-gradient(135deg, #fce4ec, #f8bbd0); }
+    .card-body { padding: 1.5rem; }
+    .card-body .article-meta { margin-bottom: 0.8rem; }
+    .card-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700; line-height: 1.3;
+      margin-bottom: 0.7rem; color: #1A1A1A;
+    }
+    .card-body p { color: #444; font-size: 0.88rem; line-height: 1.6; font-weight: 400; margin-bottom: 1rem; }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--verde); padding: 5rem 5%; text-align: center;
+    }
+    .newsletter h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 900;
+      color: white; margin-bottom: 1rem;
+    }
+    .newsletter p { color: rgba(255,255,255,0.7); font-size: 1rem; font-weight: 300; max-width: 440px; margin: 0 auto 2rem; line-height: 1.6; }
+    .newsletter-form { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .newsletter-form input {
+      padding: 1rem 1.5rem; border-radius: 50px; border: none;
+      font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
+      width: 300px; outline: none;
+    }
+    .newsletter-form button {
+      padding: 1rem 2rem; border-radius: 50px; border: none;
+      background: var(--arancio); color: white; font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem; font-weight: 500; cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .newsletter-form button:hover { background: #c46d00; transform: translateY(-2px); }
+
+    footer {
+      background: var(--grigio-scuro); color: rgba(255,255,255,0.5);
+      text-align: center; padding: 2rem 5%; font-size: 0.82rem;
+    }
+    footer a { color: var(--verde-chiaro); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-image { min-height: 200px; }
+      .griglia { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+      .newsletter-form input { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">movimento<span>&</span>salute</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="storia.html">La Mia Storia</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="strumenti.html">Strumenti</a></li>
+    <li><a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="nav-cta">Scopri i Prodotti</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Blog</div>
+  <h1>Benessere maschile over 40: <em>quello che funziona davvero.</em></h1>
+  <p>Articoli pratici su nutrizione, allenamento e abitudini. Senza teorie inutili — solo quello che ho vissuto e verificato.</p>
+</section>
+
+<!-- FILTRI -->
+<div class="filtri">
+  <a href="#" class="filtro filtro-tutti">Tutti</a>
+  <a href="#" class="filtro filtro-altri">🥗 Nutrizione</a>
+  <a href="#" class="filtro filtro-altri">🏃‍♂️ Movimento</a>
+  <a href="#" class="filtro filtro-altri">🧠 Abitudini</a>
+  <a href="#" class="filtro filtro-altri">😴 Sonno</a>
+</div>
+
+<!-- ARTICOLO IN EVIDENZA -->
+<section class="featured">
+  <div class="featured-label">📌 Articolo in evidenza</div>
+  <a href="articolo-rivincita-40.html" style="text-decoration:none; color:inherit;">
+  <div class="featured-card">
+    <div class="featured-image" style="background:#111; padding:0; overflow:hidden;"><img src="copertina-rivincita.jpg" alt="La Rivincita dei 40 - Carlo Barbieri" style="width:100%; height:100%; object-fit:cover; object-position:center top; min-height:320px; display:block;"></div>
+    <div class="featured-content">
+      <div class="article-meta">
+        <span class="tag">Abitudini</span>
+        <span class="data">2026</span>
+      </div>
+      <h2>La rivincita dei 40: perché questo è il momento migliore per rimetterti in forma (non il peggiore)</h2>
+      <p>Testosterone, neuroplasticità, abitudini. La fisiologia dietro la trasformazione maschile over 40 — e perché i 40 anni sono un vantaggio, non un ostacolo.</p>
+      <span class="leggi-link">Leggi l'articolo →</span>
+    </div>
+  </div>
+  </a>
+</section>
+
+<!-- GRIGLIA ARTICOLI -->
+<section class="articoli">
+  <h2>Tutti gli articoli</h2>
+  <div class="griglia">
+
+    <div class="card-articolo">
+      <a href="articolo-nutrizione.html" style="text-decoration:none; color:inherit;">
+      <div class="card-img card-img-nutri">🥗</div>
+      <div class="card-body">
+        <div class="article-meta"><span class="tag">Nutrizione</span><span class="data">2026</span></div>
+        <h3>Mangiare bene dopo i 40 senza impazzire: il metodo del piatto bilanciato</h3>
+        <p>Piatti bilanciati, snack proteici veloci e come evitare i trabocchetti del bar. Nutrizione semplice e sostenibile.</p>
+        <span class="leggi-link">Leggi →</span>
+      </div>
+      </a>
+    </div>
+
+    <div class="card-articolo">
+      <a href="articolo-allenamento.html" style="text-decoration:none; color:inherit;">
+      <div class="card-img card-img-sport">🏋️‍♂️</div>
+      <div class="card-body">
+        <div class="article-meta"><span class="tag">Movimento</span><span class="data">2026</span></div>
+        <h3>Allenamento over 40: come tornare in forma partendo da zero (o quasi)</h3>
+        <p>Dal divano alla palestra, passando per chi si era alzato solo per il telecomando. Metodo progressivo, senza infortuni.</p>
+        <span class="leggi-link">Leggi →</span>
+      </div>
+      </a>
+    </div>
+
+    <div class="card-articolo">
+      <a href="articolo-sonno.html" style="text-decoration:none; color:inherit;">
+      <div class="card-img card-img-sonno">😴</div>
+      <div class="card-body">
+        <div class="article-meta"><span class="tag">Sonno</span><span class="data">2026</span></div>
+        <h3>Sonno e uomo over 40: perché dormi meno e come risolvere davvero</h3>
+        <p>Le cause fisiologiche del sonno ridotto negli uomini adulti — e come migliorarlo con abitudini e integrazione mirata.</p>
+        <span class="leggi-link">Leggi →</span>
+      </div>
+      </a>
+    </div>
+
+    <div class="card-articolo">
+      <a href="articolo-rivincita-40.html" style="text-decoration:none; color:inherit;">
+      <div class="card-img card-img-mente">🧠</div>
+      <div class="card-body">
+        <div class="article-meta"><span class="tag">Abitudini</span><span class="data">2026</span></div>
+        <h3>La rivincita dei 40: testosterone, neuroplasticità e le 3 abitudini che cambiano tutto</h3>
+        <p>La scienza dietro la trasformazione maschile over 40. Perché il corpo adulto risponde meglio di quanto pensi.</p>
+        <span class="leggi-link">Leggi →</span>
+      </div>
+      </a>
+    </div>
+
+    <div class="card-articolo">
+      <a href="articolo-piramide-harvard.html" style="text-decoration:none; color:inherit;">
+      <div class="card-img card-img-nutri" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); overflow:hidden; padding:0;">
+        <img src="piramide-harvard.jpg" alt="Piramide Harvard" style="width:100%; height:100%; object-fit:cover; object-position:center;">
+      </div>
+      <div class="card-body">
+        <div class="article-meta"><span class="tag">Nutrizione</span><span class="data">Marzo 2026</span></div>
+        <h3>Il cibo non è più quello di una volta: Harvard spiega perché gli integratori sono necessari</h3>
+        <p>Coltivazioni intensive, allevamenti intensivi, cibi ultra-processati. I dati scientifici dietro la piramide alimentare di Harvard.</p>
+        <span class="leggi-link">Leggi →</span>
+      </div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <h2>Nuovi articoli ogni settimana.</h2>
+  <p>Ricevi i contenuti direttamente nella tua email. Niente spam — solo quello che vale la pena leggere.</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="La tua email" />
+    <button>Iscriviti</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Movimento & Salute · <a href="#">Privacy Policy</a> · <a href="#">Contatti</a></p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">I contenuti di questo sito hanno scopo informativo e non sostituiscono il parere medico.</p>
+</footer>
+
+</body>
+</html>
