@@ -75,6 +75,52 @@
     footer { background: #1A1A1A; color: rgba(255,255,255,0.5); text-align: center; padding: 2rem 5%; font-size: 0.82rem; }
     footer a { color: var(--verde-chiaro); text-decoration: none; }
     @media (max-width: 900px) { .articolo-wrapper { grid-template-columns: 1fr; } .articolo-sidebar { position: static; } .box-autore { flex-direction: column; text-align: center; } nav ul { display: none; } }
+
+    /* SOCIAL FOOTER */
+    .social-follow {
+      background: #1A1A1A; padding: 2.5rem 5%;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1.5rem;
+    }
+    .social-follow-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700; color: white;
+    }
+    .social-follow-text span { color: #52B788; font-style: italic; }
+    .social-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .social-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 1.3rem; border-radius: 50px;
+      text-decoration: none; font-size: 0.85rem; font-weight: 500;
+      transition: transform 0.2s, opacity 0.2s; font-family: 'DM Sans', sans-serif;
+    }
+    .social-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+    .social-btn-ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: white; }
+    .social-btn-fb { background: #1877F2; color: white; }
+
+    /* CONDIVIDI ARTICOLO */
+    .condividi-box {
+      background: white; border-radius: 20px; padding: 2rem 2.5rem;
+      margin: 2rem 0; box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid rgba(45,106,79,0.08);
+    }
+    .condividi-box h4 {
+      font-family: 'Playfair Display', serif; font-size: 1.1rem;
+      font-weight: 700; margin-bottom: 1rem; color: #1A1A1A;
+    }
+    .condividi-box p { font-size: 0.88rem; color: #555; margin-bottom: 1.2rem; }
+    .condividi-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 1.3rem; border-radius: 50px;
+      text-decoration: none; font-size: 0.85rem; font-weight: 500;
+      transition: transform 0.2s; font-family: 'DM Sans', sans-serif;
+    }
+    .share-btn:hover { transform: translateY(-2px); }
+    .share-btn-wa { background: #25D366; color: white; }
+    .share-btn-fb { background: #1877F2; color: white; }
+    .share-btn-copy { background: #f0f0f0; color: #333; cursor: pointer; border: none; }
+
   </style>
 </head>
 <body>
@@ -215,6 +261,18 @@
 
     <p>Non è debolezza integrare. È intelligenza. La differenza tra un motore con l'olio giusto e uno che va a secco è visibile — nel corpo come nelle macchine. <strong>Il cibo costruisce la struttura. L'integrazione di qualità riempie i vuoti che il cibo quotidiano lascia.</strong></p>
 
+
+    <!-- CONDIVIDI -->
+    <div class="condividi-box">
+      <h4>&#128279; Hai trovato utile questo articolo?</h4>
+      <p>Condividilo con chi conosci &mdash; potrebbe fare la differenza per qualcuno che sta cercando esattamente questo.</p>
+      <div class="condividi-btns">
+        <a href="https://wa.me/?text=Ho%20letto%20questo%20articolo%20e%20ho%20pensato%20a%20te%3A%20https://www.movimentoesalute.eu/articolo-nutrizione.html" target="_blank" class="share-btn share-btn-wa">&#128172; WhatsApp</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.movimentoesalute.eu/articolo-nutrizione.html" target="_blank" class="share-btn share-btn-fb">Facebook</a>
+        <button class="share-btn share-btn-copy" onclick="navigator.clipboard.writeText('https://www.movimentoesalute.eu/articolo-nutrizione.html'); this.textContent='&#10003; Copiato!'">&#128279; Copia link</button>
+      </div>
+    </div>
+
     <div class="box-autore">
       <img src="carlo.jpg" alt="Carlo Barbieri" class="autore-foto">
       <div class="autore-info">
@@ -256,6 +314,18 @@
     </div>
   </aside>
 
+</div>
+
+
+<!-- SEGUIMI SUI SOCIAL -->
+<div class="social-follow">
+  <div class="social-follow-text">
+    Contenuti nuovi ogni settimana &mdash; <span>seguimi sui social</span>
+  </div>
+  <div class="social-links">
+    <a href="https://www.instagram.com/carlo_gas_barbieri?igsh=MXNxdDdsbGtka3d1Zg%3D%3D&utm_source=qr" target="_blank" class="social-btn social-btn-ig">&#128247; Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61578385565022&mibextid=wwXIfr" target="_blank" class="social-btn social-btn-fb">&#128279; Facebook</a>
+  </div>
 </div>
 
 <footer>
