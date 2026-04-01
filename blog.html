@@ -56,6 +56,8 @@
     .cat-movimento { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-left: 5px solid #2D6A4F; }
     .cat-sonno { background: linear-gradient(135deg, #EDE7F6, #D1C4E9); border-left: 5px solid #5E35B1; }
     .cat-abitudini { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); border-left: 5px solid #1565C0; }
+    .cat-femminile { background: linear-gradient(135deg, #FCE4EC, #F8BBD0); border-left: 5px solid #C2185B; }
+    .filtro-btn.attivo-femminile { background: #C2185B; color: white; border-color: #C2185B; }
     .griglia { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
     .card-articolo { background: white; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; border: 1px solid rgba(0,0,0,0.04); }
     .card-articolo:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
@@ -173,11 +175,12 @@
   <p>Scegli un argomento o sfoglia tutto insieme.</p>
 
   <div class="filtri-bar">
-    <button class="filtro-btn attivo" onclick="filtra('tutti', this)">Tutti</button>
+    <button class="filtro-btn" onclick="filtra('tutti', this)" id="btn-tutti">Tutti</button>
     <button class="filtro-btn" onclick="filtra('nutrizione', this)">🥗 Nutrizione</button>
     <button class="filtro-btn" onclick="filtra('movimento', this)">🏋️ Movimento</button>
     <button class="filtro-btn" onclick="filtra('sonno', this)">😴 Sonno</button>
     <button class="filtro-btn" onclick="filtra('abitudini', this)">🧠 Abitudini</button>
+    <button class="filtro-btn" onclick="filtra('femminile', this)">🌸 Benessere Femminile</button>
   </div>
 
   <div class="categoria-header cat-nutri" id="header-nutrizione">
@@ -195,6 +198,10 @@
   <div class="categoria-header cat-abitudini" id="header-abitudini">
     <div class="cat-icona">🧠</div>
     <div><div class="cat-titolo">Abitudini & Mentalità</div><div class="cat-desc">Il cambiamento vero parte dalla testa. Motivazione, routine, neuroplasticità e mindset over 40.</div></div>
+  </div>
+  <div class="categoria-header cat-femminile" id="header-femminile">
+    <div class="cat-icona">🌸</div>
+    <div><div class="cat-titolo">Benessere Femminile</div><div class="cat-desc">Ormoni, energia, sonno e peso dopo i 35. Contenuti pensati per le donne che vogliono capire il proprio corpo — con la scienza dalla loro parte.</div></div>
   </div>
 
   <div class="griglia">
@@ -297,7 +304,7 @@
       </a>
     </div>
 
-    <div class="card-articolo" data-categoria="nutrizione">
+    <div class="card-articolo" data-categoria="femminile">
       <a href="articolo-donne-ormoni-peso.html" style="text-decoration:none; color:inherit;">
         <div class="card-img" style="padding:0; background: linear-gradient(135deg, #FCE4EC, #F48FB1);">
           <img src="copertina-donne-ormoni.jpg" alt="Donne over 35 ormoni e peso" style="width:100%; height:100%; object-fit:cover; object-position:center top;">
@@ -306,6 +313,20 @@
           <div class="article-meta"><span class="tag" style="background:#FCE4EC; color:#C2185B;">Benessere Femminile</span><span class="data">Marzo 2026</span></div>
           <h3>Perché le donne dopo i 35 faticano il doppio per perdere metà peso</h3>
           <p>Non è colpa tua. Non è pigrizia. È fisiologia — e finalmente qualcuno te la spiega in modo semplice.</p>
+          <span class="leggi-link">Leggi →</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-articolo" data-categoria="femminile">
+      <a href="articolo-stanchezza-gonfiore-donne.html" style="text-decoration:none; color:inherit;">
+        <div class="card-img" style="padding:0; background: linear-gradient(135deg, #fdf0f3, #e8a0b0);">
+          <img src="copertina-benessere-femminile-2.jpg" alt="Stanchezza e gonfiore nelle donne" style="width:100%; height:100%; object-fit:cover; object-position:center top;" onerror="this.style.display='none'">
+        </div>
+        <div class="card-body">
+          <div class="article-meta"><span class="tag" style="background:#FCE4EC; color:#C2185B;">Benessere Femminile</span><span class="data">Aprile 2026</span></div>
+          <h3>Sempre stanca, sempre gonfia: il tuo corpo non ha torto</h3>
+          <p>Stanchezza cronica, pancia che non va via e sonno disturbato: non è colpa tua. È il sistema ormonale che chiede aiuto — e la scienza spiega perché.</p>
           <span class="leggi-link">Leggi →</span>
         </div>
       </a>
@@ -341,6 +362,9 @@
 </footer>
 
 <script>
+// Imposta "Tutti" come attivo all'avvio
+document.getElementById('btn-tutti').classList.add('attivo');
+
 function filtra(categoria, btn) {
   document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('attivo'));
   btn.classList.add('attivo');
