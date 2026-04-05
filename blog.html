@@ -132,18 +132,106 @@
     .share-btn-fb { background: #1877F2; color: white; }
     .share-btn-copy { background: #f0f0f0; color: #333; cursor: pointer; border: none; }
 
+  
+  /* ===== NAV MENU A CASCATA ===== */
+  .ms-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 5%;
+    background: rgba(250,247,242,0.97); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(45,106,79,0.1);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .ms-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: #2D6A4F; text-decoration: none; z-index: 1001; }
+  .ms-logo span { color: #E07A00; }
+  .ms-menu { list-style: none; display: flex; gap: 0.3rem; align-items: center; margin: 0; padding: 0; }
+  .ms-menu > li > a { display: block; padding: 0.5rem 0.9rem; border-radius: 8px; text-decoration: none; color: #444; font-size: 0.88rem; font-weight: 500; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+  .ms-menu > li > a:hover { background: #f0f0f0; color: #2D6A4F; }
+  .ms-cta { background: #E07A00 !important; color: white !important; padding: 0.55rem 1.2rem !important; border-radius: 50px !important; }
+  .ms-cta:hover { opacity: 0.88; }
+  .ms-arrow { font-size: 0.7rem; margin-left: 2px; }
+  .ms-has-sub { position: relative; }
+  .ms-submenu { display: none; position: absolute; top: calc(100% + 6px); left: 0; background: white; border-radius: 12px; min-width: 210px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); padding: 0.5rem 0; list-style: none; z-index: 999; border: 1px solid rgba(0,0,0,0.06); }
+  .ms-has-sub:hover > .ms-submenu { display: block; }
+  .ms-submenu li a { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1.1rem; text-decoration: none; color: #333; font-size: 0.85rem; font-weight: 400; transition: background 0.15s, color 0.15s; white-space: nowrap; }
+  .ms-submenu li a:hover { background: #f5f5f5; color: #2D6A4F; }
+  .ms-sub-right { position: relative; }
+  .ms-submenu-2 { display: none; position: absolute; top: -6px; left: calc(100% + 2px); background: white; border-radius: 12px; min-width: 230px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); padding: 0.5rem 0; list-style: none; z-index: 1000; border: 1px solid rgba(0,0,0,0.06); }
+  .ms-sub-right:hover > .ms-submenu-2 { display: block; }
+  .ms-submenu-2 li a { font-size: 0.83rem; padding: 0.55rem 1.1rem; }
+  .ms-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; z-index: 1001; }
+  .ms-hamburger span { display: block; width: 24px; height: 2px; background: #2D6A4F; border-radius: 2px; transition: all 0.3s; }
+  .ms-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .ms-hamburger.open span:nth-child(2) { opacity: 0; }
+  .ms-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+  @media (max-width: 900px) {
+    .ms-hamburger { display: flex; }
+    .ms-menu { display: none; flex-direction: column; align-items: flex-start; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: white; padding: 80px 2rem 2rem; overflow-y: auto; gap: 0; z-index: 999; }
+    .ms-menu.open { display: flex; }
+    .ms-menu > li { width: 100%; border-bottom: 1px solid #f0f0f0; }
+    .ms-menu > li > a { padding: 0.9rem 0; font-size: 1rem; border-radius: 0; }
+    .ms-submenu { display: none; position: static; box-shadow: none; border: none; border-radius: 0; padding: 0 0 0 1rem; background: #fafafa; }
+    .ms-has-sub.mobile-open > .ms-submenu { display: block; }
+    .ms-submenu-2 { position: static; box-shadow: none; border: none; border-radius: 0; padding: 0 0 0 1rem; }
+    .ms-sub-right.mobile-open > .ms-submenu-2 { display: block; }
+    .ms-submenu li a { padding: 0.7rem 0.5rem; font-size: 0.9rem; }
+    .ms-cta { border-radius: 8px !important; margin-top: 0.5rem; }
+  }
+  /* ===== FINE NAV ===== */
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="logo">movimento<span>&</span>salute</a>
-  <ul>
+<!-- ========== NAV MENU A CASCATA ========== -->
+<nav class="ms-nav">
+  <a href="index.html" class="ms-logo">movimento<span>&</span>salute</a>
+  <button class="ms-hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="ms-menu">
     <li><a href="index.html">Home</a></li>
     <li><a href="storia.html">La Mia Storia</a></li>
-    <li><a href="blog.html" class="active">Blog</a></li>
+    <li class="ms-has-sub">
+      <a href="blog.html">Blog <span class="ms-arrow">&#9660;</span></a>
+      <ul class="ms-submenu">
+        <li class="ms-has-sub ms-sub-right">
+          <a href="blog.html">&#127829; Nutrizione <span class="ms-arrow">&#9658;</span></a>
+          <ul class="ms-submenu ms-submenu-2">
+            <li><a href="articolo-nutrizione.html">Fondamenti di nutrizione</a></li>
+            <li><a href="articolo-piramide-harvard.html">La piramide di Harvard</a></li>
+            <li><a href="articolo-carboidrati-rebound.html">Carboidrati e rebound</a></li>
+            <li><a href="articolo-aloe-tiroide-hashimoto.html">Aloe vera e tiroide</a></li>
+          </ul>
+        </li>
+        <li class="ms-has-sub ms-sub-right">
+          <a href="blog.html">&#127947; Movimento <span class="ms-arrow">&#9658;</span></a>
+          <ul class="ms-submenu ms-submenu-2">
+            <li><a href="articolo-allenamento.html">Allenamento over 40</a></li>
+          </ul>
+        </li>
+        <li class="ms-has-sub ms-sub-right">
+          <a href="blog.html">&#128564; Sonno <span class="ms-arrow">&#9658;</span></a>
+          <ul class="ms-submenu ms-submenu-2">
+            <li><a href="articolo-sonno.html">Sonno e recupero over 40</a></li>
+          </ul>
+        </li>
+        <li class="ms-has-sub ms-sub-right">
+          <a href="blog.html">&#129504; Abitudini <span class="ms-arrow">&#9658;</span></a>
+          <ul class="ms-submenu ms-submenu-2">
+            <li><a href="articolo-rivincita-40.html">La rivincita dei 40</a></li>
+          </ul>
+        </li>
+        <li class="ms-has-sub ms-sub-right">
+          <a href="blog.html">&#127800; Benessere Femminile <span class="ms-arrow">&#9658;</span></a>
+          <ul class="ms-submenu ms-submenu-2">
+            <li><a href="articolo-donne-ormoni-peso.html">Donne, ormoni e peso</a></li>
+            <li><a href="articolo-stanchezza-gonfiore-donne.html">Sempre stanca, sempre gonfia</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="strumenti.html">Strumenti</a></li>
-    <li><a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="nav-cta">Scopri i Prodotti</a></li>
+    <li><a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="ms-cta">Scopri i Prodotti</a></li>
   </ul>
 </nav>
 
@@ -318,6 +406,20 @@
       </a>
     </div>
 
+    <div class="card-articolo" data-categoria="nutrizione">
+      <a href="articolo-aloe-tiroide-hashimoto.html" style="text-decoration:none; color:inherit;">
+        <div class="card-img" style="padding:0; background: linear-gradient(135deg, #E8F5E9, #A5D6A7);">
+          <img src="articolo-aloe-tiroide-hashimoto.jpg" alt="Aloe vera e tiroide Hashimoto" style="width:100%; height:100%; object-fit:cover; object-position:center;" onerror="this.style.display='none'">
+        </div>
+        <div class="card-body">
+          <div class="article-meta"><span class="tag" style="background:#E8F5E9; color:#2D6A4F;">Nutrizione</span><span class="data">Aprile 2026</span></div>
+          <h3>Aloe vera e tiroide: lo studio che ha sorpreso la comunità scientifica</h3>
+          <p>TSH normalizzato nel 100% delle pazienti, anticorpi ridotti del 56% in 9 mesi. Uno studio peer-reviewed — e una storia personale che lo conferma.</p>
+          <span class="leggi-link">Leggi →</span>
+        </div>
+      </a>
+    </div>
+
     <div class="card-articolo" data-categoria="femminile">
       <a href="articolo-stanchezza-gonfiore-donne.html" style="text-decoration:none; color:inherit;">
         <div class="card-img" style="padding:0; background: linear-gradient(135deg, #fdf0f3, #e8a0b0);">
@@ -383,5 +485,33 @@ function filtra(categoria, btn) {
 }
 </script>
 
+
+<script>
+function toggleNav() {
+  var menu = document.querySelector('.ms-menu');
+  var btn = document.querySelector('.ms-hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth <= 900) {
+    document.querySelectorAll('.ms-has-sub > a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('mobile-open');
+      });
+    });
+  }
+});
+document.addEventListener('click', function(e) {
+  var nav = document.querySelector('.ms-nav');
+  var menu = document.querySelector('.ms-menu');
+  var btn = document.querySelector('.ms-hamburger');
+  if (nav && !nav.contains(e.target) && menu && menu.classList.contains('open')) {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+  }
+});
+</script>
 </body>
 </html>
