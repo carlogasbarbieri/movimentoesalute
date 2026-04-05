@@ -151,12 +151,12 @@
   .ms-cta:hover { opacity: 0.88; }
   .ms-arrow { font-size: 0.7rem; margin-left: 2px; }
   .ms-has-sub { position: relative; }
-  .ms-submenu { display: none; position: absolute; top: calc(100% + 6px); left: 0; background: white; border-radius: 12px; min-width: 210px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); padding: 0.5rem 0; list-style: none; z-index: 999; border: 1px solid rgba(0,0,0,0.06); }
+  .ms-submenu { display: none; position: absolute; top: 100%; left: 0; background: white; border-radius: 12px; min-width: 210px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); padding: 0.5rem 0; list-style: none; z-index: 999; border: 1px solid rgba(0,0,0,0.06); margin-top: 0; }
   .ms-has-sub:hover > .ms-submenu { display: block; }
   .ms-submenu li a { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1.1rem; text-decoration: none; color: #333; font-size: 0.85rem; font-weight: 400; transition: background 0.15s, color 0.15s; white-space: nowrap; }
   .ms-submenu li a:hover { background: #f5f5f5; color: #2D6A4F; }
   .ms-sub-right { position: relative; }
-  .ms-submenu-2 { display: none; position: absolute; top: -6px; left: calc(100% + 2px); background: white; border-radius: 12px; min-width: 230px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); padding: 0.5rem 0; list-style: none; z-index: 1000; border: 1px solid rgba(0,0,0,0.06); }
+  .ms-submenu-2 { display: none; position: absolute; top: 0; left: 100%; background: white; border-radius: 12px; min-width: 230px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); padding: 0.5rem 0; list-style: none; z-index: 1000; border: 1px solid rgba(0,0,0,0.06); margin-left: 0; }
   .ms-sub-right:hover > .ms-submenu-2 { display: block; }
   .ms-submenu-2 li a { font-size: 0.83rem; padding: 0.55rem 1.1rem; }
   .ms-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; z-index: 1001; }
@@ -177,6 +177,11 @@
     .ms-submenu li a { padding: 0.7rem 0.5rem; font-size: 0.9rem; }
     .ms-cta { border-radius: 8px !important; margin-top: 0.5rem; }
   }
+  
+  /* Bridge invisibile per evitare gap hover */
+  .ms-has-sub > a::after { content: ''; display: block; position: absolute; bottom: -10px; left: 0; right: 0; height: 10px; }
+  .ms-has-sub { position: relative; }
+  .ms-nav { padding-bottom: 0; }
   /* ===== FINE NAV ===== */
   </style>
 </head>
@@ -487,13 +492,63 @@ function filtra(categoria, btn) {
 
 
 <script>
+// Toggle hamburger mobile
 function toggleNav() {
   var menu = document.querySelector('.ms-menu');
   var btn = document.querySelector('.ms-hamburger');
   menu.classList.toggle('open');
   btn.classList.toggle('open');
 }
+
 document.addEventListener('DOMContentLoaded', function() {
+
+  // DESKTOP: hover con delay per evitare chiusura nel gap
+  if (window.innerWidth > 900) {
+    var closeTimers = new Map();
+
+    document.querySelectorAll('.ms-has-sub').forEach(function(item) {
+      var sub = item.querySelector(':scope > .ms-submenu, :scope > .ms-submenu-2');
+      if (!sub) return;
+
+      item.addEventListener('mouseenter', function() {
+        if (closeTimers.has(item)) {
+          clearTimeout(closeTimers.get(item));
+          closeTimers.delete(item);
+        }
+        sub.style.display = 'block';
+      });
+
+      item.addEventListener('mouseleave', function() {
+        var t = setTimeout(function() {
+          sub.style.display = 'none';
+          closeTimers.delete(item);
+        }, 120);
+        closeTimers.set(item, t);
+      });
+
+      sub.addEventListener('mouseenter', function() {
+        if (closeTimers.has(item)) {
+          clearTimeout(closeTimers.get(item));
+          closeTimers.delete(item);
+        }
+      });
+
+      sub.addEventListener('mouseleave', function() {
+        var t = setTimeout(function() {
+          sub.style.display = 'none';
+          closeTimers.delete(item);
+        }, 120);
+        closeTimers.set(item, t);
+      });
+    });
+
+    // Disabilita hover CSS su desktop (gestito da JS)
+    var style = document.createElement('style');
+    style.textContent = '.ms-has-sub:hover > .ms-submenu { display: none; } .ms-sub-right:hover > .ms-submenu-2 { display: none; }';
+    document.head.appendChild(style);
+  }
+
+  // MOBILE: tap per espandere
   if (window.innerWidth <= 900) {
     document.querySelectorAll('.ms-has-sub > a').forEach(function(link) {
       link.addEventListener('click', function(e) {
@@ -503,13 +558,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Chiudi menu mobile cliccando fuori
 document.addEventListener('click', function(e) {
   var nav = document.querySelector('.ms-nav');
   var menu = document.querySelector('.ms-menu');
   var btn = document.querySelector('.ms-hamburger');
   if (nav && !nav.contains(e.target) && menu && menu.classList.contains('open')) {
     menu.classList.remove('open');
-    btn.classList.remove('open');
+    if (btn) btn.classList.remove('open');
   }
 });
 </script>
