@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Muoversi è la miglior medicina per la mente: lo dicono gli studi | Movimento e Salute</title>
+  <meta name="description" content="Una meta-analisi su oltre 128.000 persone dimostra che il movimento fisico è efficace quanto — e spesso più — degli antidepressivi per depressione e ansia. Ecco cosa sapere.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.movimentoesalute.eu/articolo-movimento-salute-mentale.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:title" content="Muoversi è la miglior medicina per la mente: lo dicono gli studi">
+  <meta property="og:description" content="97 studi, 1039 trial clinici, 128.119 persone. La scienza è chiara: il movimento fisico funziona almeno quanto gli antidepressivi — e spesso fa di più.">
+  <meta property="og:image" content="https://www.movimentoesalute.eu/articolo-movimento-salute-mentale.jpg">
+  <meta property="og:url" content="https://www.movimentoesalute.eu/articolo-movimento-salute-mentale.html">
+  <meta property="og:type" content="article">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --verde: #2D6A4F; --verde-chiaro: #52B788; --verde-pallido: #D8F3DC; --arancio: #E07A00; --blu: #1A3A6B; --blu-chiaro: #4A7BC4; --blu-pallido: #E8EFF8; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: #FAF7F2; }
+    body { font-family: 'DM Sans', sans-serif; background: #FAF7F2 !important; color: #1A1A1A; overflow-x: hidden; line-height: 1.8; }
+    /* ===== NAV MENU A CASCATA ===== */
+    .ms-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(250,247,242,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(45,106,79,0.1); font-family: 'DM Sans', sans-serif; }
+    .ms-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: #2D6A4F; text-decoration: none; z-index: 1001; }
+    .ms-logo span { color: #E07A00; }
+    .ms-menu { list-style: none; display: flex; gap: 0.3rem; align-items: center; margin: 0; padding: 0; }
+    .ms-menu > li > a { display: block; padding: 0.5rem 0.9rem; border-radius: 8px; text-decoration: none; color: #444; font-size: 0.88rem; font-weight: 500; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+    .ms-menu > li > a:hover { background: #f0f0f0; color: #2D6A4F; }
+    .ms-cta { background: #E07A00 !important; color: white !important; padding: 0.55rem 1.2rem !important; border-radius: 50px !important; }
+    .ms-cta:hover { opacity: 0.88; }
+    .ms-arrow { font-size: 0.7rem; margin-left: 2px; }
+    .ms-has-sub { position: relative; }
+    .ms-submenu { display: none; position: absolute; top: 100%; left: 0; background: white; border-radius: 12px; min-width: 210px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); padding: 0.5rem 0; list-style: none; z-index: 999; border: 1px solid rgba(0,0,0,0.06); margin-top: 0; }
+    .ms-has-sub:hover > .ms-submenu { display: block; }
+    .ms-submenu li a { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1.1rem; text-decoration: none; color: #333; font-size: 0.85rem; font-weight: 400; transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .ms-submenu li a:hover { background: #f5f5f5; color: #2D6A4F; }
+    .ms-sub-right { position: relative; }
+    .ms-submenu-2 { display: none; position: absolute; top: 0; left: 100%; background: white; border-radius: 12px; min-width: 230px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); padding: 0.5rem 0; list-style: none; z-index: 1000; border: 1px solid rgba(0,0,0,0.06); margin-left: 0; }
+    .ms-sub-right:hover > .ms-submenu-2 { display: block; }
+    .ms-submenu-2 li a { font-size: 0.83rem; padding: 0.55rem 1.1rem; }
+    .ms-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; z-index: 1001; }
+    .ms-hamburger span { display: block; width: 24px; height: 2px; background: #2D6A4F; border-radius: 2px; transition: all 0.3s; }
+    .ms-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .ms-hamburger.open span:nth-child(2) { opacity: 0; }
+    .ms-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .ms-has-sub > a::after { content: ''; display: block; position: absolute; bottom: -10px; left: 0; right: 0; height: 10px; }
+    @media (max-width: 900px) {
+      .ms-hamburger { display: flex; }
+      .ms-menu { display: none; flex-direction: column; align-items: flex-start; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: white; padding: 80px 2rem 2rem; overflow-y: auto; gap: 0; z-index: 999; }
+      .ms-menu.open { display: flex; }
+      .ms-menu > li { width: 100%; border-bottom: 1px solid #f0f0f0; }
+      .ms-menu > li > a { padding: 0.9rem 0; font-size: 1rem; border-radius: 0; }
+      .ms-submenu { display: none; position: static; box-shadow: none; border: none; border-radius: 0; padding: 0 0 0 1rem; background: #fafafa; margin-top: 0; }
+      .ms-has-sub.mobile-open > .ms-submenu { display: block; }
+      .ms-submenu-2 { position: static; box-shadow: none; border: none; border-radius: 0; padding: 0 0 0 1rem; margin-left: 0; }
+      .ms-sub-right.mobile-open > .ms-submenu-2 { display: block; }
+      .ms-submenu li a { padding: 0.7rem 0.5rem; font-size: 0.9rem; }
+      .ms-cta { border-radius: 8px !important; margin-top: 0.5rem; }
+    }
+    /* ===== FINE NAV ===== */
+    .hero-articolo { background: linear-gradient(135deg, #0D1525, #1A2E50, #1A4A6B); padding: 10rem 5% 5rem; position: relative; overflow: hidden; }
+    .hero-articolo::before { content: ''; position: absolute; top: 20%; right: 10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(74,123,196,0.15) 0%, transparent 70%); border-radius: 50%; }
+    .hero-articolo::after { content: ''; position: absolute; bottom: -50px; left: 5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(45,106,79,0.08) 0%, transparent 70%); border-radius: 50%; }
+    .categoria-badge { display: inline-block; background: rgba(255,255,255,0.1); color: #90CAF9; font-size: 0.75rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 1.5rem; }
+    .hero-articolo h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 900; color: white; line-height: 1.15; max-width: 800px; margin-bottom: 1.5rem; }
+    .hero-articolo h1 em { font-style: italic; color: #90CAF9; }
+    .meta-articolo { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; color: rgba(255,255,255,0.55); font-size: 0.85rem; }
+    .articolo-wrapper { display: grid; grid-template-columns: 1fr 300px; gap: 4rem; max-width: 1100px; margin: 0 auto; padding: 5rem 5%; }
+    .articolo-corpo h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: #1A1A1A; line-height: 1.2; margin: 3rem 0 1.2rem; padding-top: 1rem; border-top: 2px solid var(--blu-pallido); }
+    .articolo-corpo h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--blu); margin: 2rem 0 0.8rem; }
+    .articolo-corpo p { font-size: 1.05rem; color: #444; line-height: 1.85; font-weight: 400; margin-bottom: 1.4rem; }
+    .articolo-corpo strong { color: #1A1A1A; font-weight: 600; }
+    .articolo-corpo em { color: var(--blu); font-style: italic; }
+    .citazione { border-left: 4px solid var(--blu-chiaro); padding: 1.5rem 2rem; margin: 2.5rem 0; background: white; border-radius: 0 16px 16px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+    .citazione p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: #1A1A1A !important; line-height: 1.6; margin: 0 !important; }
+    .citazione cite { display: block; margin-top: 0.8rem; font-size: 0.82rem; color: var(--blu); font-style: normal; font-weight: 500; }
+    .tabella-dati { width: 100%; border-collapse: collapse; margin: 2rem 0; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .tabella-dati th { background: #0D1525; color: white; padding: 1rem 1.5rem; text-align: left; font-size: 0.85rem; font-weight: 600; }
+    .tabella-dati td { padding: 0.9rem 1.5rem; font-size: 0.9rem; color: #444; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .tabella-dati tr:last-child td { border-bottom: none; }
+    .tabella-dati tr:nth-child(even) td { background: #F0F4FF; }
+    .positivo { color: #2D6A4F; font-weight: 600; }
+    .box-scienza { background: #0D1525; border-radius: 16px; padding: 2rem; margin: 2rem 0; }
+    .box-scienza h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #90CAF9; margin-bottom: 1rem; }
+    .box-scienza p { font-size: 0.92rem; color: rgba(255,255,255,0.78); line-height: 1.7; margin: 0 !important; }
+    .box-semplice { background: var(--blu-pallido); border-radius: 16px; padding: 2rem; margin: 2rem 0; }
+    .box-semplice h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--blu); margin-bottom: 0.8rem; }
+    .box-semplice p { font-size: 0.95rem; color: #1a2a4a; line-height: 1.7; margin: 0 !important; }
+    .box-evidenza { background: var(--verde-pallido); border-radius: 16px; padding: 2rem; margin: 2rem 0; }
+    .box-evidenza h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--verde); margin-bottom: 1rem; }
+    .box-evidenza ul { list-style: none; }
+    .box-evidenza ul li { padding: 0.5rem 0; font-size: 0.95rem; color: #333; display: flex; align-items: flex-start; gap: 0.8rem; line-height: 1.5; border-bottom: 1px solid rgba(45,106,79,0.1); }
+    .box-evidenza ul li:last-child { border-bottom: none; }
+    .box-evidenza ul li::before { content: '✓'; color: var(--verde); font-weight: 700; flex-shrink: 0; }
+    .stat-block { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 2rem 0; }
+    .stat-item { background: white; border: 1px solid var(--blu-pallido); border-radius: 14px; padding: 1.5rem 1rem; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+    .stat-item .numero { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: var(--blu); line-height: 1; }
+    .stat-item .descrizione { font-size: 0.8rem; color: #666; margin-top: 0.5rem; line-height: 1.4; }
+    .articolo-sidebar { position: sticky; top: 100px; height: fit-content; }
+    .sidebar-card { background: white; border-radius: 20px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid rgba(26,58,107,0.1); }
+    .sidebar-card h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; margin-bottom: 1rem; }
+    .sidebar-card p { font-size: 0.88rem; color: #444; line-height: 1.6; margin-bottom: 1rem; }
+    .btn-sidebar { display: block; background: var(--blu); color: white; padding: 0.8rem 1.2rem; border-radius: 50px; text-decoration: none; font-size: 0.88rem; font-weight: 500; text-align: center; margin-bottom: 0.8rem; transition: opacity 0.2s; }
+    .btn-sidebar:hover { opacity: 0.88; }
+    .btn-sidebar-wa { display: block; background: #25D366; color: white; padding: 0.8rem 1.2rem; border-radius: 50px; text-decoration: none; font-size: 0.88rem; font-weight: 500; text-align: center; transition: opacity 0.2s; }
+    .indice { list-style: none; }
+    .indice li { padding: 0.4rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .indice li:last-child { border-bottom: none; }
+    .indice a { color: var(--blu); text-decoration: none; font-size: 0.88rem; }
+    .indice a:hover { text-decoration: underline; }
+    .box-autore { background: white; border-radius: 20px; padding: 2.5rem; margin: 4rem 0 2rem; display: flex; gap: 2rem; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .autore-foto { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: top; flex-shrink: 0; border: 3px solid var(--blu-pallido); }
+    .autore-info h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .autore-info p { font-size: 0.88rem; color: #444; line-height: 1.5; }
+    .cta-articolo { background: linear-gradient(135deg, #0D1525, #1A3A6B); border-radius: 24px; padding: 3rem; text-align: center; margin: 2rem 0 4rem; }
+    .cta-articolo h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; color: white; margin-bottom: 1rem; }
+    .cta-articolo p { color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .btn-cta-light { background: white; color: #1A3A6B; padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; display: inline-block; margin: 0.4rem; }
+    .btn-cta-wa { background: #25D366; color: white; padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.95rem; display: inline-block; margin: 0.4rem; }
+    .condividi-box { background: white; border-radius: 20px; padding: 2rem 2.5rem; margin: 2rem 0; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid rgba(26,58,107,0.08); }
+    .condividi-box h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: #1A1A1A; }
+    .condividi-box p { font-size: 0.88rem; color: #555; margin-bottom: 1.2rem; }
+    .condividi-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .share-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.3rem; border-radius: 50px; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: transform 0.2s; font-family: 'DM Sans', sans-serif; }
+    .share-btn:hover { transform: translateY(-2px); }
+    .share-btn-wa { background: #25D366; color: white; }
+    .share-btn-fb { background: #1877F2; color: white; }
+    .share-btn-copy { background: #f0f0f0; color: #333; cursor: pointer; border: none; }
+    .social-follow { background: #1A1A1A; padding: 2.5rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+    .social-follow-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: white; }
+    .social-follow-text span { color: #52B788; font-style: italic; }
+    .social-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .social-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.3rem; border-radius: 50px; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: transform 0.2s, opacity 0.2s; font-family: 'DM Sans', sans-serif; }
+    .social-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+    .social-btn-ig { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: white; }
+    .social-btn-fb { background: #1877F2; color: white; }
+    footer { background: #1A1A1A; color: rgba(255,255,255,0.5); text-align: center; padding: 2rem 5%; font-size: 0.82rem; }
+    footer a { color: var(--verde-chiaro); text-decoration: none; }
+    @media (max-width: 900px) {
+      .articolo-wrapper { grid-template-columns: 1fr; }
+      .articolo-sidebar { position: static; }
+      .box-autore { flex-direction: column; text-align: center; }
+      .stat-block { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="ms-nav">
+  <a href="index.html" class="ms-logo">movimento<span>&</span>salute</a>
+  <button class="ms-hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="ms-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="storia.html">La Mia Storia</a></li>
+    <li class="ms-has-sub">
+      <a href="blog.html">Blog <span class="ms-arrow">&#9660;</span></a>
+      <ul class="ms-submenu">
+        <li class="ms-has-sub ms-sub-right">
+          <a href="blog.html">&#127829; Nutrizione <span class="ms-arrow">&#9658;</span></a>
+          <ul class="ms-submenu ms-submenu-2">
+            <li><a href="articolo-nutrizione.html">Fondamenti di nutrizione</a></li>
+            <li><a href="articolo-piramide-harvard.html">La piramide di Harvard</a></li>
+            <li><a href="articolo-carboidrati-rebound.html">Carboidrati e rebound</a></li>
+            <li><a href="articolo-aloe-tiroide-hashimoto.html">Aloe vera e tiroide</a></li>
+          </ul>
+        </li>
+        <li class="ms-has-sub ms-sub-right">
+          <a href="blog.html">&#127947; Movimento <span class="ms-arrow">&#9658;</span></a>
+          <ul class="ms-submenu ms-submenu-2">
+            <li><a href="articolo-allenamento.html">Allenamento over 40</a></li>
+            <li><a href="articolo-movimento-salute-mentale.html">Movimento e salute mentale</a></li>
+          </ul>
+        </li>
+        <li class="ms-has-sub ms-sub-right">
+          <a href="blog.html">&#128564; Sonno <span class="ms-arrow">&#9658;</span></a>
+          <ul class="ms-submenu ms-submenu-2">
+            <li><a href="articolo-sonno.html">Sonno e recupero over 40</a></li>
+          </ul>
+        </li>
+        <li class="ms-has-sub ms-sub-right">
+          <a href="blog.html">&#129504; Abitudini <span class="ms-arrow">&#9658;</span></a>
+          <ul class="ms-submenu ms-submenu-2">
+            <li><a href="articolo-rivincita-40.html">La rivincita dei 40</a></li>
+          </ul>
+        </li>
+        <li class="ms-has-sub ms-sub-right">
+          <a href="blog.html">&#127800; Benessere Femminile <span class="ms-arrow">&#9658;</span></a>
+          <ul class="ms-submenu ms-submenu-2">
+            <li><a href="articolo-donne-ormoni-peso.html">Donne, ormoni e peso</a></li>
+            <li><a href="articolo-stanchezza-gonfiore-donne.html">Sempre stanca, sempre gonfia</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="strumenti.html">Strumenti</a></li>
+    <li><a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="ms-cta">Scopri i Prodotti</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero-articolo">
+  <div class="categoria-badge">&#127939; Movimento & Mente</div>
+  <h1>Muoversi è la miglior medicina per la mente: <em>lo dicono gli studi</em></h1>
+  <div class="meta-articolo">
+    <span>&#9999;&#65039; Carlo Barbieri</span>
+    <span>&#128197; Aprile 2026</span>
+    <span>&#9200; 8 min di lettura</span>
+    <span>&#127991;&#65039; Movimento · Salute Mentale · Depressione · Ansia</span>
+  </div>
+</section>
+
+<div class="articolo-wrapper">
+  <article class="articolo-corpo">
+
+    <p>Oggi è la Giornata Mondiale della Salute. E c'è uno studio che tutti dovrebbero leggere.</p>
+
+    <p>Milioni di persone assumono antidepressivi ogni giorno. In Italia si stima che oltre 3 milioni di adulti facciano uso regolare di farmaci per ansia e depressione. Eppure esiste un'alternativa — o meglio, un complemento — che la scienza documenta da anni con dati sempre più solidi, e che quasi nessun medico prescrive per prima cosa.</p>
+
+    <p>Si chiama movimento fisico. E i numeri che lo riguardano sono difficili da ignorare.</p>
+
+    <div class="citazione">
+      <p>Non serve essere atleti. Non serve una palestra. Serve muoversi — con regolarità, con intenzione, con la consapevolezza che ogni passo ha un effetto diretto sulla chimica del tuo cervello.</p>
+      <cite>— Carlo Barbieri</cite>
+    </div>
+
+    <h2 id="studio">Lo studio che ha cambiato le carte in tavola</h2>
+
+    <p>Nel 2023 l'Università del South Australia ha pubblicato sul <strong>British Journal of Sports Medicine</strong> — una delle riviste scientifiche più autorevoli al mondo in ambito sportivo e medico — la meta-analisi più ampia mai condotta sul tema. I numeri parlano da soli.</p>
+
+    <div class="stat-block">
+      <div class="stat-item">
+        <div class="numero">97</div>
+        <div class="descrizione">revisioni sistematiche analizzate</div>
+      </div>
+      <div class="stat-item">
+        <div class="numero">1.039</div>
+        <div class="descrizione">trial clinici inclusi nello studio</div>
+      </div>
+      <div class="stat-item">
+        <div class="numero">128.119</div>
+        <div class="descrizione">persone coinvolte nella ricerca</div>
+      </div>
+    </div>
+
+    <p>La conclusione? <strong>L'attività fisica riduce i sintomi di depressione, ansia e stress in modo significativo — in tutti i gruppi di età, in entrambi i sessi, e in tutte le popolazioni studiate.</strong> I miglioramenti sono comparabili — e in molti casi superiori — a quelli ottenuti con farmaci e psicoterapia.</p>
+
+    <div class="box-scienza">
+      <h4>&#128300; Lo studio nel dettaglio (Singh et al., British Journal of Sports Medicine, 2023)</h4>
+      <p>Singh B, Olds T, Curtis R et al. "Effectiveness of physical activity interventions for improving depression, anxiety and distress: an overview of systematic reviews." Br J Sports Med. 2023;57:1203–1209. La revisione ha analizzato tutti i tipi di attività fisica — camminata, corsa, nuoto, allenamento con i pesi, yoga, pilates. Tutti hanno mostrato benefici significativi. Gli interventi di durata inferiore alle 12 settimane hanno mostrato i miglioramenti più rapidi — evidenza che non serve aspettare mesi per sentire i risultati.</p>
+    </div>
+
+    <div class="box-semplice">
+      <h4>&#128161; In parole semplici</h4>
+      <p>Quasi 130.000 persone, quasi 1.000 studi clinici, una sola conclusione: muoversi funziona. Non come alternativa ai farmaci in chi ha bisogno di supporto clinico — ma come strumento potentissimo che la medicina tradizionale sottovaluta sistematicamente.</p>
+    </div>
+
+    <h2 id="aggiornamento">Il 2026 conferma: anche meglio di quanto pensavamo</h2>
+
+    <p>A febbraio 2026 il British Journal of Sports Medicine ha pubblicato un ulteriore studio ancora più recente — una "meta-meta-analisi", cioè un'analisi delle analisi — che ha consolidato ulteriormente le evidenze.</p>
+
+    <div class="box-scienza">
+      <h4>&#128300; L'aggiornamento del 2026 (Munro et al., British Journal of Sports Medicine, 2026)</h4>
+      <p>Munro NR et al. "Effect of exercise on depression and anxiety symptoms: systematic umbrella review with meta-meta-analysis." Br J Sports Med. 2026. Conclusione degli autori: "Questa meta-meta-analisi fornisce prove robuste che l'esercizio fisico riduce efficacemente i sintomi di depressione e ansia in tutti i gruppi di età, in modo comparabile o superiore agli interventi farmacologici e psicologici tradizionali." I formati di gruppo e supervisionati hanno mostrato i benefici più sostanziali.</p>
+    </div>
+
+    <h2 id="meccanismo">Perché funziona: cosa succede nel cervello quando ti muovi</h2>
+
+    <p>Non è magia. È biochimica. Quando ti muovi — anche solo camminando a passo sostenuto — il tuo cervello avvia una serie di processi precisi che i farmaci cercano di replicare artificialmente.</p>
+
+    <table class="tabella-dati">
+      <thead>
+        <tr>
+          <th>Cosa succede</th>
+          <th>Meccanismo</th>
+          <th>Effetto pratico</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sale la serotonina</strong></td>
+          <td>Il movimento stimola la produzione del neurotrasmettitore del benessere</td>
+          <td class="positivo">Umore più stabile, meno ansia</td>
+        </tr>
+        <tr>
+          <td><strong>Sale la dopamina</strong></td>
+          <td>L'esercizio attiva il sistema di ricompensa del cervello</td>
+          <td class="positivo">Più motivazione, meno apatia</td>
+        </tr>
+        <tr>
+          <td><strong>Scende il cortisolo</strong></td>
+          <td>L'attività fisica regola l'asse HPA e abbassa l'ormone dello stress</td>
+          <td class="positivo">Meno tensione cronica, sonno migliore</td>
+        </tr>
+        <tr>
+          <td><strong>Cresce il BDNF</strong></td>
+          <td>Il "fertilizzante del cervello" aumenta con l'esercizio, stimolando nuove connessioni neurali</td>
+          <td class="positivo">Memoria, concentrazione, resilienza emotiva</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box-semplice">
+      <h4>&#128161; In parole semplici</h4>
+      <p>Gli antidepressivi agiscono prevalentemente sulla serotonina — cercano di tenerla alta artificialmente. Il movimento fa la stessa cosa, ma in modo naturale, e in più agisce su dopamina, cortisolo e BDNF contemporaneamente. È come avere quattro farmaci in uno, senza effetti collaterali.</p>
+    </div>
+
+    <h2 id="quanto">Quanto basta? Meno di quanto pensi</h2>
+
+    <p>Uno dei dati più sorprendenti della ricerca è questo: <strong>non serve molto</strong>. Gli studi mostrano che interventi di 12 settimane o meno producono già miglioramenti misurabili. E che l'intensità moderata — non l'allenamento estenuante — è quella che dà i risultati migliori per la salute mentale.</p>
+
+    <div class="box-evidenza">
+      <h4>Cosa funziona meglio secondo la ricerca</h4>
+      <ul>
+        <li><strong>Camminata a passo sostenuto</strong> — 30 minuti al giorno, 5 giorni a settimana. Il punto di partenza più accessibile e uno dei più efficaci.</li>
+        <li><strong>Corsa leggera o moderata</strong> — uno studio del 2023 ha mostrato effetti comparabili agli antidepressivi dopo 16 settimane di running terapeutico.</li>
+        <li><strong>Allenamento con i pesi</strong> — particolarmente efficace contro la depressione, soprattutto negli over 40 dove il calo ormonale amplifica i sintomi.</li>
+        <li><strong>Yoga e pilates</strong> — ottimi per l'ansia grazie alla componente respiratoria e di consapevolezza corporea.</li>
+        <li><strong>Attività in gruppo</strong> — la dimensione sociale amplifica i benefici. Allenarsi con altri funziona meglio che farlo da soli.</li>
+      </ul>
+    </div>
+
+    <h2 id="over40">Perché conta ancora di più dopo i 40</h2>
+
+    <p>Dopo i 40 anni il quadro cambia in modo significativo. Il testosterone negli uomini e gli estrogeni nelle donne iniziano a calare. Il cortisolo tende a restare cronicamente elevato. Il sonno peggiora. Il metabolismo rallenta. Tutti questi fattori insieme creano un terreno fertile per stati d'ansia, cali di umore e quella sensazione di "non essere più quelli di prima".</p>
+
+    <p>In questo contesto, il movimento fisico regolare non è un lusso o un hobby. È uno strumento di regolazione ormonale, neurologica e metabolica. È quello che tiene in equilibrio un sistema che, dopo i 40, tende naturalmente a sbilanciarsi.</p>
+
+    <div class="box-semplice">
+      <h4>&#128161; In parole semplici</h4>
+      <p>Dopo i 40 il corpo produce meno degli ormoni che ti fanno stare bene. Il movimento è uno dei pochi strumenti che ne stimola naturalmente la produzione — senza ricette, senza effetti collaterali, senza dipendenza.</p>
+    </div>
+
+    <h2 id="nutrizione">Il collegamento con la nutrizione: perché il movimento da solo non basta</h2>
+
+    <p>C'è però un aspetto che la ricerca tende a trascurare — e che nella mia esperienza fa una differenza enorme: <strong>il movimento funziona molto meglio quando il corpo ha i nutrienti giusti per supportarlo.</strong></p>
+
+    <p>La serotonina si produce a partire dal triptofano — un aminoacido che deve arrivare dal cibo. La dopamina richiede tirosina, zinco e vitamina B6. Il BDNF — il fattore di crescita neurale che il movimento stimola — ha bisogno di omega-3 per esplicare i suoi effetti. Il magnesio è indispensabile per la regolazione del sistema nervoso e del cortisolo.</p>
+
+    <p>Se questi nutrienti mancano — e oggi, con i suoli impoveriti e l'alimentazione industriale, spesso mancano — il movimento fa meno di quello che potrebbe. L'integrazione mirata non sostituisce l'esercizio. Lo amplifica.</p>
+
+    <!-- CONDIVIDI -->
+    <div class="condividi-box">
+      <h4>&#128279; Conosci qualcuno che potrebbe leggere questo?</h4>
+      <p>Condividi — oggi è la Giornata Mondiale della Salute. Il momento giusto per farlo.</p>
+      <div class="condividi-btns">
+        <a href="https://wa.me/?text=Articolo%20interessante%20su%20movimento%20e%20salute%20mentale%3A%20https://www.movimentoesalute.eu/articolo-movimento-salute-mentale.html" target="_blank" class="share-btn share-btn-wa">&#128172; WhatsApp</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.movimentoesalute.eu/articolo-movimento-salute-mentale.html" target="_blank" class="share-btn share-btn-fb">Facebook</a>
+        <button class="share-btn share-btn-copy" onclick="navigator.clipboard.writeText('https://www.movimentoesalute.eu/articolo-movimento-salute-mentale.html'); this.textContent='&#10003; Copiato!'">&#128279; Copia link</button>
+      </div>
+    </div>
+
+    <!-- AUTORE -->
+    <div class="box-autore">
+      <img src="carlo.jpg" alt="Carlo Barbieri" class="autore-foto">
+      <div class="autore-info">
+        <h4>Carlo Barbieri</h4>
+        <p>Infermiere di sala operatoria e personal trainer qualificato. Ho visto da vicino cosa fa lo stress cronico sul corpo e sulla mente — e ho sperimentato in prima persona cosa cambia quando il movimento torna ad essere parte della vita quotidiana.</p>
+      </div>
+    </div>
+
+    <!-- CTA FINALE -->
+    <div class="cta-articolo">
+      <h3>Vuoi iniziare a muoverti nel modo giusto?</h3>
+      <p>Scrivimi su WhatsApp — ti aiuto a capire da dove partire in base alla tua situazione. Oppure scopri gli strumenti nutrizionali che supportano energia e benessere mentale.</p>
+      <a href="strumenti.html" class="btn-cta-light">Vedi gli strumenti →</a>
+      <a href="https://wa.me/393357547386" target="_blank" class="btn-cta-wa">&#128172; Scrivimi su WhatsApp</a>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="articolo-sidebar">
+    <div class="sidebar-card">
+      <h4>In questo articolo</h4>
+      <ul class="indice">
+        <li><a href="#studio">Lo studio del 2023</a></li>
+        <li><a href="#aggiornamento">La conferma del 2026</a></li>
+        <li><a href="#meccanismo">Cosa succede nel cervello</a></li>
+        <li><a href="#quanto">Quanto basta</a></li>
+        <li><a href="#over40">Perché conta dopo i 40</a></li>
+        <li><a href="#nutrizione">Movimento e nutrizione</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h4>Supporta corpo e mente</h4>
+      <p>Omega-3, magnesio, vitamine del gruppo B — i nutrienti che fanno funzionare meglio il tuo cervello e amplificano i benefici del movimento.</p>
+      <a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="btn-sidebar">Scopri i prodotti →</a>
+      <a href="https://wa.me/393357547386" target="_blank" class="btn-sidebar-wa">&#128172; Scrivimi su WhatsApp</a>
+    </div>
+    <div class="sidebar-card">
+      <h4>La mia storia</h4>
+      <p>Come ho ritrovato energia, valori del sangue normali e benessere dopo anni di turni in ospedale e sedentarietà.</p>
+      <a href="storia.html" class="btn-sidebar">Leggi la storia →</a>
+    </div>
+  </aside>
+
+</div>
+
+<!-- SOCIAL BAR -->
+<div class="social-follow">
+  <div class="social-follow-text">
+    Contenuti nuovi ogni settimana &mdash; <span>seguimi sui social</span>
+  </div>
+  <div class="social-links">
+    <a href="https://www.instagram.com/carlo_gas_barbieri?igsh=MXNxdDdsbGtka3d1Zg%3D%3D&utm_source=qr" target="_blank" class="social-btn social-btn-ig">&#128247; Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61578385565022&mibextid=wwXIfr" target="_blank" class="social-btn social-btn-fb">&#128279; Facebook</a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Movimento &amp; Salute &middot; <a href="#">Privacy Policy</a> &middot; <a href="#">Contatti</a></p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">I contenuti di questo sito hanno scopo informativo e non sostituiscono il parere medico.</p>
+</footer>
+
+<script>
+function toggleNav() {
+  var menu = document.querySelector('.ms-menu');
+  var btn = document.querySelector('.ms-hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth > 900) {
+    var closeTimers = new Map();
+    document.querySelectorAll('.ms-has-sub').forEach(function(item) {
+      var sub = item.querySelector(':scope > .ms-submenu, :scope > .ms-submenu-2');
+      if (!sub) return;
+      item.addEventListener('mouseenter', function() {
+        if (closeTimers.has(item)) { clearTimeout(closeTimers.get(item)); closeTimers.delete(item); }
+        sub.style.display = 'block';
+      });
+      item.addEventListener('mouseleave', function() {
+        var t = setTimeout(function() { sub.style.display = 'none'; closeTimers.delete(item); }, 120);
+        closeTimers.set(item, t);
+      });
+      sub.addEventListener('mouseenter', function() {
+        if (closeTimers.has(item)) { clearTimeout(closeTimers.get(item)); closeTimers.delete(item); }
+      });
+      sub.addEventListener('mouseleave', function() {
+        var t = setTimeout(function() { sub.style.display = 'none'; closeTimers.delete(item); }, 120);
+        closeTimers.set(item, t);
+      });
+    });
+    var style = document.createElement('style');
+    style.textContent = '.ms-has-sub:hover > .ms-submenu { display: none; } .ms-sub-right:hover > .ms-submenu-2 { display: none; }';
+    document.head.appendChild(style);
+  }
+  if (window.innerWidth <= 900) {
+    document.querySelectorAll('.ms-has-sub > a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('mobile-open');
+      });
+    });
+  }
+});
+document.addEventListener('click', function(e) {
+  var nav = document.querySelector('.ms-nav');
+  var menu = document.querySelector('.ms-menu');
+  var btn = document.querySelector('.ms-hamburger');
+  if (nav && !nav.contains(e.target) && menu && menu.classList.contains('open')) {
+    menu.classList.remove('open');
+    if (btn) btn.classList.remove('open');
+  }
+});
+</script>
+
+</body>
+</html>
