@@ -136,16 +136,11 @@
     }
   
   /* ===== NAV MENU A CASCATA ===== */
-  .ms-nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1rem 5%;
-    background: rgba(250,247,242,0.97); backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(45,106,79,0.1);
-    font-family: 'DM Sans', sans-serif;
-  }
+  .ms-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(250,247,242,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(45,106,79,0.1); font-family: 'DM Sans', sans-serif; }
   .ms-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: #2D6A4F; text-decoration: none; z-index: 1001; }
   .ms-logo span { color: #E07A00; }
+
+  /* MENU DESKTOP */
   .ms-menu { list-style: none; display: flex; gap: 0.3rem; align-items: center; margin: 0; padding: 0; }
   .ms-menu > li > a { display: block; padding: 0.5rem 0.9rem; border-radius: 8px; text-decoration: none; color: #444; font-size: 0.88rem; font-weight: 500; transition: background 0.2s, color 0.2s; white-space: nowrap; }
   .ms-menu > li > a:hover { background: #f0f0f0; color: #2D6A4F; }
@@ -161,29 +156,115 @@
   .ms-submenu-2 { display: none; position: absolute; top: 0; left: 100%; background: white; border-radius: 12px; min-width: 230px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); padding: 0.5rem 0; list-style: none; z-index: 1000; border: 1px solid rgba(0,0,0,0.06); margin-left: 0; }
   .ms-sub-right:hover > .ms-submenu-2 { display: block; }
   .ms-submenu-2 li a { font-size: 0.83rem; padding: 0.55rem 1.1rem; }
+  .ms-has-sub > a::after { content: ''; display: block; position: absolute; bottom: -10px; left: 0; right: 0; height: 10px; }
+
+  /* HAMBURGER */
   .ms-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; z-index: 1001; }
   .ms-hamburger span { display: block; width: 24px; height: 2px; background: #2D6A4F; border-radius: 2px; transition: all 0.3s; }
   .ms-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
   .ms-hamburger.open span:nth-child(2) { opacity: 0; }
   .ms-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  /* MOBILE — pannello a schermo intero con accordion */
   @media (max-width: 900px) {
     .ms-hamburger { display: flex; }
-    .ms-menu { display: none; flex-direction: column; align-items: flex-start; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: white; padding: 80px 2rem 2rem; overflow-y: auto; gap: 0; z-index: 999; }
+
+    /* Pannello overlay a schermo intero */
+    .ms-menu {
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: white;
+      padding: 72px 0 2rem;
+      overflow-y: auto;
+      gap: 0;
+      z-index: 999;
+    }
     .ms-menu.open { display: flex; }
+
+    /* Voci primo livello */
     .ms-menu > li { width: 100%; border-bottom: 1px solid #f0f0f0; }
-    .ms-menu > li > a { padding: 0.9rem 0; font-size: 1rem; border-radius: 0; }
-    .ms-submenu { display: none; position: static; box-shadow: none; border: none; border-radius: 0; padding: 0 0 0 1rem; background: #fafafa; }
-    .ms-has-sub.mobile-open > .ms-submenu { display: block; }
-    .ms-submenu-2 { position: static; box-shadow: none; border: none; border-radius: 0; padding: 0 0 0 1rem; }
-    .ms-sub-right.mobile-open > .ms-submenu-2 { display: block; }
-    .ms-submenu li a { padding: 0.7rem 0.5rem; font-size: 0.9rem; }
-    .ms-cta { border-radius: 8px !important; margin-top: 0.5rem; }
+    .ms-menu > li > a {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 1.5rem; font-size: 1.05rem; font-weight: 600;
+      color: #1A1A1A; border-radius: 0; background: none;
+      text-decoration: none;
+    }
+    .ms-menu > li > a:hover { background: #f8f8f8; color: #2D6A4F; }
+
+    /* Nasconde sottomenu di default su mobile */
+    .ms-submenu {
+      display: none !important;
+      position: static !important;
+      box-shadow: none !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      background: #f8f8f8 !important;
+      margin: 0 !important;
+      width: 100% !important;
+    }
+
+    /* Categorie (livello 2) */
+    .ms-submenu > li { border-top: 1px solid #eee; }
+    .ms-submenu > li > a {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 0.9rem 1.5rem !important;
+      font-size: 0.95rem !important;
+      font-weight: 600 !important;
+      color: #2D6A4F !important;
+      white-space: normal !important;
+      background: #f8f8f8 !important;
+    }
+
+    /* Articoli (livello 3) */
+    .ms-submenu-2 {
+      display: none !important;
+      position: static !important;
+      box-shadow: none !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      background: #fff !important;
+      width: 100% !important;
+    }
+    .ms-submenu-2 li { border-top: 1px solid #f0f0f0; }
+    .ms-submenu-2 li a {
+      display: block !important;
+      padding: 0.8rem 1.5rem 0.8rem 2.5rem !important;
+      font-size: 0.9rem !important;
+      font-weight: 400 !important;
+      color: #333 !important;
+      white-space: normal !important;
+      background: white !important;
+      text-decoration: none;
+      border: none !important;
+    }
+    .ms-submenu-2 li a:hover { background: #f0f8f0 !important; color: #2D6A4F !important; }
+
+    /* Stato aperto accordion */
+    .ms-has-sub.mob-open > .ms-submenu { display: block !important; }
+    .ms-sub-right.mob-open > .ms-submenu-2 { display: block !important; }
+
+    /* Freccia rotante quando aperto */
+    .ms-has-sub.mob-open > a .ms-arrow { transform: rotate(180deg); display: inline-block; transition: transform 0.2s; }
+    .ms-sub-right.mob-open > a .ms-arrow { transform: rotate(90deg); display: inline-block; transition: transform 0.2s; }
+
+    /* CTA in fondo */
+    .ms-cta {
+      margin: 1rem 1.5rem !important;
+      border-radius: 50px !important;
+      text-align: center !important;
+      padding: 0.9rem 1.5rem !important;
+      font-size: 1rem !important;
+      display: block !important;
+    }
   }
-  
-  /* Bridge invisibile per evitare gap hover */
-  .ms-has-sub > a::after { content: ''; display: block; position: absolute; bottom: -10px; left: 0; right: 0; height: 10px; }
-  .ms-has-sub { position: relative; }
-  .ms-nav { padding-bottom: 0; }
   /* ===== FINE NAV ===== */
   </style>
 </head>
@@ -208,12 +289,15 @@
             <li><a href="articolo-piramide-harvard.html">La piramide di Harvard</a></li>
             <li><a href="articolo-carboidrati-rebound.html">Carboidrati e rebound</a></li>
             <li><a href="articolo-aloe-tiroide-hashimoto.html">Aloe vera e tiroide</a></li>
+            <li><a href="articolo-omega3-differenze-qualita.html">Omega-3: non tutti sono uguali</a></li>
+            <li><a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a></li>
           </ul>
         </li>
         <li class="ms-has-sub ms-sub-right">
           <a href="blog.html">&#127947; Movimento <span class="ms-arrow">&#9658;</span></a>
           <ul class="ms-submenu ms-submenu-2">
             <li><a href="articolo-allenamento.html">Allenamento over 40</a></li>
+            <li><a href="articolo-movimento-salute-mentale.html">Movimento e salute mentale</a></li>
           </ul>
         </li>
         <li class="ms-has-sub ms-sub-right">
@@ -226,6 +310,7 @@
           <a href="blog.html">&#129504; Abitudini <span class="ms-arrow">&#9658;</span></a>
           <ul class="ms-submenu ms-submenu-2">
             <li><a href="articolo-rivincita-40.html">La rivincita dei 40</a></li>
+            <li><a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a></li>
           </ul>
         </li>
         <li class="ms-has-sub ms-sub-right">
@@ -485,74 +570,66 @@
 
 
 <script>
-// Toggle hamburger mobile
 function toggleNav() {
   var menu = document.querySelector('.ms-menu');
   var btn = document.querySelector('.ms-hamburger');
   menu.classList.toggle('open');
   btn.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
 }
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  // DESKTOP: hover con delay per evitare chiusura nel gap
+  /* ---- DESKTOP: hover con delay ---- */
   if (window.innerWidth > 900) {
-    var closeTimers = new Map();
-
+    var timers = new Map();
     document.querySelectorAll('.ms-has-sub').forEach(function(item) {
       var sub = item.querySelector(':scope > .ms-submenu, :scope > .ms-submenu-2');
       if (!sub) return;
-
       item.addEventListener('mouseenter', function() {
-        if (closeTimers.has(item)) {
-          clearTimeout(closeTimers.get(item));
-          closeTimers.delete(item);
-        }
+        if (timers.has(item)) { clearTimeout(timers.get(item)); timers.delete(item); }
         sub.style.display = 'block';
       });
-
       item.addEventListener('mouseleave', function() {
-        var t = setTimeout(function() {
-          sub.style.display = 'none';
-          closeTimers.delete(item);
-        }, 120);
-        closeTimers.set(item, t);
+        var t = setTimeout(function() { sub.style.display = 'none'; timers.delete(item); }, 120);
+        timers.set(item, t);
       });
-
       sub.addEventListener('mouseenter', function() {
-        if (closeTimers.has(item)) {
-          clearTimeout(closeTimers.get(item));
-          closeTimers.delete(item);
-        }
+        if (timers.has(item)) { clearTimeout(timers.get(item)); timers.delete(item); }
       });
-
       sub.addEventListener('mouseleave', function() {
-        var t = setTimeout(function() {
-          sub.style.display = 'none';
-          closeTimers.delete(item);
-        }, 120);
-        closeTimers.set(item, t);
+        var t = setTimeout(function() { sub.style.display = 'none'; timers.delete(item); }, 120);
+        timers.set(item, t);
       });
     });
-
-    // Disabilita hover CSS su desktop (gestito da JS)
-    var style = document.createElement('style');
-    style.textContent = '.ms-has-sub:hover > .ms-submenu { display: none; } .ms-sub-right:hover > .ms-submenu-2 { display: none; }';
-    document.head.appendChild(style);
+    /* Disabilita hover CSS su desktop (gestito da JS) */
+    var s = document.createElement('style');
+    s.textContent = '.ms-has-sub:hover > .ms-submenu{display:none}.ms-sub-right:hover > .ms-submenu-2{display:none}';
+    document.head.appendChild(s);
   }
 
-  // MOBILE: tap per espandere
+  /* ---- MOBILE: accordion a tap ---- */
   if (window.innerWidth <= 900) {
-    document.querySelectorAll('.ms-has-sub > a').forEach(function(link) {
+    /* Livello 1 → 2: tap su "Blog" apre le categorie */
+    document.querySelectorAll('.ms-menu > li.ms-has-sub > a').forEach(function(link) {
       link.addEventListener('click', function(e) {
         e.preventDefault();
-        this.parentElement.classList.toggle('mobile-open');
+        var li = this.parentElement;
+        li.classList.toggle('mob-open');
+      });
+    });
+    /* Livello 2 → 3: tap su categoria apre gli articoli */
+    document.querySelectorAll('.ms-submenu > li.ms-has-sub > a, .ms-submenu > li.ms-sub-right > a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var li = this.parentElement;
+        li.classList.toggle('mob-open');
       });
     });
   }
 });
 
-// Chiudi menu mobile cliccando fuori
+/* Chiudi menu mobile cliccando fuori */
 document.addEventListener('click', function(e) {
   var nav = document.querySelector('.ms-nav');
   var menu = document.querySelector('.ms-menu');
@@ -560,6 +637,7 @@ document.addEventListener('click', function(e) {
   if (nav && !nav.contains(e.target) && menu && menu.classList.contains('open')) {
     menu.classList.remove('open');
     if (btn) btn.classList.remove('open');
+    document.body.style.overflow = '';
   }
 });
 </script>
