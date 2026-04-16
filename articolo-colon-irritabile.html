@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Colon Irritabile: cause, sintomi e come gestirlo davvero | Movimento e Salute</title>
+  <meta name="description" content="Il colon irritabile colpisce il 15-20% della popolazione. Non è nella tua testa — è nel tuo microbioma. Cause, soluzioni nutrizionali e integrazione mirata spiegati con basi scientifiche solide.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.movimentoesalute.eu/articolo-colon-irritabile.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:title" content="Colon Irritabile: cause, sintomi e come gestirlo davvero">
+  <meta property="og:description" content="Gonfiore cronico, diarrea, stipsi, dolore addominale. Il colon irritabile non è nella tua testa — è nel tuo microbioma. La scienza spiega cosa succede e cosa fare.">
+  <meta property="og:image" content="https://www.movimentoesalute.eu/articolo-colon-irritabile.jpg">
+  <meta property="og:url" content="https://www.movimentoesalute.eu/articolo-colon-irritabile.html">
+  <meta property="og:type" content="article">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --verde: #2D6A4F; --verde-chiaro: #52B788; --verde-pallido: #D8F3DC; --arancio: #E07A00; --teal: #0E7C7B; --teal-chiaro: #1AA7A6; --teal-pallido: #E0F4F4; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: #FAF7F2; }
+    body { font-family: 'DM Sans', sans-serif; background: #FAF7F2 !important; color: #1A1A1A; overflow-x: hidden; line-height: 1.8; }
+
+    /* ===== NAV ===== */
+    .ms-nav { position:fixed; top:0; left:0; right:0; z-index:9000; display:flex; justify-content:space-between; align-items:center; padding:1rem 5%; background:rgba(250,247,242,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(45,106,79,0.1); font-family:'DM Sans',sans-serif; }
+    .ms-logo { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:#2D6A4F; text-decoration:none; }
+    .ms-logo span { color:#E07A00; }
+    .ms-arrow { font-size:0.7rem; margin-left:3px; display:inline-block; transition:transform 0.25s; }
+    .ms-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:6px; z-index:9100; }
+    .ms-hamburger span { display:block; width:24px; height:2px; background:#2D6A4F; border-radius:2px; transition:all 0.3s; }
+    .ms-hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+    .ms-hamburger.open span:nth-child(2) { opacity:0; }
+    .ms-hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+    .ms-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:8800; }
+    .ms-overlay.open { display:block; }
+    .ms-panel { display:none; position:fixed; top:0; right:0; bottom:0; width:min(320px,88vw); background:#fff; z-index:9100; overflow-y:auto; -webkit-overflow-scrolling:touch; flex-direction:column; box-shadow:-4px 0 24px rgba(0,0,0,0.18); }
+    .ms-panel.open { display:flex; }
+    .ms-panel-header { display:flex; justify-content:space-between; align-items:center; padding:1.1rem 1.2rem; border-bottom:2px solid #f0f0f0; position:sticky; top:0; background:white; z-index:1; flex-shrink:0; }
+    .ms-panel-logo { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#2D6A4F; }
+    .ms-panel-logo span { color:#E07A00; }
+    .ms-close { background:none; border:none; font-size:1.3rem; color:#555; cursor:pointer; padding:4px 8px; }
+    .ms-panel-list { list-style:none; margin:0; padding:0; flex:1; }
+    .ms-panel-list > li { border-bottom:1px solid #f0f0f0; }
+    .ms-panel-list > li > a { display:block; padding:1rem 1.2rem; font-size:1rem; font-weight:600; color:#1A1A1A; text-decoration:none; }
+    .ms-acc-btn { width:100%; text-align:left; background:none; border:none; padding:1rem 1.2rem; font-size:1rem; font-weight:600; color:#1A1A1A; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-family:'DM Sans',sans-serif; }
+    .ms-acc-btn.ms-acc-cat { padding:0.85rem 1.2rem 0.85rem 1.8rem; font-size:0.95rem; color:#2D6A4F; background:#F8F8F8; }
+    .ms-acc-arrow { font-size:0.7rem; transition:transform 0.25s; flex-shrink:0; margin-left:6px; }
+    .ms-acc.open > .ms-acc-btn .ms-acc-arrow { transform:rotate(180deg); }
+    .ms-acc-sub { list-style:none; margin:0; padding:0; display:none; background:#F8F8F8; }
+    .ms-acc.open > .ms-acc-sub { display:block; }
+    .ms-acc-sub > li { border-top:1px solid #ebebeb; }
+    .ms-acc-sub > li > a { display:block; padding:0.75rem 1.2rem 0.75rem 2.2rem; font-size:0.9rem; font-weight:400; color:#333; text-decoration:none; line-height:1.4; }
+    .ms-panel-cta { display:block; margin:1rem 1.2rem 1.5rem; padding:0.9rem; background:#E07A00; color:white; border-radius:50px; text-align:center; font-weight:600; font-size:0.95rem; text-decoration:none; }
+    .ms-desktop-menu { display:none; align-items:center; gap:0.3rem; }
+    .ms-desktop-menu > a { padding:0.5rem 0.9rem; border-radius:8px; text-decoration:none; color:#444; font-size:0.88rem; font-weight:500; transition:background 0.2s,color 0.2s; white-space:nowrap; font-family:'DM Sans',sans-serif; }
+    .ms-desktop-menu > a:hover { background:#f0f0f0; color:#2D6A4F; }
+    .ms-nav-cta { background:#E07A00!important; color:white!important; padding:0.55rem 1.2rem!important; border-radius:50px!important; }
+    .ms-dd { position:relative; }
+    .ms-dd-trigger { padding:0.5rem 0.9rem; border-radius:8px; text-decoration:none; color:#444; font-size:0.88rem; font-weight:500; cursor:pointer; white-space:nowrap; font-family:'DM Sans',sans-serif; display:block; }
+    .ms-dd-trigger:hover { background:#f0f0f0; color:#2D6A4F; }
+    .ms-dd-panel { display:none; position:absolute; top:calc(100% + 8px); left:50%; transform:translateX(-50%); background:white; border-radius:16px; box-shadow:0 12px 40px rgba(0,0,0,0.14); padding:1.2rem; min-width:600px; border:1px solid rgba(0,0,0,0.06); z-index:9200; flex-direction:row; gap:1.5rem; }
+    .ms-dd:hover .ms-dd-panel, .ms-dd-panel:hover { display:flex; }
+    .ms-dd-col { display:flex; flex-direction:column; gap:0.1rem; flex:1; }
+    .ms-dd-head { margin-bottom:0.3rem; }
+    .ms-dd-head a { font-size:0.82rem; font-weight:700; color:#2D6A4F; text-decoration:none; text-transform:uppercase; letter-spacing:0.5px; }
+    .ms-dd-col > a { font-size:0.85rem; color:#333; text-decoration:none; padding:0.35rem 0.5rem; border-radius:6px; transition:background 0.15s; font-family:'DM Sans',sans-serif; }
+    .ms-dd-col > a:hover { background:#f5f5f5; color:#2D6A4F; }
+    @media (min-width:901px) { .ms-hamburger { display:none!important; } .ms-panel { display:none!important; } .ms-overlay { display:none!important; } .ms-desktop-menu { display:flex; } }
+    @media (max-width:900px) { .ms-hamburger { display:flex; } .ms-desktop-menu { display:none!important; } }
+    /* ===== FINE NAV ===== */
+
+    .hero-articolo { background: linear-gradient(135deg, #071A18, #0E4D4C, #0E7C7B); padding: 10rem 5% 5rem; position: relative; overflow: hidden; }
+    .hero-articolo::before { content:''; position:absolute; top:20%; right:10%; width:300px; height:300px; background:radial-gradient(circle,rgba(26,167,166,0.15) 0%,transparent 70%); border-radius:50%; }
+    .categoria-badge { display:inline-block; background:rgba(255,255,255,0.1); color:#80DEEA; font-size:0.75rem; font-weight:500; letter-spacing:2px; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1.5rem; }
+    .hero-articolo h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.5rem); font-weight:900; color:white; line-height:1.15; max-width:800px; margin-bottom:1.5rem; }
+    .hero-articolo h1 em { font-style:italic; color:#80DEEA; }
+    .meta-articolo { display:flex; gap:2rem; align-items:center; flex-wrap:wrap; color:rgba(255,255,255,0.55); font-size:0.85rem; }
+    .articolo-wrapper { display:grid; grid-template-columns:1fr 300px; gap:4rem; max-width:1100px; margin:0 auto; padding:5rem 5%; }
+    .articolo-corpo h2 { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,2.5vw,2rem); font-weight:900; color:#1A1A1A; line-height:1.2; margin:3rem 0 1.2rem; padding-top:1rem; border-top:2px solid var(--teal-pallido); }
+    .articolo-corpo h3 { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--teal); margin:2rem 0 0.8rem; }
+    .articolo-corpo p { font-size:1.05rem; color:#444; line-height:1.85; font-weight:400; margin-bottom:1.4rem; }
+    .articolo-corpo strong { color:#1A1A1A; font-weight:600; }
+    .citazione { border-left:4px solid var(--teal-chiaro); padding:1.5rem 2rem; margin:2.5rem 0; background:white; border-radius:0 16px 16px 0; box-shadow:0 4px 20px rgba(0,0,0,0.05); }
+    .citazione p { font-family:'Playfair Display',serif; font-size:1.15rem; font-style:italic; color:#1A1A1A!important; line-height:1.6; margin:0!important; }
+    .citazione cite { display:block; margin-top:0.8rem; font-size:0.82rem; color:var(--teal); font-style:normal; font-weight:500; }
+    .tabella-dati { width:100%; border-collapse:collapse; margin:2rem 0; background:white; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+    .tabella-dati th { background:#071A18; color:white; padding:1rem 1.5rem; text-align:left; font-size:0.85rem; font-weight:600; }
+    .tabella-dati td { padding:0.9rem 1.5rem; font-size:0.9rem; color:#444; border-bottom:1px solid rgba(0,0,0,0.06); }
+    .tabella-dati tr:last-child td { border-bottom:none; }
+    .tabella-dati tr:nth-child(even) td { background:var(--teal-pallido); }
+    .verde { color:#2D6A4F; font-weight:600; }
+    .rosso { color:#C0392B; font-weight:600; }
+    .box-scienza { background:#071A18; border-radius:16px; padding:2rem; margin:2rem 0; }
+    .box-scienza h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#80DEEA; margin-bottom:1rem; }
+    .box-scienza p { font-size:0.92rem; color:rgba(255,255,255,0.78); line-height:1.7; margin:0!important; }
+    .box-semplice { background:var(--teal-pallido); border-radius:16px; padding:2rem; margin:2rem 0; }
+    .box-semplice h4 { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--teal); margin-bottom:0.8rem; }
+    .box-semplice p { font-size:0.95rem; color:#072a29; line-height:1.7; margin:0!important; }
+    .box-evidenza { background:var(--verde-pallido); border-radius:16px; padding:2rem; margin:2rem 0; }
+    .box-evidenza h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--verde); margin-bottom:1rem; }
+    .box-evidenza ul { list-style:none; }
+    .box-evidenza ul li { padding:0.6rem 0; font-size:0.95rem; color:#333; display:flex; align-items:flex-start; gap:0.8rem; line-height:1.6; border-bottom:1px solid rgba(45,106,79,0.1); }
+    .box-evidenza ul li:last-child { border-bottom:none; }
+    .box-evidenza ul li::before { content:'✓'; color:var(--verde); font-weight:700; flex-shrink:0; margin-top:2px; }
+    .box-attenzione { background:#FFF8E1; border:2px solid #F9A825; border-radius:16px; padding:2rem; margin:2rem 0; }
+    .box-attenzione h4 { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:#E65100; margin-bottom:0.8rem; }
+    .box-attenzione p { font-size:0.95rem; color:#333; line-height:1.7; margin:0!important; }
+    .stat-block { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin:2rem 0; }
+    .stat-item { background:white; border:1px solid var(--teal-pallido); border-radius:14px; padding:1.5rem 1rem; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+    .stat-item .numero { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:900; color:var(--teal); line-height:1; }
+    .stat-item .descrizione { font-size:0.8rem; color:#666; margin-top:0.5rem; line-height:1.4; }
+    .articolo-sidebar { position:sticky; top:100px; height:fit-content; }
+    .sidebar-card { background:white; border-radius:20px; padding:2rem; margin-bottom:1.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); border:1px solid rgba(14,124,123,0.1); }
+    .sidebar-card h4 { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; margin-bottom:1rem; }
+    .sidebar-card p { font-size:0.88rem; color:#444; line-height:1.6; margin-bottom:1rem; }
+    .btn-sidebar { display:block; background:var(--teal); color:white; padding:0.8rem 1.2rem; border-radius:50px; text-decoration:none; font-size:0.88rem; font-weight:500; text-align:center; margin-bottom:0.8rem; transition:opacity 0.2s; }
+    .btn-sidebar:hover { opacity:0.88; }
+    .btn-sidebar-wa { display:block; background:#25D366; color:white; padding:0.8rem 1.2rem; border-radius:50px; text-decoration:none; font-size:0.88rem; font-weight:500; text-align:center; }
+    .indice { list-style:none; }
+    .indice li { padding:0.4rem 0; border-bottom:1px solid rgba(0,0,0,0.06); }
+    .indice li:last-child { border-bottom:none; }
+    .indice a { color:var(--teal); text-decoration:none; font-size:0.88rem; }
+    .indice a:hover { text-decoration:underline; }
+    .box-autore { background:white; border-radius:20px; padding:2.5rem; margin:4rem 0 2rem; display:flex; gap:2rem; align-items:center; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+    .autore-foto { width:80px; height:80px; border-radius:50%; object-fit:cover; object-position:top; flex-shrink:0; border:3px solid var(--teal-pallido); }
+    .autore-info h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; margin-bottom:0.3rem; }
+    .autore-info p { font-size:0.88rem; color:#444; line-height:1.5; }
+    .cta-articolo { background:linear-gradient(135deg,#071A18,#0E7C7B); border-radius:24px; padding:3rem; text-align:center; margin:2rem 0 4rem; }
+    .cta-articolo h3 { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:900; color:white; margin-bottom:1rem; }
+    .cta-articolo p { color:rgba(255,255,255,0.7); font-size:0.95rem; margin-bottom:1.5rem; }
+    .btn-cta-light { background:white; color:#0E7C7B; padding:0.9rem 2rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:0.95rem; display:inline-block; margin:0.4rem; }
+    .btn-cta-wa { background:#25D366; color:white; padding:0.9rem 2rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:0.95rem; display:inline-block; margin:0.4rem; }
+    .condividi-box { background:white; border-radius:20px; padding:2rem 2.5rem; margin:2rem 0; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+    .condividi-box h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; margin-bottom:1rem; }
+    .condividi-box p { font-size:0.88rem; color:#555; margin-bottom:1.2rem; }
+    .condividi-btns { display:flex; gap:0.8rem; flex-wrap:wrap; }
+    .share-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.3rem; border-radius:50px; text-decoration:none; font-size:0.85rem; font-weight:500; transition:transform 0.2s; font-family:'DM Sans',sans-serif; }
+    .share-btn:hover { transform:translateY(-2px); }
+    .share-btn-wa { background:#25D366; color:white; }
+    .share-btn-fb { background:#1877F2; color:white; }
+    .share-btn-copy { background:#f0f0f0; color:#333; cursor:pointer; border:none; }
+    .social-follow { background:#1A1A1A; padding:2.5rem 5%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; }
+    .social-follow-text { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:white; }
+    .social-follow-text span { color:#52B788; font-style:italic; }
+    .social-links { display:flex; gap:1rem; flex-wrap:wrap; }
+    .social-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.3rem; border-radius:50px; text-decoration:none; font-size:0.85rem; font-weight:500; transition:transform 0.2s,opacity 0.2s; font-family:'DM Sans',sans-serif; }
+    .social-btn:hover { transform:translateY(-2px); opacity:0.9; }
+    .social-btn-ig { background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045); color:white; }
+    .social-btn-fb { background:#1877F2; color:white; }
+    footer { background:#1A1A1A; color:rgba(255,255,255,0.5); text-align:center; padding:2rem 5%; font-size:0.82rem; }
+    footer a { color:var(--verde-chiaro); text-decoration:none; }
+    @media (max-width:900px) {
+      .articolo-wrapper { grid-template-columns:1fr; }
+      .articolo-sidebar { position:static; }
+      .box-autore { flex-direction:column; text-align:center; }
+      .stat-block { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="ms-nav">
+  <a href="index.html" class="ms-logo">movimento<span>&</span>salute</a>
+  <button class="ms-hamburger" id="msBtn" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="ms-panel" id="msPanel">
+  <div class="ms-panel-header">
+    <span class="ms-panel-logo">movimento<span>&</span>salute</span>
+    <button onclick="toggleNav()" class="ms-close">&#10005;</button>
+  </div>
+  <ul class="ms-panel-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="storia.html">La Mia Storia</a></li>
+    <li class="ms-acc">
+      <button class="ms-acc-btn" onclick="toggleAcc(this)">Blog <span class="ms-acc-arrow">&#9660;</span></button>
+      <ul class="ms-acc-sub">
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#127829; Nutrizione <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-nutrizione.html">Fondamenti di nutrizione</a></li>
+            <li><a href="articolo-piramide-harvard.html">La piramide di Harvard</a></li>
+            <li><a href="articolo-carboidrati-rebound.html">Carboidrati e rebound</a></li>
+            <li><a href="articolo-aloe-tiroide-hashimoto.html">Aloe vera e tiroide</a></li>
+            <li><a href="articolo-omega3-differenze-qualita.html">Omega-3: non tutti uguali</a></li>
+            <li><a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#127947; Movimento <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-allenamento.html">Allenamento over 40</a></li>
+            <li><a href="articolo-movimento-salute-mentale.html">Movimento e salute mentale</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#128564; Sonno <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-sonno.html">Sonno e recupero over 40</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#129504; Abitudini <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-rivincita-40.html">La rivincita dei 40</a></li>
+            <li><a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#127800; Benessere Femminile <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-donne-ormoni-peso.html">Donne, ormoni e peso</a></li>
+            <li><a href="articolo-stanchezza-gonfiore-donne.html">Sempre stanca, sempre gonfia</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#129704; Disturbi &amp; Benessere <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-colon-irritabile.html">Colon irritabile</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="strumenti.html">Strumenti</a></li>
+    <li><a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="ms-panel-cta">Scopri i Prodotti</a></li>
+  </ul>
+</div>
+<div class="ms-overlay" id="msOverlay" onclick="toggleNav()"></div>
+<div class="ms-desktop-menu">
+  <a href="index.html">Home</a>
+  <a href="storia.html">La Mia Storia</a>
+  <div class="ms-dd">
+    <a href="blog.html" class="ms-dd-trigger">Blog &#9660;</a>
+    <div class="ms-dd-panel">
+      <div class="ms-dd-col">
+        <div class="ms-dd-head"><a href="blog.html">&#127829; Nutrizione</a></div>
+        <a href="articolo-nutrizione.html">Fondamenti di nutrizione</a>
+        <a href="articolo-piramide-harvard.html">La piramide di Harvard</a>
+        <a href="articolo-carboidrati-rebound.html">Carboidrati e rebound</a>
+        <a href="articolo-aloe-tiroide-hashimoto.html">Aloe vera e tiroide</a>
+        <a href="articolo-omega3-differenze-qualita.html">Omega-3: non tutti uguali</a>
+        <a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a>
+      </div>
+      <div class="ms-dd-col">
+        <div class="ms-dd-head"><a href="blog.html">&#127947; Movimento</a></div>
+        <a href="articolo-allenamento.html">Allenamento over 40</a>
+        <a href="articolo-movimento-salute-mentale.html">Movimento e salute mentale</a>
+        <div class="ms-dd-head" style="margin-top:1rem"><a href="blog.html">&#128564; Sonno</a></div>
+        <a href="articolo-sonno.html">Sonno e recupero over 40</a>
+        <div class="ms-dd-head" style="margin-top:1rem"><a href="blog.html">&#129504; Abitudini</a></div>
+        <a href="articolo-rivincita-40.html">La rivincita dei 40</a>
+        <a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a>
+      </div>
+      <div class="ms-dd-col">
+        <div class="ms-dd-head"><a href="blog.html">&#127800; Benessere Femminile</a></div>
+        <a href="articolo-donne-ormoni-peso.html">Donne, ormoni e peso</a>
+        <a href="articolo-stanchezza-gonfiore-donne.html">Sempre stanca, sempre gonfia</a>
+        <div class="ms-dd-head" style="margin-top:1rem"><a href="blog.html">&#129704; Disturbi &amp; Benessere</a></div>
+        <a href="articolo-colon-irritabile.html">Colon irritabile</a>
+      </div>
+    </div>
+  </div>
+  <a href="strumenti.html">Strumenti</a>
+  <a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="ms-nav-cta">Scopri i Prodotti</a>
+</div>
+
+<!-- HERO -->
+<section class="hero-articolo">
+  <div class="categoria-badge">&#129704; Disturbi &amp; Benessere</div>
+  <h1>Colon irritabile: <em>non è nella tua testa</em></h1>
+  <div class="meta-articolo">
+    <span>&#9999;&#65039; Carlo Barbieri</span>
+    <span>&#128197; Aprile 2026</span>
+    <span>&#9200; 9 min di lettura</span>
+    <span>&#127991;&#65039; Colon Irritabile · IBS · Microbioma · Intestino</span>
+  </div>
+</section>
+
+<div class="articolo-wrapper">
+  <article class="articolo-corpo">
+
+    <p>Gonfiore dopo ogni pasto. Dolore addominale che arriva e va senza preavviso. Giorni di diarrea seguiti da giorni di stitichezza. E la sensazione — spesso confermata anche da qualche medico frettoloso — che sia tutto colpa dello stress, dei nervi, dell'ansia.</p>
+
+    <p>Se hai il colon irritabile, probabilmente ti hanno detto che "devi imparare a rilassarti". O che non c'è niente di organico, quindi non c'è niente da fare.</p>
+
+    <p>Non è così. E la scienza degli ultimi anni lo dimostra con dati sempre più chiari.</p>
+
+    <div class="citazione">
+      <p>Il colon irritabile è un disturbo reale, con basi biologiche misurabili. Non è un problema psicologico — anche se lo stress lo amplifica. È un problema di microbioma, di permeabilità intestinale, di asse intestino-cervello. E su tutto questo si può lavorare.</p>
+      <cite>— Carlo Barbieri</cite>
+    </div>
+
+    <h2 id="cos-e">Cos'è davvero il colon irritabile</h2>
+
+    <p>La sindrome dell'intestino irritabile — in inglese IBS, Irritable Bowel Syndrome — è un disturbo cronico dell'apparato gastrointestinale che colpisce il colon, l'ultimo tratto dell'intestino crasso. Non è una malattia infiammatoria come il Crohn o la colite ulcerosa — non distrugge i tessuti — ma è un disturbo funzionale: il colon funziona in modo alterato, con conseguenze quotidiane spesso invalidanti.</p>
+
+    <div class="stat-block">
+      <div class="stat-item">
+        <div class="numero">15-20%</div>
+        <div class="descrizione">della popolazione mondiale soffre di IBS — uno dei disturbi gastrointestinali più diffusi</div>
+      </div>
+      <div class="stat-item">
+        <div class="numero">40%</div>
+        <div class="descrizione">degli adulti ha almeno un disturbo funzionale gastrointestinale cronico (Policlinico di Milano, 2024)</div>
+      </div>
+      <div class="stat-item">
+        <div class="numero">3</div>
+        <div class="descrizione">mesi continuativi di sintomi sono necessari per la diagnosi clinica di IBS</div>
+      </div>
+    </div>
+
+    <p>I sintomi principali sono tre: <strong>dolore addominale cronico</strong> che tende ad allevarsi con l'evacuazione, <strong>gonfiore</strong> e <strong>alterazione dell'alvo</strong> — che può manifestarsi come diarrea prevalente (IBS-D), stipsi prevalente (IBS-C) o alternanza dei due (IBS-M, misto).</p>
+
+    <div class="box-semplice">
+      <h4>&#128161; In parole semplici</h4>
+      <p>Il colon irritabile non distrugge l'intestino come fanno Crohn o colite. Ma lo rende imprevedibile, doloroso e difficile da gestire. Per molte persone interferisce con il lavoro, i rapporti sociali, la qualità della vita — ogni giorno.</p>
+    </div>
+
+    <h2 id="cause">Perché succede: le cause che la scienza ha identificato</h2>
+
+    <p>Per anni l'IBS è stata considerata una condizione "idiopatica" — senza causa identificabile — e la diagnosi arrivava solo dopo aver escluso tutto il resto. Oggi sappiamo che non è così. Le cause sono molteplici, spesso sovrapposte, e sempre più documentate.</p>
+
+    <h3>1. Il microbioma alterato — la causa principale</h3>
+    <p>La ricerca più recente indica il <strong>microbioma intestinale</strong> come il protagonista centrale dell'IBS. Uno studio pubblicato su <em>Microbiology Spectrum</em> dall'American Society for Microbiology, condotto su 576 pazienti con IBS e 487 controlli sani, ha dimostrato con chiarezza che le persone con colon irritabile hanno una <strong>minore diversità batterica intestinale</strong> rispetto alle persone sane.</p>
+
+    <div class="box-scienza">
+      <h4>&#128300; La scienza del microbioma nell'IBS (Shim JO et al., Microbiology Spectrum, 2024)</h4>
+      <p>Studi multipli hanno documentato che nei pazienti IBS si osserva: riduzione significativa di Bifidobatteri e Lattobacilli (i batteri protettivi), aumento di Firmicutes e Proteobacteria, diminuzione di Bacteroidetes. Questa disbiosi altera la motilità intestinale, aumenta la produzione di gas, infiamma la mucosa e altera la segnalazione dell'asse intestino-cervello — spiegando sia i sintomi fisici che la componente emotiva del disturbo.</p>
+    </div>
+
+    <h3>2. L'asse intestino-cervello</h3>
+    <p>L'intestino è il nostro "secondo cervello" — contiene oltre 500 milioni di neuroni e produce il 90% della serotonina del corpo. Quando il microbioma è alterato, questa comunicazione si inceppa. Il risultato è una percezione amplificata del dolore (ipersensibilità viscerale), alterazioni della motilità e un'influenza diretta sull'umore — che spiega perché ansia e depressione sono così frequenti in chi soffre di IBS.</p>
+
+    <h3>3. La permeabilità intestinale aumentata</h3>
+    <p>In condizioni normali, la parete intestinale è una barriera selettiva — lascia passare i nutrienti e blocca le tossine. Nell'IBS questa barriera si indebolisce (intestino permeabile o "leaky gut"), permettendo a sostanze indesiderate di entrare nel circolo sanguigno e attivare risposte infiammatorie. Non è infiammazione nel senso classico — non si vede alle biopsie — ma è abbastanza da generare sintomi cronici.</p>
+
+    <h3>4. Stress cronico e cortisolo</h3>
+    <p>Lo stress non causa l'IBS, ma lo amplifica in modo significativo. Il cortisolo — l'ormone dello stress — irrita direttamente la mucosa intestinale, aumenta la permeabilità e altera il microbioma. Non a caso le riacutizzazioni di IBS coincidono spesso con periodi di stress intenso, lavorativo o personale.</p>
+
+    <div class="box-semplice">
+      <h4>&#128161; In parole semplici</h4>
+      <p>Il colon irritabile non nasce "nella testa" — nasce nell'intestino. Ma l'asse intestino-cervello è bidirezionale: quello che succede nell'intestino influenza il cervello e viceversa. Per questo lo stress peggiora i sintomi senza essere la causa primaria.</p>
+    </div>
+
+    <h2 id="dopo40">Perché peggiora dopo i 40</h2>
+
+    <p>Il colon irritabile può comparire a qualsiasi età, ma dopo i 40 anni diversi fattori si sovrappongono e tendono ad aggravarlo.</p>
+
+    <table class="tabella-dati">
+      <thead>
+        <tr>
+          <th>Fattore over 40</th>
+          <th>Effetto sull'intestino</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Calo degli estrogeni (donne)</strong></td>
+          <td>Gli estrogeni proteggono la mucosa intestinale — la loro riduzione aumenta la permeabilità e l'infiammazione</td>
+        </tr>
+        <tr>
+          <td><strong>Stress cronico accumulato</strong></td>
+          <td>Anni di cortisolo elevato alterano progressivamente il microbioma e la motilità intestinale</td>
+        </tr>
+        <tr>
+          <td><strong>Microbioma che invecchia</strong></td>
+          <td>La diversità batterica si riduce fisiologicamente con l'età — accelerando la disbiosi</td>
+        </tr>
+        <tr>
+          <td><strong>Dieta industriale prolungata</strong></td>
+          <td>Decenni di alimenti ultra-processati, poveri di fibre e ricchi di zuccheri, impoveriscono il microbioma</td>
+        </tr>
+        <tr>
+          <td><strong>Uso di farmaci (FANS, antibiotici)</strong></td>
+          <td>I farmaci antinfiammatori e gli antibiotici alterano la flora batterica e la barriera intestinale</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="alimentazione">Il ruolo dell'alimentazione: cosa aiuta e cosa peggiora</h2>
+
+    <p>Non esiste una dieta universale per il colon irritabile — ogni persona ha i suoi trigger specifici. Ma la ricerca ha identificato pattern chiari.</p>
+
+    <h3>La dieta Low-FODMAP</h3>
+    <p>È l'approccio nutrizionale più studiato e con le maggiori evidenze per l'IBS. I FODMAP sono carboidrati fermentabili (oligosaccaridi, disaccaridi, monosaccaridi e polioli) che, nelle persone con IBS, vengono fermentati dai batteri intestinali producendo gas in eccesso e richiamando acqua nel colon — causando gonfiore, dolore e alterazioni dell'alvo.</p>
+
+    <div class="box-evidenza">
+      <h4>Alimenti spesso problematici nell'IBS (alto contenuto di FODMAP)</h4>
+      <ul>
+        <li><strong>Latticini</strong> — latte, yogurt, formaggi freschi (lattosio)</li>
+        <li><strong>Grano e segale</strong> — pane, pasta, cereali convenzionali (fruttani)</li>
+        <li><strong>Legumi</strong> — fagioli, ceci, lenticchie in grandi quantità (galattani)</li>
+        <li><strong>Frutta ad alto fruttosio</strong> — mele, pere, mango, anguria</li>
+        <li><strong>Verdure fermentescibili</strong> — cipolla, aglio, cavolfiore, broccoli in eccesso</li>
+        <li><strong>Dolcificanti</strong> — sorbitolo, mannitolo, xilitolo (nei prodotti "senza zucchero")</li>
+      </ul>
+    </div>
+
+    <div class="box-evidenza">
+      <h4>Alimenti generalmente ben tollerati nell'IBS</h4>
+      <ul>
+        <li><strong>Proteine magre</strong> — pollo, tacchino, pesce, uova: non fermentano e supportano la mucosa</li>
+        <li><strong>Riso, avena, quinoa</strong> — cereali a basso contenuto di FODMAP</li>
+        <li><strong>Verdure a basso FODMAP</strong> — zucchine, carote, spinaci, lattuga, pomodori, cetrioli</li>
+        <li><strong>Frutta a basso FODMAP</strong> — fragole, kiwi, uva, arance, limoni</li>
+        <li><strong>Olio EVO</strong> — antinfiammatorio, protegge la mucosa</li>
+        <li><strong>Zenzero e curcuma</strong> — proprietà antinfiammatorie documentate sull'intestino</li>
+      </ul>
+    </div>
+
+    <div class="box-attenzione">
+      <h4>⚠️ Importante</h4>
+      <p>La dieta Low-FODMAP non è una dieta permanente — prevede una fase di restrizione (4-6 settimane) seguita da una graduale reintroduzione per identificare i trigger personali. Va eseguita idealmente con la supervisione di un dietologo o gastroenterologo. Non tutti i FODMAP danno problemi a tutti: la personalizzazione è fondamentale.</p>
+    </div>
+
+    <h2 id="integrazione">L'integrazione mirata: cosa dice la scienza</h2>
+
+    <p>Quando si parla di colon irritabile, l'integrazione non è un optional — è spesso parte fondamentale della gestione. Ecco cosa ha le prove più solide.</p>
+
+    <h3>Probiotici — il pilastro</h3>
+    <p>I probiotici sono i più studiati per l'IBS. La <strong>World Gastroenterology Organisation</strong> ha identificato i ceppi con le maggiori evidenze: Bifidobacterium bifidum MIMBb75, Lactobacillus plantarum 299v, Saccharomyces boulardii CNCM I-745, Bifidobacterium infantis 35624. Non tutti i probiotici sono uguali — la scelta del ceppo specifico fa la differenza. È fondamentale optare per capsule gastroresistenti che proteggano i microrganismi dall'acidità gastrica.</p>
+
+    <div class="box-scienza">
+      <h4>&#128300; Probiotici nell'IBS (meta-analisi, Gastroenterology, 2023)</h4>
+      <p>Una meta-analisi pubblicata su Gastroenterology (2023) ha confermato che i probiotici riducono significativamente i sintomi dell'IBS, con benefici documentati su gonfiore, dolore addominale e frequenza delle evacuazioni. I risultati variano in base al ceppo, al dosaggio e alla durata del trattamento — evidenziando l'importanza della scelta mirata rispetto all'uso di prodotti generici.</p>
+    </div>
+
+    <h3>Aloe vera — l'antinfiammatorio intestinale naturale</h3>
+    <p>L'aloe vera da bere (succo privo di aloina) ha effetti documentati sulla mucosa intestinale: riduce l'infiammazione, calma gli spasmi, facilita il transito. Particolarmente utile nella fase acuta. La dose tipica negli studi è di 20-50ml al giorno a stomaco vuoto, a cicli di 2-3 settimane.</p>
+
+    <h3>L-Glutammina — la riparatrice della barriera intestinale</h3>
+    <p>La glutammina è l'aminoacido principale delle cellule intestinali. Uno studio clinico su 106 pazienti con IBS post-infettiva ha dimostrato che l'integrazione con L-glutammina (5g tre volte al giorno) ha ridotto significativamente la gravità dei sintomi e migliorato la permeabilità intestinale rispetto al placebo. Agisce sulle "tight junctions" — le giunzioni tra le cellule intestinali — rinforzando la barriera e riducendo il "leaky gut".</p>
+
+    <h3>Omega-3 — l'antinfiammatorio sistemico</h3>
+    <p>Gli omega-3 EPA e DHA hanno effetti antinfiammatori documentati anche a livello intestinale. Umanitas li include tra i nutrienti con efficacia dimostrata nel tenere sotto controllo l'infiammazione nell'IBS. La qualità conta — come abbiamo spiegato nell'articolo dedicato agli omega-3: la forma trigliceride garantisce un'assorbimento fino al 70% superiore rispetto agli esteri etilici.</p>
+
+    <h3>Vitamina D</h3>
+    <p>Diversi studi hanno associato la carenza di vitamina D a una maggiore gravità dei sintomi IBS. La supplementazione ha mostrato miglioramenti nella qualità della vita dei pazienti — anche se i meccanismi non sono ancora completamente chiariti. Con l'età la produzione cutanea di vitamina D si riduce, rendendo l'integrazione ancora più rilevante per il pubblico over 40.</p>
+
+    <div class="box-semplice">
+      <h4>&#128161; In parole semplici</h4>
+      <p>Non esiste una pillola magica per il colon irritabile. Ma un'integrazione intelligente — probiotici mirati, aloe vera, glutammina, omega-3 di qualità — agisce su più livelli contemporaneamente: riequilibra il microbioma, ripara la barriera intestinale, riduce l'infiammazione. È un approccio che completa — non sostituisce — la gestione medica e alimentare.</p>
+    </div>
+
+    <h2 id="stile-vita">Stile di vita: i fattori che fanno davvero la differenza</h2>
+
+    <p>Alimentazione e integrazione da sole non bastano se lo stile di vita rimane invariato.</p>
+
+    <div class="box-evidenza">
+      <h4>Le abitudini che la ricerca supporta</h4>
+      <ul>
+        <li><strong>Movimento fisico regolare</strong> — uno studio pubblicato sull'American Journal of Gastroenterology (Johannesson et al., 2011) ha dimostrato che l'attività fisica migliora significativamente i sintomi dell'IBS. Anche solo 20-30 minuti di camminata quotidiana stimolano la motilità intestinale e riducono il gonfiore.</li>
+        <li><strong>Pasti regolari, senza saltare</strong> — l'intestino è un organo abitudinario. Orari irregolari e digiuni prolungati destabilizzano la motilità e peggiorano i sintomi.</li>
+        <li><strong>Masticazione lenta</strong> — inghiottire aria mangiando in fretta aumenta il gas intestinale. Mangiare lentamente e masticare bene riduce questo meccanismo.</li>
+        <li><strong>Gestione dello stress</strong> — non per "guarire" l'IBS, ma per ridurre le riacutizzazioni. Respirazione diaframmatica, camminata all'aperto, sonno adeguato — tutto ciò che abbassa il cortisolo aiuta l'intestino.</li>
+        <li><strong>Idratazione adeguata</strong> — soprattutto nella forma con stipsi prevalente. L'acqua ammorbidisce le feci e facilita il transito.</li>
+        <li><strong>Limitare alcol e caffè</strong> — entrambi irritano la mucosa intestinale e alterano la motilità, spesso scatenando episodi acuti.</li>
+      </ul>
+    </div>
+
+    <h2 id="medico">Quando è fondamentale rivolgersi al medico</h2>
+
+    <p>Il colon irritabile è gestibile — ma alcune situazioni richiedono valutazione medica immediata. Non rimandare se noti:</p>
+
+    <table class="tabella-dati">
+      <thead>
+        <tr>
+          <th>Segnale</th>
+          <th>Perché preoccupa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sangue nelle feci</strong></td>
+          <td class="rosso">Richiede esclusione immediata di patologie organiche gravi</td>
+        </tr>
+        <tr>
+          <td><strong>Perdita di peso inspiegabile</strong></td>
+          <td class="rosso">Può indicare malassorbimento o patologie più serie</td>
+        </tr>
+        <tr>
+          <td><strong>Dolore notturno che sveglia</strong></td>
+          <td class="rosso">L'IBS tipicamente non causa dolore di notte</td>
+        </tr>
+        <tr>
+          <td><strong>Febbre associata ai sintomi</strong></td>
+          <td class="rosso">Suggerisce componente infiammatoria o infettiva</td>
+        </tr>
+        <tr>
+          <td><strong>Sintomi comparsi dopo i 50 anni</strong></td>
+          <td class="rosso">Escludere cause organiche con colonscopia</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- CONDIVIDI -->
+    <div class="condividi-box">
+      <h4>&#128279; Conosci qualcuno che convive con il colon irritabile?</h4>
+      <p>Condividi — potrebbe essere l'articolo che stava cercando.</p>
+      <div class="condividi-btns">
+        <a href="https://wa.me/?text=Articolo%20sul%20colon%20irritabile%3A%20https://www.movimentoesalute.eu/articolo-colon-irritabile.html" target="_blank" class="share-btn share-btn-wa">&#128172; WhatsApp</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.movimentoesalute.eu/articolo-colon-irritabile.html" target="_blank" class="share-btn share-btn-fb">Facebook</a>
+        <button class="share-btn share-btn-copy" onclick="navigator.clipboard.writeText('https://www.movimentoesalute.eu/articolo-colon-irritabile.html'); this.textContent='&#10003; Copiato!'">&#128279; Copia link</button>
+      </div>
+    </div>
+
+    <!-- AUTORE -->
+    <div class="box-autore">
+      <img src="carlo.jpg" alt="Carlo Barbieri" class="autore-foto">
+      <div class="autore-info">
+        <h4>Carlo Barbieri</h4>
+        <p>Infermiere di sala operatoria e personal trainer qualificato. Ho visto da vicino quanto il benessere intestinale influenzi ogni aspetto della salute — e quanto spesso venga sottovalutato o mal gestito.</p>
+      </div>
+    </div>
+
+    <!-- CTA FINALE -->
+    <div class="cta-articolo">
+      <h3>Vuoi un supporto concreto per il tuo intestino?</h3>
+      <p>Scrivimi su WhatsApp — parliamo della tua situazione specifica. Oppure scopri i prodotti che supportano il microbioma e la salute intestinale nel negozio.</p>
+      <a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="btn-cta-light">Scopri i prodotti →</a>
+      <a href="https://wa.me/393357547386" target="_blank" class="btn-cta-wa">&#128172; Scrivimi su WhatsApp</a>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="articolo-sidebar">
+    <div class="sidebar-card">
+      <h4>In questo articolo</h4>
+      <ul class="indice">
+        <li><a href="#cos-e">Cos'è il colon irritabile</a></li>
+        <li><a href="#cause">Le cause che la scienza ha identificato</a></li>
+        <li><a href="#dopo40">Perché peggiora dopo i 40</a></li>
+        <li><a href="#alimentazione">Il ruolo dell'alimentazione</a></li>
+        <li><a href="#integrazione">L'integrazione mirata</a></li>
+        <li><a href="#stile-vita">Stile di vita</a></li>
+        <li><a href="#medico">Quando rivolgersi al medico</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h4>Supporto per l'intestino</h4>
+      <p>Probiotici mirati, aloe vera, omega-3 di qualità. I prodotti che supportano microbioma e barriera intestinale.</p>
+      <a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="btn-sidebar">Scopri i prodotti →</a>
+      <a href="https://wa.me/393357547386" target="_blank" class="btn-sidebar-wa">&#128172; Scrivimi su WhatsApp</a>
+    </div>
+    <div class="sidebar-card">
+      <h4>Leggi anche</h4>
+      <p>Come le carenze nutrizionali alimentano il food noise e la dipendenza da zuccheri.</p>
+      <a href="articolo-food-noise-fame-nervosa.html" class="btn-sidebar" style="background:var(--verde);">Food Noise →</a>
+    </div>
+  </aside>
+</div>
+
+<div class="social-follow">
+  <div class="social-follow-text">Contenuti nuovi ogni settimana &mdash; <span>seguimi sui social</span></div>
+  <div class="social-links">
+    <a href="https://www.instagram.com/carlo_gas_barbieri?igsh=MXNxdDdsbGtka3d1Zg%3D%3D&utm_source=qr" target="_blank" class="social-btn social-btn-ig">&#128247; Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61578385565022&mibextid=wwXIfr" target="_blank" class="social-btn social-btn-fb">&#128279; Facebook</a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Movimento &amp; Salute &middot; <a href="#">Privacy Policy</a> &middot; <a href="#">Contatti</a></p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">I contenuti di questo sito hanno scopo informativo e non sostituiscono il parere medico. In caso di sintomi persistenti o preoccupanti consulta sempre il tuo medico o uno specialista gastroenterologo.</p>
+</footer>
+
+<script>
+function toggleNav() {
+  var panel = document.getElementById('msPanel');
+  var btn   = document.getElementById('msBtn');
+  var ov    = document.getElementById('msOverlay');
+  var open  = !panel.classList.contains('open');
+  panel.classList.toggle('open', open);
+  btn.classList.toggle('open', open);
+  ov.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function toggleAcc(btn) {
+  btn.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
