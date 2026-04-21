@@ -15,16 +15,13 @@
   <meta property="og:type" content="article">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
-    :root { --verde: #2D6A4F; --verde-chiaro: #52B788; --verde-pallido: #D8F3DC; --arancio: #E07A00; --teal: #0E7C7B; --teal-chiaro: #1AA7A6; --teal-pallido: #E0F4F4; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: #FAF7F2; }
-    body { font-family: 'DM Sans', sans-serif; background: #FAF7F2 !important; color: #1A1A1A; overflow-x: hidden; line-height: 1.8; }
-
-    /* ===== NAV ===== */
+    :root { --verde:#2D6A4F; --verde-chiaro:#52B788; --verde-pallido:#D8F3DC; --arancio:#E07A00; --teal:#0E7C7B; --teal-chiaro:#1AA7A6; --teal-pallido:#E0F4F4; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; background:#FAF7F2; }
+    body { font-family:'DM Sans',sans-serif; background:#FAF7F2!important; color:#1A1A1A; overflow-x:hidden; line-height:1.8; }
     .ms-nav { position:fixed; top:0; left:0; right:0; z-index:9000; display:flex; justify-content:space-between; align-items:center; padding:1rem 5%; background:rgba(250,247,242,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(45,106,79,0.1); font-family:'DM Sans',sans-serif; }
     .ms-logo { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:#2D6A4F; text-decoration:none; }
     .ms-logo span { color:#E07A00; }
-    .ms-arrow { font-size:0.7rem; margin-left:3px; display:inline-block; transition:transform 0.25s; }
     .ms-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:6px; z-index:9100; }
     .ms-hamburger span { display:block; width:24px; height:2px; background:#2D6A4F; border-radius:2px; transition:all 0.3s; }
     .ms-hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
@@ -64,11 +61,10 @@
     .ms-dd-head a { font-size:0.82rem; font-weight:700; color:#2D6A4F; text-decoration:none; text-transform:uppercase; letter-spacing:0.5px; }
     .ms-dd-col > a { font-size:0.85rem; color:#333; text-decoration:none; padding:0.35rem 0.5rem; border-radius:6px; transition:background 0.15s; font-family:'DM Sans',sans-serif; }
     .ms-dd-col > a:hover { background:#f5f5f5; color:#2D6A4F; }
-    @media (min-width:901px) { .ms-hamburger { display:none!important; } .ms-panel { display:none!important; } .ms-overlay { display:none!important; } .ms-desktop-menu { display:flex; } }
-    @media (max-width:900px) { .ms-hamburger { display:flex; } .ms-desktop-menu { display:none!important; } }
-    /* ===== FINE NAV ===== */
+    @media (min-width:901px) { .ms-hamburger{display:none!important;} .ms-panel{display:none!important;} .ms-overlay{display:none!important;} .ms-desktop-menu{display:flex;} }
+    @media (max-width:900px) { .ms-hamburger{display:flex;} .ms-desktop-menu{display:none!important;} }
 
-    .hero-articolo { background: linear-gradient(135deg, #071A18, #0E4D4C, #0E7C7B); padding: 10rem 5% 5rem; position: relative; overflow: hidden; }
+    .hero-articolo { background:linear-gradient(135deg,#071A18,#0E4D4C,#0E7C7B); padding:10rem 5% 5rem; position:relative; overflow:hidden; }
     .hero-articolo::before { content:''; position:absolute; top:20%; right:10%; width:300px; height:300px; background:radial-gradient(circle,rgba(26,167,166,0.15) 0%,transparent 70%); border-radius:50%; }
     .categoria-badge { display:inline-block; background:rgba(255,255,255,0.1); color:#80DEEA; font-size:0.75rem; font-weight:500; letter-spacing:2px; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1.5rem; }
     .hero-articolo h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.5rem); font-weight:900; color:white; line-height:1.15; max-width:800px; margin-bottom:1.5rem; }
@@ -104,6 +100,17 @@
     .box-attenzione { background:#FFF8E1; border:2px solid #F9A825; border-radius:16px; padding:2rem; margin:2rem 0; }
     .box-attenzione h4 { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:#E65100; margin-bottom:0.8rem; }
     .box-attenzione p { font-size:0.95rem; color:#333; line-height:1.7; margin:0!important; }
+    /* FRULLATO CARD */
+    .box-frullato { background:linear-gradient(135deg,#071A18,#0E4D4C); border-radius:20px; padding:2.5rem; margin:2rem 0; }
+    .box-frullato h3 { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:900; color:white; margin-bottom:0.5rem; }
+    .box-frullato .sottotitolo { color:#80DEEA; font-size:0.9rem; margin-bottom:1.5rem; }
+    .frullato-ingredienti { list-style:none; margin:0 0 1.5rem; padding:0; }
+    .frullato-ingredienti li { display:flex; align-items:flex-start; gap:0.8rem; padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.85); font-size:0.95rem; line-height:1.5; }
+    .frullato-ingredienti li strong { color:#80DEEA; }
+    .frullato-ingredienti li:last-child { border-bottom:none; }
+    .frullato-ingredienti li span { color:#80DEEA; font-weight:700; flex-shrink:0; font-size:1.1rem; }
+    .frullato-perche { background:rgba(255,255,255,0.08); border-radius:12px; padding:1.2rem 1.5rem; }
+    .frullato-perche p { color:rgba(255,255,255,0.75); font-size:0.88rem; line-height:1.7; margin:0!important; }
     .stat-block { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin:2rem 0; }
     .stat-item { background:white; border:1px solid var(--teal-pallido); border-radius:14px; padding:1.5rem 1rem; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.05); }
     .stat-item .numero { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:900; color:var(--teal); line-height:1; }
@@ -142,12 +149,11 @@
     .social-follow-text { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:white; }
     .social-follow-text span { color:#52B788; font-style:italic; }
     .social-links { display:flex; gap:1rem; flex-wrap:wrap; }
-    .social-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.3rem; border-radius:50px; text-decoration:none; font-size:0.85rem; font-weight:500; transition:transform 0.2s,opacity 0.2s; font-family:'DM Sans',sans-serif; }
-    .social-btn:hover { transform:translateY(-2px); opacity:0.9; }
-    .social-btn-ig { background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045); color:white; }
-    .social-btn-fb { background:#1877F2; color:white; }
+    .social-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.3rem; border-radius:50px; text-decoration:none; font-size:0.85rem; font-weight:500; font-family:'DM Sans',sans-serif; }
     footer { background:#1A1A1A; color:rgba(255,255,255,0.5); text-align:center; padding:2rem 5%; font-size:0.82rem; }
     footer a { color:var(--verde-chiaro); text-decoration:none; }
+    .social-btn-ig { background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045); color:white; }
+    .social-btn-fb { background:#1877F2; color:white; }
     @media (max-width:900px) {
       .articolo-wrapper { grid-template-columns:1fr; }
       .articolo-sidebar { position:static; }
@@ -218,6 +224,7 @@
           <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#129704; Disturbi &amp; Benessere <span class="ms-acc-arrow">&#9654;</span></button>
           <ul class="ms-acc-sub">
             <li><a href="articolo-colon-irritabile.html">Colon irritabile</a></li>
+            <li><a href="articolo-resistenza-insulinica.html">Resistenza insulinica</a></li>
           </ul>
         </li>
       </ul>
@@ -280,219 +287,243 @@
 <div class="articolo-wrapper">
   <article class="articolo-corpo">
 
-    <p>Gonfiore dopo ogni pasto. Dolore addominale che arriva e va senza preavviso. Giorni di diarrea seguiti da giorni di stitichezza. E la sensazione — spesso confermata anche da qualche medico frettoloso — che sia tutto colpa dello stress, dei nervi, dell'ansia.</p>
+    <p>Gonfiore dopo ogni pasto. Dolore addominale che arriva e va senza preavviso. Giorni di diarrea, poi giorni di stitichezza. E quella sensazione — spesso confermata anche da qualche medico frettoloso — che sia tutta colpa dello stress, dei nervi, dell'ansia.</p>
 
-    <p>Se hai il colon irritabile, probabilmente ti hanno detto che "devi imparare a rilassarti". O che non c'è niente di organico, quindi non c'è niente da fare.</p>
+    <p>Se hai il colon irritabile, probabilmente ti hanno detto di <em>"imparare a rilassarti"</em>. Che non c'è niente di organico. Che devi imparare a conviverci.</p>
 
-    <p>Non è così. E la scienza degli ultimi anni lo dimostra con dati sempre più chiari.</p>
+    <p>Non è abbastanza. E la scienza degli ultimi anni lo dimostra con dati sempre più chiari.</p>
 
     <div class="citazione">
-      <p>Il colon irritabile è un disturbo reale, con basi biologiche misurabili. Non è un problema psicologico — anche se lo stress lo amplifica. È un problema di microbioma, di permeabilità intestinale, di asse intestino-cervello. E su tutto questo si può lavorare.</p>
+      <p>Il colon irritabile è un disturbo reale, con basi biologiche misurabili. Non è un capriccio della mente — anche se lo stress lo peggiora. Nasce nell'intestino, nel microbioma, nella barriera intestinale. E su tutto questo si può lavorare.</p>
       <cite>— Carlo Barbieri</cite>
     </div>
 
-    <h2 id="cos-e">Cos'è davvero il colon irritabile</h2>
+    <h2 id="cos-e">Cos'è il colon irritabile — in parole semplici</h2>
 
-    <p>La sindrome dell'intestino irritabile — in inglese IBS, Irritable Bowel Syndrome — è un disturbo cronico dell'apparato gastrointestinale che colpisce il colon, l'ultimo tratto dell'intestino crasso. Non è una malattia infiammatoria come il Crohn o la colite ulcerosa — non distrugge i tessuti — ma è un disturbo funzionale: il colon funziona in modo alterato, con conseguenze quotidiane spesso invalidanti.</p>
+    <p>Il colon irritabile — chiamato anche IBS dall'inglese "Irritable Bowel Syndrome" — è un disturbo cronico dell'intestino. Non distrugge i tessuti come il Crohn o la colite ulcerosa. Ma fa funzionare l'intestino in modo irregolare e imprevedibile, con conseguenze quotidiane che possono essere davvero invalidanti.</p>
+
+    <p>I tre sintomi principali sono: <strong>dolore addominale ricorrente</strong> (che spesso migliora dopo essere andati in bagno), <strong>gonfiore</strong> e <strong>intestino irregolare</strong> — chi ha più diarrea (IBS-D), chi ha più stitichezza (IBS-C), chi le alterna (IBS-M).</p>
+
+    <div class="box-semplice">
+      <h4>&#128161; In parole semplici</h4>
+      <p>Pensa all'intestino come a un tubo con un suo ritmo. Nel colon irritabile quel ritmo è sballato — a volte va troppo veloce, a volte troppo lento, a volte produce gas in eccesso. Il risultato è dolore, gonfiore e una vita scandita dai bagni. Non è immaginazione — è fisiologia.</p>
+    </div>
 
     <div class="stat-block">
       <div class="stat-item">
         <div class="numero">15-20%</div>
-        <div class="descrizione">della popolazione mondiale soffre di IBS — uno dei disturbi gastrointestinali più diffusi</div>
+        <div class="descrizione">della popolazione mondiale soffre di colon irritabile</div>
       </div>
       <div class="stat-item">
         <div class="numero">40%</div>
-        <div class="descrizione">degli adulti ha almeno un disturbo funzionale gastrointestinale cronico (Policlinico di Milano, 2024)</div>
+        <div class="descrizione">degli adulti ha almeno un disturbo intestinale funzionale cronico</div>
       </div>
       <div class="stat-item">
-        <div class="numero">3</div>
-        <div class="descrizione">mesi continuativi di sintomi sono necessari per la diagnosi clinica di IBS</div>
+        <div class="numero">3 mesi</div>
+        <div class="descrizione">di sintomi continui necessari per la diagnosi clinica di IBS</div>
       </div>
     </div>
 
-    <p>I sintomi principali sono tre: <strong>dolore addominale cronico</strong> che tende ad allevarsi con l'evacuazione, <strong>gonfiore</strong> e <strong>alterazione dell'alvo</strong> — che può manifestarsi come diarrea prevalente (IBS-D), stipsi prevalente (IBS-C) o alternanza dei due (IBS-M, misto).</p>
+    <h2 id="cause">Perché succede — le cause reali</h2>
+
+    <p>Per anni il colon irritabile era considerato un disturbo senza causa identificabile. Si arrivava alla diagnosi solo dopo aver escluso tutto il resto — e spesso il messaggio implicito era "non abbiamo trovato niente, quindi il problema sei tu". Oggi non è più così.</p>
+
+    <h3>1. Il microbioma — la causa principale</h3>
+
+    <p>Il microbioma è la colonia di miliardi di batteri che vive nel tuo intestino. Quando è in equilibrio, l'intestino funziona bene. Quando si sbilancia — si chiama disbiosi — tutto va storto.</p>
+
+    <div class="box-scienza">
+      <h4>&#128300; Lo studio (Shim JO et al., Microbiology Spectrum, American Society for Microbiology, 2024)</h4>
+      <p>Uno studio su 576 persone con IBS e 487 persone sane ha dimostrato che chi soffre di colon irritabile ha una minore varietà di batteri intestinali. In particolare mancano i batteri "buoni" — Bifidobatteri e Lattobacilli — mentre crescono batteri che producono gas, infiammazione e irritazione della mucosa. Questa alterazione spiega sia i sintomi fisici che il legame con l'umore.</p>
+    </div>
 
     <div class="box-semplice">
       <h4>&#128161; In parole semplici</h4>
-      <p>Il colon irritabile non distrugge l'intestino come fanno Crohn o colite. Ma lo rende imprevedibile, doloroso e difficile da gestire. Per molte persone interferisce con il lavoro, i rapporti sociali, la qualità della vita — ogni giorno.</p>
-    </div>
-
-    <h2 id="cause">Perché succede: le cause che la scienza ha identificato</h2>
-
-    <p>Per anni l'IBS è stata considerata una condizione "idiopatica" — senza causa identificabile — e la diagnosi arrivava solo dopo aver escluso tutto il resto. Oggi sappiamo che non è così. Le cause sono molteplici, spesso sovrapposte, e sempre più documentate.</p>
-
-    <h3>1. Il microbioma alterato — la causa principale</h3>
-    <p>La ricerca più recente indica il <strong>microbioma intestinale</strong> come il protagonista centrale dell'IBS. Uno studio pubblicato su <em>Microbiology Spectrum</em> dall'American Society for Microbiology, condotto su 576 pazienti con IBS e 487 controlli sani, ha dimostrato con chiarezza che le persone con colon irritabile hanno una <strong>minore diversità batterica intestinale</strong> rispetto alle persone sane.</p>
-
-    <div class="box-scienza">
-      <h4>&#128300; La scienza del microbioma nell'IBS (Shim JO et al., Microbiology Spectrum, 2024)</h4>
-      <p>Studi multipli hanno documentato che nei pazienti IBS si osserva: riduzione significativa di Bifidobatteri e Lattobacilli (i batteri protettivi), aumento di Firmicutes e Proteobacteria, diminuzione di Bacteroidetes. Questa disbiosi altera la motilità intestinale, aumenta la produzione di gas, infiamma la mucosa e altera la segnalazione dell'asse intestino-cervello — spiegando sia i sintomi fisici che la componente emotiva del disturbo.</p>
+      <p>Immagina il microbioma come un condominio. Se i buoni inquilini se ne vanno e arrivano quelli che fanno casino, l'edificio ne risente. Il tuo intestino fa lo stesso — e i sintomi sono il suo modo di protestare.</p>
     </div>
 
     <h3>2. L'asse intestino-cervello</h3>
-    <p>L'intestino è il nostro "secondo cervello" — contiene oltre 500 milioni di neuroni e produce il 90% della serotonina del corpo. Quando il microbioma è alterato, questa comunicazione si inceppa. Il risultato è una percezione amplificata del dolore (ipersensibilità viscerale), alterazioni della motilità e un'influenza diretta sull'umore — che spiega perché ansia e depressione sono così frequenti in chi soffre di IBS.</p>
 
-    <h3>3. La permeabilità intestinale aumentata</h3>
-    <p>In condizioni normali, la parete intestinale è una barriera selettiva — lascia passare i nutrienti e blocca le tossine. Nell'IBS questa barriera si indebolisce (intestino permeabile o "leaky gut"), permettendo a sostanze indesiderate di entrare nel circolo sanguigno e attivare risposte infiammatorie. Non è infiammazione nel senso classico — non si vede alle biopsie — ma è abbastanza da generare sintomi cronici.</p>
+    <p>L'intestino non è solo un tubo digerente. Ha oltre 500 milioni di neuroni e produce il 90% della serotonina del corpo — lo stesso neurotrasmettitore che regola l'umore. Intestino e cervello si parlano continuamente, in entrambe le direzioni.</p>
 
-    <h3>4. Stress cronico e cortisolo</h3>
-    <p>Lo stress non causa l'IBS, ma lo amplifica in modo significativo. Il cortisolo — l'ormone dello stress — irrita direttamente la mucosa intestinale, aumenta la permeabilità e altera il microbioma. Non a caso le riacutizzazioni di IBS coincidono spesso con periodi di stress intenso, lavorativo o personale.</p>
+    <p>Quando il microbioma è alterato, questa comunicazione si inceppa. Il risultato è che l'intestino diventa ipersensibile — percepisce come dolore quello che in una persona sana passerebbe inosservato. Ed è per questo che ansia e stati d'umore bassi sono così frequenti in chi soffre di IBS — non come causa, ma come conseguenza di questo squilibrio.</p>
 
     <div class="box-semplice">
       <h4>&#128161; In parole semplici</h4>
-      <p>Il colon irritabile non nasce "nella testa" — nasce nell'intestino. Ma l'asse intestino-cervello è bidirezionale: quello che succede nell'intestino influenza il cervello e viceversa. Per questo lo stress peggiora i sintomi senza essere la causa primaria.</p>
+      <p>Lo stress non causa il colon irritabile, ma lo amplifica — perché l'asse intestino-cervello funziona in entrambe le direzioni. Quando stai male di testa, l'intestino lo sente. E quando l'intestino sta male, la testa lo sente. È un circolo che si autoalimenta.</p>
     </div>
+
+    <h3>3. La barriera intestinale indebolita</h3>
+
+    <p>La parete dell'intestino dovrebbe essere una barriera selettiva — lascia passare i nutrienti buoni e blocca le tossine. In molte persone con IBS questa barriera si indebolisce. Si chiama "intestino permeabile" o leaky gut. Le tossine passano nel sangue, attivano una risposta infiammatoria di basso grado — non visibile alle biopsie, ma sufficiente a generare sintomi cronici.</p>
+
+    <h3>4. Lo stress cronico e il cortisolo</h3>
+
+    <p>Il cortisolo — l'ormone dello stress — irrita direttamente la mucosa intestinale, aumenta la permeabilità e altera il microbioma. Anni di stress cronico lasciano un segno nell'intestino. Non è una scusa — è fisiologia.</p>
 
     <h2 id="dopo40">Perché peggiora dopo i 40</h2>
 
-    <p>Il colon irritabile può comparire a qualsiasi età, ma dopo i 40 anni diversi fattori si sovrappongono e tendono ad aggravarlo.</p>
+    <p>Il colon irritabile può comparire a qualsiasi età, ma dopo i 40 anni diversi fattori si sommano e tendono ad aggravarlo.</p>
 
     <table class="tabella-dati">
-      <thead>
-        <tr>
-          <th>Fattore over 40</th>
-          <th>Effetto sull'intestino</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Cosa cambia dopo i 40</th><th>Effetto sull'intestino</th></tr></thead>
       <tbody>
-        <tr>
-          <td><strong>Calo degli estrogeni (donne)</strong></td>
-          <td>Gli estrogeni proteggono la mucosa intestinale — la loro riduzione aumenta la permeabilità e l'infiammazione</td>
-        </tr>
-        <tr>
-          <td><strong>Stress cronico accumulato</strong></td>
-          <td>Anni di cortisolo elevato alterano progressivamente il microbioma e la motilità intestinale</td>
-        </tr>
-        <tr>
-          <td><strong>Microbioma che invecchia</strong></td>
-          <td>La diversità batterica si riduce fisiologicamente con l'età — accelerando la disbiosi</td>
-        </tr>
-        <tr>
-          <td><strong>Dieta industriale prolungata</strong></td>
-          <td>Decenni di alimenti ultra-processati, poveri di fibre e ricchi di zuccheri, impoveriscono il microbioma</td>
-        </tr>
-        <tr>
-          <td><strong>Uso di farmaci (FANS, antibiotici)</strong></td>
-          <td>I farmaci antinfiammatori e gli antibiotici alterano la flora batterica e la barriera intestinale</td>
-        </tr>
+        <tr><td><strong>Calo degli estrogeni (nelle donne)</strong></td><td>Gli estrogeni proteggono la mucosa intestinale — calano, la protezione diminuisce</td></tr>
+        <tr><td><strong>Microbioma che invecchia</strong></td><td>La varietà batterica si riduce fisiologicamente con l'età</td></tr>
+        <tr><td><strong>Anni di dieta industriale</strong></td><td>Decenni di cibi ultra-processati, poveri di fibre, impoveriscono il microbioma</td></tr>
+        <tr><td><strong>Stress accumulato</strong></td><td>Il cortisolo cronico altera progressivamente motilità e microbioma</td></tr>
+        <tr><td><strong>Uso di farmaci nel tempo</strong></td><td>FANS e antibiotici ripetuti danneggiano la flora batterica e la barriera intestinale</td></tr>
       </tbody>
     </table>
 
-    <h2 id="alimentazione">Il ruolo dell'alimentazione: cosa aiuta e cosa peggiora</h2>
+    <h2 id="alimentazione">Cosa mangiare e cosa evitare</h2>
 
-    <p>Non esiste una dieta universale per il colon irritabile — ogni persona ha i suoi trigger specifici. Ma la ricerca ha identificato pattern chiari.</p>
+    <p>Non esiste una dieta uguale per tutti con il colon irritabile — ogni persona ha i suoi trigger specifici. Ma la ricerca ha identificato schemi chiari.</p>
 
-    <h3>La dieta Low-FODMAP</h3>
-    <p>È l'approccio nutrizionale più studiato e con le maggiori evidenze per l'IBS. I FODMAP sono carboidrati fermentabili (oligosaccaridi, disaccaridi, monosaccaridi e polioli) che, nelle persone con IBS, vengono fermentati dai batteri intestinali producendo gas in eccesso e richiamando acqua nel colon — causando gonfiore, dolore e alterazioni dell'alvo.</p>
+    <p>L'approccio più studiato si chiama <strong>dieta Low-FODMAP</strong>. I FODMAP sono zuccheri fermentabili che, nelle persone con IBS, vengono fermentati dai batteri intestinali producendo gas in eccesso, gonfiore e dolore.</p>
 
     <div class="box-evidenza">
-      <h4>Alimenti spesso problematici nell'IBS (alto contenuto di FODMAP)</h4>
+      <h4>Alimenti spesso problematici (alto contenuto di FODMAP)</h4>
       <ul>
-        <li><strong>Latticini</strong> — latte, yogurt, formaggi freschi (lattosio)</li>
-        <li><strong>Grano e segale</strong> — pane, pasta, cereali convenzionali (fruttani)</li>
-        <li><strong>Legumi</strong> — fagioli, ceci, lenticchie in grandi quantità (galattani)</li>
-        <li><strong>Frutta ad alto fruttosio</strong> — mele, pere, mango, anguria</li>
-        <li><strong>Verdure fermentescibili</strong> — cipolla, aglio, cavolfiore, broccoli in eccesso</li>
-        <li><strong>Dolcificanti</strong> — sorbitolo, mannitolo, xilitolo (nei prodotti "senza zucchero")</li>
+        <li><strong>Latte, yogurt, formaggi freschi</strong> — contengono lattosio, spesso mal tollerato nell'IBS</li>
+        <li><strong>Pane, pasta, pizza convenzionali</strong> — il frumento contiene fruttani che fermentano</li>
+        <li><strong>Cipolla e aglio</strong> — tra i trigger più comuni, anche in piccole quantità</li>
+        <li><strong>Legumi in grandi quantità</strong> — fagioli, ceci, lenticchie producono gas intestinale</li>
+        <li><strong>Mele, pere, mango, anguria</strong> — frutta ad alto contenuto di fruttosio</li>
+        <li><strong>Prodotti "senza zucchero"</strong> — i dolcificanti sorbitolo e mannitolo sono fortemente fermentabili</li>
       </ul>
     </div>
 
     <div class="box-evidenza">
       <h4>Alimenti generalmente ben tollerati nell'IBS</h4>
       <ul>
-        <li><strong>Proteine magre</strong> — pollo, tacchino, pesce, uova: non fermentano e supportano la mucosa</li>
-        <li><strong>Riso, avena, quinoa</strong> — cereali a basso contenuto di FODMAP</li>
-        <li><strong>Verdure a basso FODMAP</strong> — zucchine, carote, spinaci, lattuga, pomodori, cetrioli</li>
-        <li><strong>Frutta a basso FODMAP</strong> — fragole, kiwi, uva, arance, limoni</li>
-        <li><strong>Olio EVO</strong> — antinfiammatorio, protegge la mucosa</li>
+        <li><strong>Pollo, pesce, uova, tacchino</strong> — proteine che non fermentano e supportano la mucosa intestinale</li>
+        <li><strong>Riso, avena, quinoa</strong> — cereali a basso contenuto di FODMAP e facilmente digeribili</li>
+        <li><strong>Zucchine, carote, spinaci, lattuga, pomodori</strong> — verdure a basso impatto fermentativo</li>
+        <li><strong>Fragole, kiwi, uva, arance, limoni</strong> — frutta tollerata anche in quantità moderate</li>
+        <li><strong>Olio EVO</strong> — antinfiammatorio, protegge la mucosa intestinale</li>
         <li><strong>Zenzero e curcuma</strong> — proprietà antinfiammatorie documentate sull'intestino</li>
       </ul>
     </div>
 
     <div class="box-attenzione">
-      <h4>⚠️ Importante</h4>
-      <p>La dieta Low-FODMAP non è una dieta permanente — prevede una fase di restrizione (4-6 settimane) seguita da una graduale reintroduzione per identificare i trigger personali. Va eseguita idealmente con la supervisione di un dietologo o gastroenterologo. Non tutti i FODMAP danno problemi a tutti: la personalizzazione è fondamentale.</p>
+      <h4>⚠️ Da sapere</h4>
+      <p>La dieta Low-FODMAP non è una dieta per sempre. Prevede una fase di restrizione (4-6 settimane) seguita da una graduale reintroduzione degli alimenti, uno per uno, per capire quali sono i tuoi trigger personali. Va fatta idealmente con un dietologo o gastroenterologo. Non tutti i FODMAP danno problemi a tutti — la personalizzazione è la chiave.</p>
     </div>
 
-    <h2 id="integrazione">L'integrazione mirata: cosa dice la scienza</h2>
+    <h2 id="frullato">Il frullato amico dell'intestino irritabile</h2>
 
-    <p>Quando si parla di colon irritabile, l'integrazione non è un optional — è spesso parte fondamentale della gestione. Ecco cosa ha le prove più solide.</p>
+    <p>Uno degli strumenti più pratici e sottovalutati per chi soffre di colon irritabile è il frullato mattutino — fatto con gli ingredienti giusti. Il vantaggio è semplice: la frullatura pre-digerisce parzialmente gli ingredienti, le proteine si rendono più accessibili, le fibre si spezzano. Per un intestino già affaticato, partire così al mattino fa una differenza concreta.</p>
 
-    <h3>Probiotici — il pilastro</h3>
-    <p>I probiotici sono i più studiati per l'IBS. La <strong>World Gastroenterology Organisation</strong> ha identificato i ceppi con le maggiori evidenze: Bifidobacterium bifidum MIMBb75, Lactobacillus plantarum 299v, Saccharomyces boulardii CNCM I-745, Bifidobacterium infantis 35624. Non tutti i probiotici sono uguali — la scelta del ceppo specifico fa la differenza. È fondamentale optare per capsule gastroresistenti che proteggano i microrganismi dall'acidità gastrica.</p>
+    <p>Il frullato che uso io ogni mattina si basa su due prodotti specifici, scelti non per abitudine ma per quello che contengono — e che è esattamente quello di cui l'intestino irritabile ha bisogno.</p>
+
+    <div class="box-frullato">
+      <h3>&#129363; Il frullato per l'IBS — come lo preparo io</h3>
+      <p class="sottotitolo">Colazione completa — basso FODMAP, facile da digerire, nutriente</p>
+
+      <ul class="frullato-ingredienti">
+        <li><span>1️⃣</span><div>
+          <strong>Formula 1</strong> — il frullato sostitutivo del pasto. Proteine, fibre, vitamine e minerali in una porzione da 28g. Disponibile in molti gusti — il più scelto è vaniglia, il mio personale preferito è fragola e anguria. Contiene un mix completo di micronutrienti — zinco, magnesio, vitamine del gruppo B — spesso carenti in chi soffre di IBS. <em>Per chi è sensibile al lattosio</em>, esiste la versione <strong>Protein Drink Mix Vegan</strong>: stessa struttura proteica da soia isolata pura, zero lattosio, zuccheri quasi assenti (0,2g per porzione), dolcificato con stevia — non fermentabile e quindi perfetto per l'IBS.
+        </div></li>
+        <li><span>🌿</span><div>
+          <strong>Aloe vera da bere (senza aloina)</strong> — 30ml aggiunti dopo la frullatura. Riduce l'infiammazione della mucosa intestinale, calma gli spasmi, protegge il colon. L'ingrediente che trasforma una colazione nutriente in uno strumento attivo per l'intestino irritabile.
+        </div></li>
+        <li><span>🥛</span><div>
+          <strong>Base liquida:</strong> acqua, latte di riso o latte di mandorla senza zuccheri aggiunti. Niente latte vaccino — niente lattosio, niente gonfiore.
+        </div></li>
+      </ul>
+
+      <div class="frullato-perche">
+        <p><strong style="color:#80DEEA;">Perché funziona per l'IBS:</strong> Proteine di soia isolata che non fermentano. Stevia come dolcificante — non produce gas. Micronutrienti completi che coprono le carenze tipiche dell'IBS. Niente lattosio nella versione vegan. Niente fruttani del grano. L'aloe che calma la mucosa. Un pasto che l'intestino riesce a gestire anche nelle giornate più difficili — in 2 minuti.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin:1.5rem 0 2.5rem;">
+      <a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" style="display:inline-block; background:linear-gradient(135deg,#071A18,#0E7C7B); color:white; padding:1rem 2.5rem; border-radius:50px; text-decoration:none; font-weight:700; font-size:1rem; font-family:'DM Sans',sans-serif; box-shadow:0 4px 20px rgba(14,124,123,0.35);">
+        &#129363; Trova Formula 1 e Protein Drink Mix Vegan nel negozio →
+      </a>
+    </div>
+
+    <h2 id="integrazione">L'integrazione mirata: cosa funziona davvero</h2>
+
+    <p>Per il colon irritabile l'integrazione non è un lusso — è spesso parte essenziale della gestione. Ecco cosa ha le prove scientifiche più solide, spiegato in modo semplice.</p>
+
+    <h3>&#129854; Probiotici — il punto di partenza</h3>
+    <p>I probiotici sono batteri buoni vivi che, se presi nella quantità giusta e nella forma giusta, aiutano a riequilibrare il microbioma intestinale. La World Gastroenterology Organisation ha identificato i ceppi più efficaci per l'IBS: Bifidobacterium infantis 35624, Lactobacillus plantarum 299v, Saccharomyces boulardii. Non tutti i probiotici sono uguali — il ceppo specifico fa la differenza. Meglio optare per capsule gastroresistenti che proteggano i batteri dall'acidità dello stomaco.</p>
 
     <div class="box-scienza">
-      <h4>&#128300; Probiotici nell'IBS (meta-analisi, Gastroenterology, 2023)</h4>
-      <p>Una meta-analisi pubblicata su Gastroenterology (2023) ha confermato che i probiotici riducono significativamente i sintomi dell'IBS, con benefici documentati su gonfiore, dolore addominale e frequenza delle evacuazioni. I risultati variano in base al ceppo, al dosaggio e alla durata del trattamento — evidenziando l'importanza della scelta mirata rispetto all'uso di prodotti generici.</p>
+      <h4>&#128300; I dati (meta-analisi, Gastroenterology, 2023)</h4>
+      <p>Una meta-analisi pubblicata su Gastroenterology nel 2023 ha confermato che i probiotici riducono significativamente i sintomi dell'IBS — gonfiore, dolore addominale e irregolarità dell'alvo. I risultati dipendono dal ceppo, dal dosaggio e dalla durata del trattamento. Un probiotico generico da supermercato e uno studiato specificamente per l'IBS non hanno lo stesso effetto.</p>
     </div>
 
-    <h3>Aloe vera — l'antinfiammatorio intestinale naturale</h3>
-    <p>L'aloe vera da bere (succo privo di aloina) ha effetti documentati sulla mucosa intestinale: riduce l'infiammazione, calma gli spasmi, facilita il transito. Particolarmente utile nella fase acuta. La dose tipica negli studi è di 20-50ml al giorno a stomaco vuoto, a cicli di 2-3 settimane.</p>
+    <h3>&#129854;&#127807; Prebiotici + Probiotici insieme — la combinazione più efficace</h3>
+    <p>Prendere solo probiotici senza prebiotici è come piantare semi senza annaffiarli. I <strong>prebiotici</strong> sono fibre speciali che non vengono digerite dall'uomo ma che servono da nutrimento ai batteri buoni — li fanno crescere, sopravvivere e colonizzare l'intestino in modo stabile.</p>
 
-    <h3>L-Glutammina — la riparatrice della barriera intestinale</h3>
-    <p>La glutammina è l'aminoacido principale delle cellule intestinali. Uno studio clinico su 106 pazienti con IBS post-infettiva ha dimostrato che l'integrazione con L-glutammina (5g tre volte al giorno) ha ridotto significativamente la gravità dei sintomi e migliorato la permeabilità intestinale rispetto al placebo. Agisce sulle "tight junctions" — le giunzioni tra le cellule intestinali — rinforzando la barriera e riducendo il "leaky gut".</p>
-
-    <h3>Omega-3 — l'antinfiammatorio sistemico</h3>
-    <p>Gli omega-3 EPA e DHA hanno effetti antinfiammatori documentati anche a livello intestinale. Umanitas li include tra i nutrienti con efficacia dimostrata nel tenere sotto controllo l'infiammazione nell'IBS. La qualità conta — come abbiamo spiegato nell'articolo dedicato agli omega-3: la forma trigliceride garantisce un'assorbimento fino al 70% superiore rispetto agli esteri etilici.</p>
-
-    <h3>Vitamina D</h3>
-    <p>Diversi studi hanno associato la carenza di vitamina D a una maggiore gravità dei sintomi IBS. La supplementazione ha mostrato miglioramenti nella qualità della vita dei pazienti — anche se i meccanismi non sono ancora completamente chiariti. Con l'età la produzione cutanea di vitamina D si riduce, rendendo l'integrazione ancora più rilevante per il pubblico over 40.</p>
+    <p>I <strong>galattoligosaccaridi (GOS)</strong> sono tra i prebiotici più studiati per l'IBS: favoriscono selettivamente la crescita di Bifidobatteri e Lattobacilli senza alimentare i batteri "cattivi". Abbinati a ceppi probiotici specifici come <em>Lactobacillus helveticus</em> R52 e <em>Bifidobacterium lactis</em> HN019 — documentati per la riduzione del gonfiore, del dolore addominale e per il miglioramento della motilità intestinale — la combinazione diventa molto più potente di qualsiasi dei due presa da sola.</p>
 
     <div class="box-semplice">
       <h4>&#128161; In parole semplici</h4>
-      <p>Non esiste una pillola magica per il colon irritabile. Ma un'integrazione intelligente — probiotici mirati, aloe vera, glutammina, omega-3 di qualità — agisce su più livelli contemporaneamente: riequilibra il microbioma, ripara la barriera intestinale, riduce l'infiammazione. È un approccio che completa — non sostituisce — la gestione medica e alimentare.</p>
+      <p>I probiotici sono i nuovi inquilini buoni che vuoi nel condominio-intestino. I prebiotici sono il cibo che gli dai per farli restare. Senza cibo, i nuovi inquilini se ne vanno presto. Con il cibo giusto, si insediano e fanno ordine. Per questo la combinazione prebiotico + probiotico è molto più efficace di uno solo dei due.</p>
     </div>
 
-    <h2 id="stile-vita">Stile di vita: i fattori che fanno davvero la differenza</h2>
+    <p>L'integratore che consiglio per questo scopo combina esattamente questi elementi: galattoligosaccaridi come prebiotico, ceppi probiotici selezionati con 2 miliardi di UFC per dose, e fibre aggiuntive. È disponibile nel negozio.</p>
 
-    <p>Alimentazione e integrazione da sole non bastano se lo stile di vita rimane invariato.</p>
+    <div style="text-align:center; margin:1.5rem 0 2.5rem;">
+      <a href="https://gaia-galletti.goherbalife.com/Catalog/Product/Details/it-IT/173K" target="_blank" style="display:inline-block; background:linear-gradient(135deg,#071A18,#0E7C7B); color:white; padding:1rem 2.5rem; border-radius:50px; text-decoration:none; font-weight:700; font-size:1rem; font-family:'DM Sans',sans-serif; box-shadow:0 4px 20px rgba(14,124,123,0.35);">
+        &#129854; Scopri l'integratore prebiotico + probiotico →
+      </a>
+    </div>
+
+    <h3>🌿 Aloe vera — l'antinfiammatorio naturale per l'intestino</h3>
+    <p>Il succo di aloe vera da bere — purificato dall'aloina, che è lassativa e irritante — ha effetti documentati sulla mucosa intestinale. Riduce l'infiammazione, calma gli spasmi, facilita il transito senza irritare. Si assume tipicamente 20-50ml al mattino a stomaco vuoto, a cicli di 2-3 settimane.</p>
+
+    <h3>&#129678; L-Glutammina — la riparatrice della parete intestinale</h3>
+    <p>La glutammina è l'aminoacido principale delle cellule intestinali. Funziona come mattone per riparare la parete dell'intestino — quella barriera indebolita che abbiamo visto essere una delle cause dell'IBS. Uno studio clinico su 106 pazienti ha dimostrato che l'integrazione con L-glutammina ha ridotto significativamente i sintomi e migliorato la permeabilità intestinale rispetto al placebo.</p>
+
+    <h3>&#129425; Omega-3 — anti-infiammatori che arrivano anche all'intestino</h3>
+    <p>Gli omega-3 EPA e DHA hanno effetti antinfiammatori documentati anche a livello intestinale. Humanitas li include tra i nutrienti con maggiore efficacia nella gestione dell'IBS. Come abbiamo spiegato nell'articolo dedicato, la qualità conta moltissimo: la forma trigliceride viene assorbita fino al 70% meglio rispetto alla forma più comune ed economica.</p>
+
+    <h3>☀️ Vitamina D</h3>
+    <p>Diversi studi hanno associato la carenza di vitamina D a sintomi più gravi di IBS. La supplementazione ha mostrato miglioramenti nella qualità di vita dei pazienti. Dopo i 40 anni la produzione cutanea di vitamina D si riduce significativamente — integrarla diventa ancora più importante.</p>
+
+    <div class="box-semplice">
+      <h4>&#128161; In parole semplici</h4>
+      <p>Nessun integratore guarisce il colon irritabile da solo. Ma probiotici mirati, aloe vera, glutammina e omega-3 di qualità lavorano su livelli diversi contemporaneamente: riequilibrano i batteri buoni, riparano la parete intestinale, riducono l'infiammazione. È un approccio che aiuta il corpo a fare quello che sa già fare — solo meglio.</p>
+    </div>
+
+    <h2 id="stile-vita">Le abitudini che fanno davvero la differenza</h2>
 
     <div class="box-evidenza">
-      <h4>Le abitudini che la ricerca supporta</h4>
+      <h4>Cosa supporta la scienza</h4>
       <ul>
-        <li><strong>Movimento fisico regolare</strong> — uno studio pubblicato sull'American Journal of Gastroenterology (Johannesson et al., 2011) ha dimostrato che l'attività fisica migliora significativamente i sintomi dell'IBS. Anche solo 20-30 minuti di camminata quotidiana stimolano la motilità intestinale e riducono il gonfiore.</li>
-        <li><strong>Pasti regolari, senza saltare</strong> — l'intestino è un organo abitudinario. Orari irregolari e digiuni prolungati destabilizzano la motilità e peggiorano i sintomi.</li>
-        <li><strong>Masticazione lenta</strong> — inghiottire aria mangiando in fretta aumenta il gas intestinale. Mangiare lentamente e masticare bene riduce questo meccanismo.</li>
-        <li><strong>Gestione dello stress</strong> — non per "guarire" l'IBS, ma per ridurre le riacutizzazioni. Respirazione diaframmatica, camminata all'aperto, sonno adeguato — tutto ciò che abbassa il cortisolo aiuta l'intestino.</li>
-        <li><strong>Idratazione adeguata</strong> — soprattutto nella forma con stipsi prevalente. L'acqua ammorbidisce le feci e facilita il transito.</li>
-        <li><strong>Limitare alcol e caffè</strong> — entrambi irritano la mucosa intestinale e alterano la motilità, spesso scatenando episodi acuti.</li>
+        <li><strong>Muoversi ogni giorno</strong> — anche solo 20-30 minuti di camminata stimolano la motilità intestinale e riducono il gonfiore. Uno studio sull'American Journal of Gastroenterology ha dimostrato miglioramenti significativi dei sintomi IBS con l'attività fisica regolare.</li>
+        <li><strong>Mangiare a orari regolari</strong> — l'intestino è un organo abitudinario. Saltare i pasti o mangiarli a orari sempre diversi destabilizza la motilità.</li>
+        <li><strong>Masticare lentamente</strong> — mangiare in fretta significa inghiottire aria, che si traduce in gas e gonfiore. Semplice ma efficace.</li>
+        <li><strong>Dormire abbastanza</strong> — la privazione del sonno aumenta il cortisolo, che peggiora i sintomi intestinali. Il sonno è uno degli strumenti anti-IBS più sottovalutati.</li>
+        <li><strong>Bere abbastanza acqua</strong> — fondamentale soprattutto per chi ha stipsi prevalente. Almeno 1,5-2 litri al giorno.</li>
+        <li><strong>Limitare alcol e caffè</strong> — entrambi irritano la mucosa intestinale. Non eliminare, ma ridurre — soprattutto nelle fasi di riacutizzazione.</li>
       </ul>
     </div>
 
-    <h2 id="medico">Quando è fondamentale rivolgersi al medico</h2>
+    <h2 id="medico">Quando è fondamentale andare dal medico</h2>
 
-    <p>Il colon irritabile è gestibile — ma alcune situazioni richiedono valutazione medica immediata. Non rimandare se noti:</p>
+    <p>Il colon irritabile si gestisce — ma alcuni segnali richiedono una valutazione medica immediata. Non rimandare se noti:</p>
 
     <table class="tabella-dati">
-      <thead>
-        <tr>
-          <th>Segnale</th>
-          <th>Perché preoccupa</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Segnale d'allarme</th><th>Perché non ignorarlo</th></tr></thead>
       <tbody>
-        <tr>
-          <td><strong>Sangue nelle feci</strong></td>
-          <td class="rosso">Richiede esclusione immediata di patologie organiche gravi</td>
-        </tr>
-        <tr>
-          <td><strong>Perdita di peso inspiegabile</strong></td>
-          <td class="rosso">Può indicare malassorbimento o patologie più serie</td>
-        </tr>
-        <tr>
-          <td><strong>Dolore notturno che sveglia</strong></td>
-          <td class="rosso">L'IBS tipicamente non causa dolore di notte</td>
-        </tr>
-        <tr>
-          <td><strong>Febbre associata ai sintomi</strong></td>
-          <td class="rosso">Suggerisce componente infiammatoria o infettiva</td>
-        </tr>
-        <tr>
-          <td><strong>Sintomi comparsi dopo i 50 anni</strong></td>
-          <td class="rosso">Escludere cause organiche con colonscopia</td>
-        </tr>
+        <tr><td><strong>Sangue nelle feci</strong></td><td class="rosso">Richiede esclusione urgente di patologie organiche gravi</td></tr>
+        <tr><td><strong>Perdita di peso inspiegabile</strong></td><td class="rosso">Può indicare malassorbimento o altre patologie</td></tr>
+        <tr><td><strong>Dolore che ti sveglia di notte</strong></td><td class="rosso">Il colon irritabile tipicamente non causa dolore notturno</td></tr>
+        <tr><td><strong>Febbre associata ai sintomi</strong></td><td class="rosso">Suggerisce una componente infiammatoria o infettiva</td></tr>
+        <tr><td><strong>Sintomi comparsi dopo i 50 anni</strong></td><td class="rosso">Escludere cause organiche con esami specifici</td></tr>
       </tbody>
     </table>
+
+    <div class="box-attenzione">
+      <h4>&#9888;&#65039; Questo articolo è informativo</h4>
+      <p>I contenuti di questo articolo hanno scopo divulgativo e non sostituiscono il parere del medico o dello specialista gastroenterologo. Se hai sintomi persistenti o preoccupanti, rivolgiti sempre a un professionista della salute prima di modificare la tua alimentazione o iniziare qualsiasi integrazione.</p>
+    </div>
 
     <!-- CONDIVIDI -->
     <div class="condividi-box">
@@ -510,7 +541,7 @@
       <img src="carlo.jpg" alt="Carlo Barbieri" class="autore-foto">
       <div class="autore-info">
         <h4>Carlo Barbieri</h4>
-        <p>Infermiere di sala operatoria e personal trainer qualificato. Ho visto da vicino quanto il benessere intestinale influenzi ogni aspetto della salute — e quanto spesso venga sottovalutato o mal gestito.</p>
+        <p>Infermiere di sala operatoria e personal trainer qualificato. In ospedale ho visto da vicino quanto il benessere intestinale influenzi ogni aspetto della salute — e quanto spesso venga sottovalutato o liquidato con un generico "è lo stress".</p>
       </div>
     </div>
 
@@ -530,12 +561,13 @@
       <h4>In questo articolo</h4>
       <ul class="indice">
         <li><a href="#cos-e">Cos'è il colon irritabile</a></li>
-        <li><a href="#cause">Le cause che la scienza ha identificato</a></li>
+        <li><a href="#cause">Le cause reali</a></li>
         <li><a href="#dopo40">Perché peggiora dopo i 40</a></li>
-        <li><a href="#alimentazione">Il ruolo dell'alimentazione</a></li>
+        <li><a href="#alimentazione">Cosa mangiare e cosa evitare</a></li>
+        <li><a href="#frullato">Il frullato intestino calmo</a></li>
         <li><a href="#integrazione">L'integrazione mirata</a></li>
-        <li><a href="#stile-vita">Stile di vita</a></li>
-        <li><a href="#medico">Quando rivolgersi al medico</a></li>
+        <li><a href="#stile-vita">Le abitudini che contano</a></li>
+        <li><a href="#medico">Quando andare dal medico</a></li>
       </ul>
     </div>
     <div class="sidebar-card">
@@ -546,7 +578,7 @@
     </div>
     <div class="sidebar-card">
       <h4>Leggi anche</h4>
-      <p>Come le carenze nutrizionali alimentano il food noise e la dipendenza da zuccheri.</p>
+      <p>Come le carenze nutrizionali alimentano il food noise e la voglia di zuccheri.</p>
       <a href="articolo-food-noise-fame-nervosa.html" class="btn-sidebar" style="background:var(--verde);">Food Noise →</a>
     </div>
   </aside>
@@ -562,7 +594,7 @@
 
 <footer>
   <p>&copy; 2026 Movimento &amp; Salute &middot; <a href="#">Privacy Policy</a> &middot; <a href="#">Contatti</a></p>
-  <p style="margin-top:0.5rem; font-size:0.75rem;">I contenuti di questo sito hanno scopo informativo e non sostituiscono il parere medico. In caso di sintomi persistenti o preoccupanti consulta sempre il tuo medico o uno specialista gastroenterologo.</p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">I contenuti di questo sito hanno scopo informativo e non sostituiscono il parere medico. In caso di sintomi persistenti consulta sempre il tuo medico.</p>
 </footer>
 
 <script>

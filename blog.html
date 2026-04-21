@@ -56,6 +56,8 @@
     .cat-movimento { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-left: 5px solid #2D6A4F; }
     .cat-sonno { background: linear-gradient(135deg, #EDE7F6, #D1C4E9); border-left: 5px solid #5E35B1; }
     .cat-abitudini { background: linear-gradient(135deg, #E3F2FD, #BBDEFB); border-left: 5px solid #1565C0; }
+    .cat-femminile { background: linear-gradient(135deg, #FCE4EC, #F8BBD0); border-left: 5px solid #C2185B; }
+    .filtro-btn.attivo-femminile { background: #C2185B; color: white; border-color: #C2185B; }
     .griglia { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
     .card-articolo { background: white; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; border: 1px solid rgba(0,0,0,0.04); }
     .card-articolo:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
@@ -130,20 +132,285 @@
     .share-btn-fb { background: #1877F2; color: white; }
     .share-btn-copy { background: #f0f0f0; color: #333; cursor: pointer; border: none; }
 
+  
+  /* ===== NAV ===== */
+  .ms-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 9000;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 5%;
+    background: rgba(250,247,242,0.97); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(45,106,79,0.1);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .ms-logo { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:#2D6A4F; text-decoration:none; }
+  .ms-logo span { color:#E07A00; }
+
+  /* HAMBURGER — visibile solo mobile */
+  .ms-hamburger {
+    display: none;
+    flex-direction: column; gap: 5px;
+    cursor: pointer; background: none; border: none; padding: 6px; z-index: 9100;
+  }
+  .ms-hamburger span { display:block; width:24px; height:2px; background:#2D6A4F; border-radius:2px; transition:all 0.3s; }
+  .ms-hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+  .ms-hamburger.open span:nth-child(2) { opacity:0; }
+  .ms-hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+  /* OVERLAY */
+  .ms-overlay { display:none; position:fixed; top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,0.5); z-index:8800; }
+  .ms-overlay.open { display:block; }
+
+  /* ===================== PANNELLO MOBILE ===================== */
+  .ms-panel {
+    display: none;
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: 88vw; max-width: 340px;
+    background: #fff;
+    z-index: 9100;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-direction: column;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.18);
+  }
+  .ms-panel.open { display: flex; }
+
+  .ms-panel-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.1rem 1.2rem;
+    border-bottom: 2px solid #f0f0f0;
+    position: sticky; top: 0; background: white; z-index: 1;
+    flex-shrink: 0;
+  }
+  .ms-panel-logo { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#2D6A4F; }
+  .ms-panel-logo span { color:#E07A00; }
+  .ms-close { background:none; border:none; font-size:1.3rem; color:#555; cursor:pointer; padding:4px 8px; }
+
+  .ms-panel-list { list-style:none; margin:0; padding:0; flex:1; }
+  .ms-panel-list > li { border-bottom:1px solid #f0f0f0; }
+  .ms-panel-list > li > a {
+    display: block; padding: 1rem 1.2rem;
+    font-size: 1rem; font-weight: 600; color: #1A1A1A;
+    text-decoration: none;
+  }
+  .ms-panel-list > li > a:active { background:#f5f5f5; }
+
+  /* Accordion buttons */
+  .ms-acc-btn {
+    width: 100%; text-align: left; background: none; border: none;
+    padding: 1rem 1.2rem;
+    font-size: 1rem; font-weight: 600; color: #1A1A1A;
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .ms-acc-btn.ms-acc-cat {
+    padding: 0.85rem 1.2rem 0.85rem 1.8rem;
+    font-size: 0.95rem; color: #2D6A4F;
+    background: #F8F8F8;
+  }
+  .ms-acc-arrow { font-size: 0.7rem; transition: transform 0.25s; flex-shrink:0; margin-left:6px; }
+  .ms-acc.open > .ms-acc-btn .ms-acc-arrow { transform: rotate(180deg); }
+
+  /* Sottoliste accordion */
+  .ms-acc-sub {
+    list-style: none; margin: 0; padding: 0;
+    display: none; background: #F8F8F8;
+  }
+  .ms-acc.open > .ms-acc-sub { display: block; }
+
+  .ms-acc-sub > li { border-top: 1px solid #ebebeb; }
+  .ms-acc-sub > li > a {
+    display: block;
+    padding: 0.75rem 1.2rem 0.75rem 2.2rem;
+    font-size: 0.9rem; font-weight: 400; color: #333;
+    text-decoration: none; line-height: 1.4;
+  }
+  .ms-acc-sub > li > a:active { background: #eef6ee; color: #2D6A4F; }
+
+  /* CTA in fondo al pannello */
+  .ms-panel-cta {
+    display: block;
+    margin: 1rem 1.2rem 1.5rem;
+    padding: 0.9rem;
+    background: #E07A00; color: white;
+    border-radius: 50px; text-align: center;
+    font-weight: 600; font-size: 0.95rem; text-decoration: none;
+  }
+
+  /* ===================== MENU DESKTOP ===================== */
+  .ms-desktop-menu {
+    display: none; /* nascosto su mobile */
+    align-items: center; gap: 0.3rem;
+  }
+  .ms-desktop-menu > a {
+    padding: 0.5rem 0.9rem; border-radius: 8px;
+    text-decoration: none; color: #444; font-size: 0.88rem; font-weight: 500;
+    transition: background 0.2s, color 0.2s; white-space: nowrap;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .ms-desktop-menu > a:hover { background: #f0f0f0; color: #2D6A4F; }
+  .ms-nav-cta { background:#E07A00!important; color:white!important; padding:0.55rem 1.2rem!important; border-radius:50px!important; }
+
+  /* Dropdown desktop */
+  .ms-dd { position: relative; }
+  .ms-dd-trigger {
+    padding: 0.5rem 0.9rem; border-radius: 8px;
+    text-decoration: none; color: #444; font-size: 0.88rem; font-weight: 500;
+    cursor: pointer; white-space: nowrap; font-family: 'DM Sans', sans-serif;
+    display: block;
+  }
+  .ms-dd-trigger:hover { background: #f0f0f0; color: #2D6A4F; }
+  .ms-dd-panel {
+    display: none; position: absolute; top: calc(100% + 8px); left: 50%;
+    transform: translateX(-50%);
+    background: white; border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+    padding: 1.2rem; min-width: 600px;
+    border: 1px solid rgba(0,0,0,0.06); z-index: 9200;
+    display: none; flex-direction: row; gap: 1.5rem;
+  }
+  .ms-dd:hover .ms-dd-panel,
+  .ms-dd-panel:hover { display: flex; }
+  .ms-dd-col { display: flex; flex-direction: column; gap: 0.1rem; flex: 1; }
+  .ms-dd-head { margin-bottom: 0.3rem; }
+  .ms-dd-head a { font-size: 0.82rem; font-weight: 700; color: #2D6A4F; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; }
+  .ms-dd-col > a {
+    font-size: 0.85rem; color: #333; text-decoration: none;
+    padding: 0.35rem 0.5rem; border-radius: 6px; transition: background 0.15s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .ms-dd-col > a:hover { background: #f5f5f5; color: #2D6A4F; }
+
+  @media (min-width: 901px) {
+    .ms-hamburger { display: none !important; }
+    .ms-panel { display: none !important; }
+    .ms-overlay { display: none !important; }
+    .ms-desktop-menu { display: flex; }
+  }
+  @media (max-width: 900px) {
+    .ms-hamburger { display: flex; }
+    .ms-desktop-menu { display: none !important; }
+  }
+  /* ===== FINE NAV ===== */
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="logo">movimento<span>&</span>salute</a>
-  <ul>
+<!-- NAV -->
+<nav class="ms-nav">
+  <a href="index.html" class="ms-logo">movimento<span>&</span>salute</a>
+  <button class="ms-hamburger" id="msBtn" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MENU MOBILE SEPARATO DAL NAV -->
+<div class="ms-panel" id="msPanel">
+  <div class="ms-panel-header">
+    <span class="ms-panel-logo">movimento<span>&</span>salute</span>
+    <button onclick="toggleNav()" class="ms-close">&#10005;</button>
+  </div>
+  <ul class="ms-panel-list">
     <li><a href="index.html">Home</a></li>
     <li><a href="storia.html">La Mia Storia</a></li>
-    <li><a href="blog.html" class="active">Blog</a></li>
+    <li class="ms-acc">
+      <button class="ms-acc-btn" onclick="toggleAcc(this)">
+        Blog <span class="ms-acc-arrow">&#9660;</span>
+      </button>
+      <ul class="ms-acc-sub">
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">
+            &#127829; Nutrizione <span class="ms-acc-arrow">&#9654;</span>
+          </button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-nutrizione.html">Fondamenti di nutrizione</a></li>
+            <li><a href="articolo-piramide-harvard.html">La piramide di Harvard</a></li>
+            <li><a href="articolo-carboidrati-rebound.html">Carboidrati e rebound</a></li>
+            <li><a href="articolo-aloe-tiroide-hashimoto.html">Aloe vera e tiroide</a></li>
+            <li><a href="articolo-omega3-differenze-qualita.html">Omega-3: non tutti uguali</a></li>
+            <li><a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">
+            &#127947; Movimento <span class="ms-acc-arrow">&#9654;</span>
+          </button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-allenamento.html">Allenamento over 40</a></li>
+            <li><a href="articolo-movimento-salute-mentale.html">Movimento e salute mentale</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">
+            &#128564; Sonno <span class="ms-acc-arrow">&#9654;</span>
+          </button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-sonno.html">Sonno e recupero over 40</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">
+            &#129504; Abitudini <span class="ms-acc-arrow">&#9654;</span>
+          </button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-rivincita-40.html">La rivincita dei 40</a></li>
+            <li><a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">
+            &#127800; Benessere Femminile <span class="ms-acc-arrow">&#9654;</span>
+          </button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-donne-ormoni-peso.html">Donne, ormoni e peso</a></li>
+            <li><a href="articolo-stanchezza-gonfiore-donne.html">Sempre stanca, sempre gonfia</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="strumenti.html">Strumenti</a></li>
-    <li><a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="nav-cta">Scopri i Prodotti</a></li>
+    <li><a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="ms-panel-cta">Scopri i Prodotti</a></li>
   </ul>
-</nav>
+</div>
+<div class="ms-overlay" id="msOverlay" onclick="toggleNav()"></div>
+
+<!-- MENU DESKTOP (voci inline) -->
+<div class="ms-desktop-menu">
+  <a href="index.html">Home</a>
+  <a href="storia.html">La Mia Storia</a>
+  <div class="ms-dd">
+    <a href="blog.html" class="ms-dd-trigger">Blog &#9660;</a>
+    <div class="ms-dd-panel">
+      <div class="ms-dd-col">
+        <div class="ms-dd-head"><a href="blog.html">&#127829; Nutrizione</a></div>
+        <a href="articolo-nutrizione.html">Fondamenti di nutrizione</a>
+        <a href="articolo-piramide-harvard.html">La piramide di Harvard</a>
+        <a href="articolo-carboidrati-rebound.html">Carboidrati e rebound</a>
+        <a href="articolo-aloe-tiroide-hashimoto.html">Aloe vera e tiroide</a>
+        <a href="articolo-omega3-differenze-qualita.html">Omega-3: non tutti uguali</a>
+        <a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a>
+      </div>
+      <div class="ms-dd-col">
+        <div class="ms-dd-head"><a href="blog.html">&#127947; Movimento</a></div>
+        <a href="articolo-allenamento.html">Allenamento over 40</a>
+        <a href="articolo-movimento-salute-mentale.html">Movimento e salute mentale</a>
+        <div class="ms-dd-head" style="margin-top:1rem"><a href="blog.html">&#128564; Sonno</a></div>
+        <a href="articolo-sonno.html">Sonno e recupero over 40</a>
+      </div>
+      <div class="ms-dd-col">
+        <div class="ms-dd-head"><a href="blog.html">&#129504; Abitudini</a></div>
+        <a href="articolo-rivincita-40.html">La rivincita dei 40</a>
+        <a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a>
+        <div class="ms-dd-head" style="margin-top:1rem"><a href="blog.html">&#127800; Benessere Femminile</a></div>
+        <a href="articolo-donne-ormoni-peso.html">Donne, ormoni e peso</a>
+        <a href="articolo-stanchezza-gonfiore-donne.html">Sempre stanca, sempre gonfia</a>
+      </div>
+    </div>
+  </div>
+  <a href="strumenti.html">Strumenti</a>
+  <a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="ms-nav-cta">Scopri i Prodotti</a>
+</div>
+
 
 <section class="hero">
   <div class="hero-badge">Blog</div>
@@ -173,11 +440,12 @@
   <p>Scegli un argomento o sfoglia tutto insieme.</p>
 
   <div class="filtri-bar">
-    <button class="filtro-btn attivo" onclick="filtra('tutti', this)">Tutti</button>
+    <button class="filtro-btn" onclick="filtra('tutti', this)" id="btn-tutti">Tutti</button>
     <button class="filtro-btn" onclick="filtra('nutrizione', this)">🥗 Nutrizione</button>
     <button class="filtro-btn" onclick="filtra('movimento', this)">🏋️ Movimento</button>
     <button class="filtro-btn" onclick="filtra('sonno', this)">😴 Sonno</button>
     <button class="filtro-btn" onclick="filtra('abitudini', this)">🧠 Abitudini</button>
+    <button class="filtro-btn" onclick="filtra('femminile', this)">🌸 Benessere Femminile</button>
   </div>
 
   <div class="categoria-header cat-nutri" id="header-nutrizione">
@@ -195,6 +463,10 @@
   <div class="categoria-header cat-abitudini" id="header-abitudini">
     <div class="cat-icona">🧠</div>
     <div><div class="cat-titolo">Abitudini & Mentalità</div><div class="cat-desc">Il cambiamento vero parte dalla testa. Motivazione, routine, neuroplasticità e mindset over 40.</div></div>
+  </div>
+  <div class="categoria-header cat-femminile" id="header-femminile">
+    <div class="cat-icona">🌸</div>
+    <div><div class="cat-titolo">Benessere Femminile</div><div class="cat-desc">Ormoni, energia, sonno e peso dopo i 35. Contenuti pensati per le donne che vogliono capire il proprio corpo — con la scienza dalla loro parte.</div></div>
   </div>
 
   <div class="griglia">
@@ -236,6 +508,20 @@
           <div class="article-meta"><span class="tag">Movimento</span><span class="data">Marzo 2026</span></div>
           <h3>Allenamento over 40: come tornare in forma partendo da zero (o quasi)</h3>
           <p>Dal divano alla palestra. Metodo progressivo, senza infortuni, adatto a tutti i livelli.</p>
+          <span class="leggi-link">Leggi →</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-articolo" data-categoria="movimento">
+      <a href="articolo-movimento-salute-mentale.html" style="text-decoration:none; color:inherit;">
+        <div class="card-img card-img-sport" style="padding:0;">
+          <img src="articolo-movimento-salute-mentale.jpg" alt="Movimento e salute mentale" style="width:100%; height:100%; object-fit:cover; object-position:center;" onerror="this.style.display='none'">
+        </div>
+        <div class="card-body">
+          <div class="article-meta"><span class="tag">Movimento</span><span class="data">Aprile 2026</span></div>
+          <h3>Muoversi è la miglior medicina per la mente: lo dicono gli studi</h3>
+          <p>97 studi, 128.119 persone, una conclusione: il movimento fisico funziona almeno quanto gli antidepressivi. La scienza spiega perché.</p>
           <span class="leggi-link">Leggi →</span>
         </div>
       </a>
@@ -297,7 +583,7 @@
       </a>
     </div>
 
-    <div class="card-articolo" data-categoria="nutrizione">
+    <div class="card-articolo" data-categoria="femminile">
       <a href="articolo-donne-ormoni-peso.html" style="text-decoration:none; color:inherit;">
         <div class="card-img" style="padding:0; background: linear-gradient(135deg, #FCE4EC, #F48FB1);">
           <img src="copertina-donne-ormoni.jpg" alt="Donne over 35 ormoni e peso" style="width:100%; height:100%; object-fit:cover; object-position:center top;">
@@ -306,6 +592,90 @@
           <div class="article-meta"><span class="tag" style="background:#FCE4EC; color:#C2185B;">Benessere Femminile</span><span class="data">Marzo 2026</span></div>
           <h3>Perché le donne dopo i 35 faticano il doppio per perdere metà peso</h3>
           <p>Non è colpa tua. Non è pigrizia. È fisiologia — e finalmente qualcuno te la spiega in modo semplice.</p>
+          <span class="leggi-link">Leggi →</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-articolo" data-categoria="nutrizione">
+      <a href="articolo-aloe-tiroide-hashimoto.html" style="text-decoration:none; color:inherit;">
+        <div class="card-img" style="padding:0; background: linear-gradient(135deg, #E8F5E9, #A5D6A7);">
+          <img src="articolo-aloe-tiroide-hashimoto.jpg" alt="Aloe vera e tiroide Hashimoto" style="width:100%; height:100%; object-fit:cover; object-position:center;" onerror="this.style.display='none'">
+        </div>
+        <div class="card-body">
+          <div class="article-meta"><span class="tag" style="background:#E8F5E9; color:#2D6A4F;">Nutrizione</span><span class="data">Aprile 2026</span></div>
+          <h3>Aloe vera e tiroide: lo studio che ha sorpreso la comunità scientifica</h3>
+          <p>TSH normalizzato nel 100% delle pazienti, anticorpi ridotti del 56% in 9 mesi. Uno studio peer-reviewed — e una storia personale che lo conferma.</p>
+          <span class="leggi-link">Leggi →</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-articolo" data-categoria="nutrizione">
+      <a href="articolo-omega3-differenze-qualita.html" style="text-decoration:none; color:inherit;">
+        <div class="card-img card-img-nutri" style="padding:0;">
+          <img src="articolo-omega3-differenze-qualita.jpg" alt="Omega-3 differenze qualità" style="width:100%; height:100%; object-fit:cover; object-position:center;" onerror="this.style.display='none'">
+        </div>
+        <div class="card-body">
+          <div class="article-meta"><span class="tag">Nutrizione</span><span class="data">Aprile 2026</span></div>
+          <h3>Omega-3: non tutti sono uguali. Quello che nessuno ti dice</h3>
+          <p>Fegato o corpo del pesce? Trigliceridi o esteri etilici? La forma chimica cambia tutto. Fino al 70% di assorbimento in più scegliendo quello giusto.</p>
+          <span class="leggi-link">Leggi →</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-articolo" data-categoria="abitudini">
+      <a href="articolo-food-noise-fame-nervosa.html" style="text-decoration:none; color:inherit;">
+        <div class="card-img card-img-abitudini" style="padding:0;">
+          <img src="articolo-food-noise-fame-nervosa.jpg" alt="Food noise e fame nervosa" style="width:100%; height:100%; object-fit:cover; object-position:center;" onerror="this.style.display='none'">
+        </div>
+        <div class="card-body">
+          <div class="article-meta"><span class="tag">Abitudini</span><span class="data">Aprile 2026</span></div>
+          <h3>Food Noise: perché pensi al cibo anche quando non hai fame</h3>
+          <p>Non è debolezza. È il tuo cervello che cerca quello che manca. Carenze di magnesio, zinco e proteine scatenano la dipendenza da zuccheri.</p>
+          <span class="leggi-link">Leggi →</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-articolo" data-categoria="femminile">
+      <a href="articolo-stanchezza-gonfiore-donne.html" style="text-decoration:none; color:inherit;">
+        <div class="card-img" style="padding:0; background: linear-gradient(135deg, #fdf0f3, #e8a0b0);">
+          <img src="copertina-benessere-femminile-2.jpg" alt="Stanchezza e gonfiore nelle donne" style="width:100%; height:100%; object-fit:cover; object-position:center top;" onerror="this.style.display='none'">
+        </div>
+        <div class="card-body">
+          <div class="article-meta"><span class="tag" style="background:#FCE4EC; color:#C2185B;">Benessere Femminile</span><span class="data">Aprile 2026</span></div>
+          <h3>Sempre stanca, sempre gonfia: il tuo corpo non ha torto</h3>
+          <p>Stanchezza cronica, pancia che non va via e sonno disturbato: non è colpa tua. È il sistema ormonale che chiede aiuto — e la scienza spiega perché.</p>
+          <span class="leggi-link">Leggi →</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-articolo" data-categoria="benessere">
+      <a href="articolo-resistenza-insulinica.html" style="text-decoration:none; color:inherit;">
+        <div class="card-img card-img-nutri" style="padding:0; background:linear-gradient(135deg,#FEF3C7,#B45309);">
+          <img src="articolo-resistenza-insulinica.jpg" alt="Resistenza insulinica" style="width:100%; height:100%; object-fit:cover; object-position:center;" onerror="this.style.display='none'">
+        </div>
+        <div class="card-body">
+          <div class="article-meta"><span class="tag" style="background:#FEF3C7; color:#B45309;">Disturbi &amp; Benessere</span><span class="data">Aprile 2026</span></div>
+          <h3>Resistenza insulinica: il problema silenzioso che blocca salute e risultati</h3>
+          <p>Stanchezza dopo i pasti, grasso addominale che resiste, voglia di dolci. Non è pigrizia — è chimica. La scienza identifica gli ingredienti naturali che migliorano la sensibilità insulinica.</p>
+          <span class="leggi-link">Leggi →</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="card-articolo" data-categoria="benessere">
+      <a href="articolo-colon-irritabile.html" style="text-decoration:none; color:inherit;">
+        <div class="card-img" style="padding:0; background: linear-gradient(135deg, #E0F4F4, #0E7C7B);">
+          <img src="articolo-colon-irritabile.jpg" alt="Colon irritabile cause e soluzioni" style="width:100%; height:100%; object-fit:cover; object-position:center;" onerror="this.style.display='none'">
+        </div>
+        <div class="card-body">
+          <div class="article-meta"><span class="tag" style="background:#E0F4F4; color:#0E7C7B;">Disturbi &amp; Benessere</span><span class="data">Aprile 2026</span></div>
+          <h3>Colon irritabile: non è nella tua testa</h3>
+          <p>Gonfiore, dolore, diarrea e stipsi alternati. Il colon irritabile colpisce il 15-20% della popolazione. Cause, alimentazione e integrazione mirata spiegati con basi scientifiche.</p>
           <span class="leggi-link">Leggi →</span>
         </div>
       </a>
@@ -341,6 +711,9 @@
 </footer>
 
 <script>
+// Imposta "Tutti" come attivo all'avvio
+document.getElementById('btn-tutti').classList.add('attivo');
+
 function filtra(categoria, btn) {
   document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('attivo'));
   btn.classList.add('attivo');
@@ -359,5 +732,23 @@ function filtra(categoria, btn) {
 }
 </script>
 
+
+<script>
+function toggleNav() {
+  var panel = document.getElementById('msPanel');
+  var btn   = document.getElementById('msBtn');
+  var ov    = document.getElementById('msOverlay');
+  var open  = !panel.classList.contains('open');
+  panel.classList.toggle('open', open);
+  btn.classList.toggle('open', open);
+  ov.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+
+function toggleAcc(btn) {
+  var li = btn.parentElement;
+  li.classList.toggle('open');
+}
+</script>
 </body>
 </html>
