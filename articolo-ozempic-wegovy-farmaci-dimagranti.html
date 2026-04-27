@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ozempic, Wegovy, Mounjaro: cosa non ti dicono | Movimento e Salute</title>
+  <meta name="description" content="I farmaci GLP-1 fanno dimagrire — ma fino al 40% del peso perso è muscolo, il 60-75% torna entro un anno dalla sospensione e costano fino a 380€ al mese. La verità completa, con dati scientifici.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.movimentoesalute.eu/articolo-ozempic-wegovy-farmaci-dimagranti.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:title" content="Ozempic, Wegovy, Mounjaro: cosa non ti dicono">
+  <meta property="og:description" content="Funzionano — ma il 60-75% del peso torna dopo la sospensione, fino al 40% di quello che perdi è muscolo e costano fino a 380€ al mese. I dati che le case farmaceutiche non pubblicizzano.">
+  <meta property="og:image" content="https://www.movimentoesalute.eu/articolo-ozempic-wegovy-farmaci-dimagranti.jpg">
+  <meta property="og:url" content="https://www.movimentoesalute.eu/articolo-ozempic-wegovy-farmaci-dimagranti.html">
+  <meta property="og:type" content="article">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --verde:#2D6A4F; --verde-chiaro:#52B788; --verde-pallido:#D8F3DC; --arancio:#E07A00; --rosso:#B91C1C; --rosso-chiaro:#EF4444; --rosso-pallido:#FEE2E2; --grigio:#374151; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; background:#FAF7F2; }
+    body { font-family:'DM Sans',sans-serif; background:#FAF7F2!important; color:#1A1A1A; overflow-x:hidden; line-height:1.8; }
+    /* NAV */
+    .ms-nav { position:fixed; top:0; left:0; right:0; z-index:9000; display:flex; justify-content:space-between; align-items:center; padding:1rem 5%; background:rgba(250,247,242,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(45,106,79,0.1); font-family:'DM Sans',sans-serif; }
+    .ms-logo { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:#2D6A4F; text-decoration:none; }
+    .ms-logo span { color:#E07A00; }
+    .ms-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:6px; z-index:9100; }
+    .ms-hamburger span { display:block; width:24px; height:2px; background:#2D6A4F; border-radius:2px; transition:all 0.3s; }
+    .ms-hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+    .ms-hamburger.open span:nth-child(2) { opacity:0; }
+    .ms-hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+    .ms-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:8800; }
+    .ms-overlay.open { display:block; }
+    .ms-panel { display:none; position:fixed; top:0; right:0; bottom:0; width:min(320px,88vw); background:#fff; z-index:9100; overflow-y:auto; -webkit-overflow-scrolling:touch; flex-direction:column; box-shadow:-4px 0 24px rgba(0,0,0,0.18); }
+    .ms-panel.open { display:flex; }
+    .ms-panel-header { display:flex; justify-content:space-between; align-items:center; padding:1.1rem 1.2rem; border-bottom:2px solid #f0f0f0; position:sticky; top:0; background:white; z-index:1; flex-shrink:0; }
+    .ms-panel-logo { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#2D6A4F; }
+    .ms-panel-logo span { color:#E07A00; }
+    .ms-close { background:none; border:none; font-size:1.3rem; color:#555; cursor:pointer; padding:4px 8px; }
+    .ms-panel-list { list-style:none; margin:0; padding:0; flex:1; }
+    .ms-panel-list > li { border-bottom:1px solid #f0f0f0; }
+    .ms-panel-list > li > a { display:block; padding:1rem 1.2rem; font-size:1rem; font-weight:600; color:#1A1A1A; text-decoration:none; }
+    .ms-acc-btn { width:100%; text-align:left; background:none; border:none; padding:1rem 1.2rem; font-size:1rem; font-weight:600; color:#1A1A1A; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-family:'DM Sans',sans-serif; }
+    .ms-acc-btn.ms-acc-cat { padding:0.85rem 1.2rem 0.85rem 1.8rem; font-size:0.95rem; color:#2D6A4F; background:#F8F8F8; }
+    .ms-acc-arrow { font-size:0.7rem; transition:transform 0.25s; flex-shrink:0; margin-left:6px; }
+    .ms-acc.open > .ms-acc-btn .ms-acc-arrow { transform:rotate(180deg); }
+    .ms-acc-sub { list-style:none; margin:0; padding:0; display:none; background:#F8F8F8; }
+    .ms-acc.open > .ms-acc-sub { display:block; }
+    .ms-acc-sub > li { border-top:1px solid #ebebeb; }
+    .ms-acc-sub > li > a { display:block; padding:0.75rem 1.2rem 0.75rem 2.2rem; font-size:0.9rem; font-weight:400; color:#333; text-decoration:none; line-height:1.4; }
+    .ms-panel-cta { display:block; margin:1rem 1.2rem 1.5rem; padding:0.9rem; background:#E07A00; color:white; border-radius:50px; text-align:center; font-weight:600; font-size:0.95rem; text-decoration:none; }
+    .ms-desktop-menu { display:none; align-items:center; gap:0.3rem; }
+    .ms-desktop-menu > a { padding:0.5rem 0.9rem; border-radius:8px; text-decoration:none; color:#444; font-size:0.88rem; font-weight:500; transition:background 0.2s; white-space:nowrap; font-family:'DM Sans',sans-serif; }
+    .ms-desktop-menu > a:hover { background:#f0f0f0; color:#2D6A4F; }
+    .ms-nav-cta { background:#E07A00!important; color:white!important; padding:0.55rem 1.2rem!important; border-radius:50px!important; }
+    .ms-dd { position:relative; }
+    .ms-dd-trigger { padding:0.5rem 0.9rem; border-radius:8px; text-decoration:none; color:#444; font-size:0.88rem; font-weight:500; cursor:pointer; white-space:nowrap; font-family:'DM Sans',sans-serif; display:block; }
+    .ms-dd-trigger:hover { background:#f0f0f0; color:#2D6A4F; }
+    .ms-dd-panel { display:none; position:absolute; top:calc(100% + 8px); left:50%; transform:translateX(-50%); background:white; border-radius:16px; box-shadow:0 12px 40px rgba(0,0,0,0.14); padding:1.2rem; min-width:600px; border:1px solid rgba(0,0,0,0.06); z-index:9200; flex-direction:row; gap:1.5rem; }
+    .ms-dd:hover .ms-dd-panel, .ms-dd-panel:hover { display:flex; }
+    .ms-dd-col { display:flex; flex-direction:column; gap:0.1rem; flex:1; }
+    .ms-dd-head { margin-bottom:0.3rem; }
+    .ms-dd-head a { font-size:0.82rem; font-weight:700; color:#2D6A4F; text-decoration:none; text-transform:uppercase; letter-spacing:0.5px; }
+    .ms-dd-col > a { font-size:0.85rem; color:#333; text-decoration:none; padding:0.35rem 0.5rem; border-radius:6px; transition:background 0.15s; font-family:'DM Sans',sans-serif; }
+    .ms-dd-col > a:hover { background:#f5f5f5; color:#2D6A4F; }
+    @media (min-width:901px) { .ms-hamburger{display:none!important;} .ms-panel{display:none!important;} .ms-overlay{display:none!important;} .ms-desktop-menu{display:flex;} }
+    @media (max-width:900px) { .ms-hamburger{display:flex;} .ms-desktop-menu{display:none!important;} }
+    /* ARTICOLO */
+    .hero-articolo { background:linear-gradient(135deg,#1A0000,#7F1D1D,#B91C1C); padding:10rem 5% 5rem; position:relative; overflow:hidden; }
+    .hero-articolo::before { content:''; position:absolute; top:20%; right:10%; width:300px; height:300px; background:radial-gradient(circle,rgba(239,68,68,0.2) 0%,transparent 70%); border-radius:50%; }
+    .categoria-badge { display:inline-block; background:rgba(255,255,255,0.1); color:#FCA5A5; font-size:0.75rem; font-weight:500; letter-spacing:2px; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1.5rem; }
+    .hero-articolo h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.5rem); font-weight:900; color:white; line-height:1.15; max-width:800px; margin-bottom:1.5rem; }
+    .hero-articolo h1 em { font-style:italic; color:#FCA5A5; }
+    .meta-articolo { display:flex; gap:2rem; align-items:center; flex-wrap:wrap; color:rgba(255,255,255,0.55); font-size:0.85rem; }
+    .articolo-wrapper { display:grid; grid-template-columns:1fr 300px; gap:4rem; max-width:1100px; margin:0 auto; padding:5rem 5%; }
+    .articolo-corpo h2 { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,2.5vw,2rem); font-weight:900; color:#1A1A1A; line-height:1.2; margin:3rem 0 1.2rem; padding-top:1rem; border-top:2px solid var(--rosso-pallido); }
+    .articolo-corpo h3 { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--rosso); margin:2rem 0 0.8rem; }
+    .articolo-corpo p { font-size:1.05rem; color:#444; line-height:1.85; margin-bottom:1.4rem; }
+    .articolo-corpo strong { color:#1A1A1A; font-weight:600; }
+    .citazione { border-left:4px solid var(--rosso-chiaro); padding:1.5rem 2rem; margin:2.5rem 0; background:white; border-radius:0 16px 16px 0; box-shadow:0 4px 20px rgba(0,0,0,0.05); }
+    .citazione p { font-family:'Playfair Display',serif; font-size:1.15rem; font-style:italic; color:#1A1A1A!important; line-height:1.6; margin:0!important; }
+    .citazione cite { display:block; margin-top:0.8rem; font-size:0.82rem; color:var(--rosso); font-style:normal; font-weight:500; }
+    .box-scienza { background:#1A0000; border-radius:16px; padding:2rem; margin:2rem 0; }
+    .box-scienza h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#FCA5A5; margin-bottom:1rem; }
+    .box-scienza p { font-size:0.92rem; color:rgba(255,255,255,0.78); line-height:1.7; margin:0!important; }
+    .box-semplice { background:var(--rosso-pallido); border-radius:16px; padding:2rem; margin:2rem 0; }
+    .box-semplice h4 { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--rosso); margin-bottom:0.8rem; }
+    .box-semplice p { font-size:0.95rem; color:#3B0000; line-height:1.7; margin:0!important; }
+    .box-verde { background:var(--verde-pallido); border-radius:16px; padding:2rem; margin:2rem 0; }
+    .box-verde h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--verde); margin-bottom:1rem; }
+    .box-verde ul { list-style:none; }
+    .box-verde ul li { padding:0.6rem 0; font-size:0.95rem; color:#333; display:flex; align-items:flex-start; gap:0.8rem; line-height:1.6; border-bottom:1px solid rgba(45,106,79,0.1); }
+    .box-verde ul li:last-child { border-bottom:none; }
+    .box-verde ul li::before { content:'✓'; color:var(--verde); font-weight:700; flex-shrink:0; margin-top:2px; }
+    .box-attenzione { background:#FFF8E1; border:2px solid #F9A825; border-radius:16px; padding:2rem; margin:2rem 0; }
+    .box-attenzione h4 { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:#E65100; margin-bottom:0.8rem; }
+    .box-attenzione p { font-size:0.95rem; color:#333; line-height:1.7; margin:0!important; }
+    .farmaco-card { background:white; border:2px solid var(--rosso-pallido); border-radius:16px; padding:1.8rem; margin:1rem 0; }
+    .farmaco-card h3 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--grigio); margin-bottom:0.4rem; }
+    .farmaco-card .principio { font-size:0.8rem; color:var(--rosso); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:0.8rem; }
+    .farmaco-card p { font-size:0.93rem; color:#444; line-height:1.7; margin:0; }
+    .farmaco-card .costo { display:inline-block; background:var(--rosso-pallido); color:var(--rosso); font-size:0.82rem; font-weight:700; padding:0.3rem 0.9rem; border-radius:20px; margin-top:0.8rem; }
+    .stat-block { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin:2rem 0; }
+    .stat-item { background:white; border:2px solid var(--rosso-pallido); border-radius:14px; padding:1.5rem 1rem; text-align:center; }
+    .stat-item .numero { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:900; color:var(--rosso); line-height:1; }
+    .stat-item .descrizione { font-size:0.8rem; color:#666; margin-top:0.5rem; line-height:1.4; }
+    .articolo-sidebar { position:sticky; top:100px; height:fit-content; }
+    .sidebar-card { background:white; border-radius:20px; padding:2rem; margin-bottom:1.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); border:1px solid rgba(185,28,28,0.1); }
+    .sidebar-card h4 { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; margin-bottom:1rem; }
+    .sidebar-card p { font-size:0.88rem; color:#444; line-height:1.6; margin-bottom:1rem; }
+    .btn-sidebar { display:block; background:var(--verde); color:white; padding:0.8rem 1.2rem; border-radius:50px; text-decoration:none; font-size:0.88rem; font-weight:500; text-align:center; margin-bottom:0.8rem; transition:opacity 0.2s; }
+    .btn-sidebar:hover { opacity:0.88; }
+    .btn-sidebar-wa { display:block; background:#25D366; color:white; padding:0.8rem 1.2rem; border-radius:50px; text-decoration:none; font-size:0.88rem; font-weight:500; text-align:center; }
+    .indice { list-style:none; }
+    .indice li { padding:0.4rem 0; border-bottom:1px solid rgba(0,0,0,0.06); }
+    .indice li:last-child { border-bottom:none; }
+    .indice a { color:var(--rosso); text-decoration:none; font-size:0.88rem; }
+    .indice a:hover { text-decoration:underline; }
+    .box-autore { background:white; border-radius:20px; padding:2.5rem; margin:4rem 0 2rem; display:flex; gap:2rem; align-items:center; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+    .autore-foto { width:80px; height:80px; border-radius:50%; object-fit:cover; object-position:top; flex-shrink:0; border:3px solid var(--rosso-pallido); }
+    .autore-info h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; margin-bottom:0.3rem; }
+    .autore-info p { font-size:0.88rem; color:#444; line-height:1.5; }
+    .cta-articolo { background:linear-gradient(135deg,#14532D,#2D6A4F); border-radius:24px; padding:3rem; text-align:center; margin:2rem 0 4rem; }
+    .cta-articolo h3 { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:900; color:white; margin-bottom:1rem; }
+    .cta-articolo p { color:rgba(255,255,255,0.7); font-size:0.95rem; margin-bottom:1.5rem; }
+    .btn-cta-light { background:white; color:#2D6A4F; padding:0.9rem 2rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:0.95rem; display:inline-block; margin:0.4rem; }
+    .btn-cta-wa { background:#25D366; color:white; padding:0.9rem 2rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:0.95rem; display:inline-block; margin:0.4rem; }
+    .condividi-box { background:white; border-radius:20px; padding:2rem 2.5rem; margin:2rem 0; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+    .condividi-box h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; margin-bottom:1rem; }
+    .condividi-box p { font-size:0.88rem; color:#555; margin-bottom:1.2rem; }
+    .condividi-btns { display:flex; gap:0.8rem; flex-wrap:wrap; }
+    .share-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.3rem; border-radius:50px; text-decoration:none; font-size:0.85rem; font-weight:500; transition:transform 0.2s; font-family:'DM Sans',sans-serif; }
+    .share-btn:hover { transform:translateY(-2px); }
+    .share-btn-wa { background:#25D366; color:white; }
+    .share-btn-fb { background:#1877F2; color:white; }
+    .share-btn-copy { background:#f0f0f0; color:#333; cursor:pointer; border:none; }
+    .social-follow { background:#1A1A1A; padding:2.5rem 5%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; }
+    .social-follow-text { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:white; }
+    .social-follow-text span { color:#52B788; font-style:italic; }
+    .social-links { display:flex; gap:1rem; }
+    .social-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.3rem; border-radius:50px; text-decoration:none; font-size:0.85rem; font-weight:500; font-family:'DM Sans',sans-serif; }
+    .social-btn-ig { background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045); color:white; }
+    .social-btn-fb { background:#1877F2; color:white; }
+    footer { background:#1A1A1A; color:rgba(255,255,255,0.5); text-align:center; padding:2rem 5%; font-size:0.82rem; }
+    footer a { color:var(--verde-chiaro); text-decoration:none; }
+    @media (max-width:900px) {
+      .articolo-wrapper { grid-template-columns:1fr; }
+      .articolo-sidebar { position:static; }
+      .box-autore { flex-direction:column; text-align:center; }
+      .stat-block { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="ms-nav">
+  <a href="index.html" class="ms-logo">movimento<span>&</span>salute</a>
+  <button class="ms-hamburger" id="msBtn" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="ms-panel" id="msPanel">
+  <div class="ms-panel-header">
+    <span class="ms-panel-logo">movimento<span>&</span>salute</span>
+    <button onclick="toggleNav()" class="ms-close">&#10005;</button>
+  </div>
+  <ul class="ms-panel-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="storia.html">La Mia Storia</a></li>
+    <li class="ms-acc">
+      <button class="ms-acc-btn" onclick="toggleAcc(this)">Blog <span class="ms-acc-arrow">&#9660;</span></button>
+      <ul class="ms-acc-sub">
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#127829; Nutrizione <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-nutrizione.html">Fondamenti di nutrizione</a></li>
+            <li><a href="articolo-piramide-harvard.html">La piramide di Harvard</a></li>
+            <li><a href="articolo-carboidrati-rebound.html">Carboidrati e rebound</a></li>
+            <li><a href="articolo-aloe-tiroide-hashimoto.html">Aloe vera e tiroide</a></li>
+            <li><a href="articolo-omega3-differenze-qualita.html">Omega-3: non tutti uguali</a></li>
+            <li><a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#127947; Movimento <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-allenamento.html">Allenamento over 40</a></li>
+            <li><a href="articolo-movimento-salute-mentale.html">Movimento e salute mentale</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#128564; Sonno <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-sonno.html">Sonno e recupero over 40</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#129504; Abitudini <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-rivincita-40.html">La rivincita dei 40</a></li>
+            <li><a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#127800; Benessere Femminile <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-donne-ormoni-peso.html">Donne, ormoni e peso</a></li>
+            <li><a href="articolo-stanchezza-gonfiore-donne.html">Sempre stanca, sempre gonfia</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#129704; Disturbi &amp; Benessere <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-colon-irritabile.html">Colon irritabile</a></li>
+            <li><a href="articolo-resistenza-insulinica.html">Resistenza insulinica</a></li>
+            <li><a href="articolo-ozempic-wegovy-farmaci-dimagranti.html">Ozempic e Wegovy: cosa non ti dicono</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="strumenti.html">Strumenti</a></li>
+    <li><a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="ms-panel-cta">Scopri i Prodotti</a></li>
+  </ul>
+</div>
+<div class="ms-overlay" id="msOverlay" onclick="toggleNav()"></div>
+<div class="ms-desktop-menu">
+  <a href="index.html">Home</a>
+  <a href="storia.html">La Mia Storia</a>
+  <div class="ms-dd">
+    <a href="blog.html" class="ms-dd-trigger">Blog &#9660;</a>
+    <div class="ms-dd-panel">
+      <div class="ms-dd-col">
+        <div class="ms-dd-head"><a href="blog.html">&#127829; Nutrizione</a></div>
+        <a href="articolo-nutrizione.html">Fondamenti di nutrizione</a>
+        <a href="articolo-piramide-harvard.html">La piramide di Harvard</a>
+        <a href="articolo-carboidrati-rebound.html">Carboidrati e rebound</a>
+        <a href="articolo-aloe-tiroide-hashimoto.html">Aloe vera e tiroide</a>
+        <a href="articolo-omega3-differenze-qualita.html">Omega-3: non tutti uguali</a>
+        <a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a>
+      </div>
+      <div class="ms-dd-col">
+        <div class="ms-dd-head"><a href="blog.html">&#127947; Movimento</a></div>
+        <a href="articolo-allenamento.html">Allenamento over 40</a>
+        <a href="articolo-movimento-salute-mentale.html">Movimento e salute mentale</a>
+        <div class="ms-dd-head" style="margin-top:1rem"><a href="blog.html">&#128564; Sonno</a></div>
+        <a href="articolo-sonno.html">Sonno e recupero over 40</a>
+        <div class="ms-dd-head" style="margin-top:1rem"><a href="blog.html">&#129504; Abitudini</a></div>
+        <a href="articolo-rivincita-40.html">La rivincita dei 40</a>
+        <a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a>
+      </div>
+      <div class="ms-dd-col">
+        <div class="ms-dd-head"><a href="blog.html">&#127800; Benessere Femminile</a></div>
+        <a href="articolo-donne-ormoni-peso.html">Donne, ormoni e peso</a>
+        <a href="articolo-stanchezza-gonfiore-donne.html">Sempre stanca, sempre gonfia</a>
+        <div class="ms-dd-head" style="margin-top:1rem"><a href="blog.html">&#129704; Disturbi &amp; Benessere</a></div>
+        <a href="articolo-colon-irritabile.html">Colon irritabile</a>
+        <a href="articolo-resistenza-insulinica.html">Resistenza insulinica</a>
+        <a href="articolo-ozempic-wegovy-farmaci-dimagranti.html">Ozempic: cosa non ti dicono</a>
+      </div>
+    </div>
+  </div>
+  <a href="strumenti.html">Strumenti</a>
+  <a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="ms-nav-cta">Scopri i Prodotti</a>
+</div>
+
+<!-- HERO -->
+<section class="hero-articolo">
+  <div class="categoria-badge">&#129704; Disturbi &amp; Benessere</div>
+  <h1>Ozempic, Wegovy, Mounjaro: <em>quello che nessuno ti dice</em></h1>
+  <div class="meta-articolo">
+    <span>&#9999;&#65039; Carlo Barbieri</span>
+    <span>&#128197; Aprile 2026</span>
+    <span>&#9200; 10 min di lettura</span>
+    <span>&#127991;&#65039; GLP-1 · Semaglutide · Dimagrimento · Effetti Collaterali</span>
+  </div>
+</section>
+
+<div class="articolo-wrapper">
+  <article class="articolo-corpo">
+
+    <p>Sono ovunque. Sui social, nelle riviste, nei talk show. Elon Musk ne parla. Oprah Winfrey lo ha usato. I medici li prescrivono sempre di più. I titoli dei giornali parlano di "rivoluzione" nel trattamento dell'obesità.</p>
+
+    <p>Ozempic. Wegovy. Mounjaro. I farmaci che fanno dimagrire — e che stanno cambiando il modo in cui il mondo guarda al peso corporeo.</p>
+
+    <p>Ma c'è una parte di questa storia che non finisce sui titoli. Che le case farmaceutiche non hanno interesse a pubblicizzare. E che migliaia di persone scoprono solo dopo aver iniziato la terapia.</p>
+
+    <p>Questo articolo non è contro chi li usa. È per chiunque voglia avere <strong>un quadro completo prima di decidere</strong>.</p>
+
+    <div class="citazione">
+      <p>Funzionano. Lo dico subito, senza ambiguità. Ma "funzionano" è solo metà della storia. L'altra metà riguarda cosa succede al tuo corpo mentre li prendi — e soprattutto cosa succede quando smetti.</p>
+      <cite>— Carlo Barbieri</cite>
+    </div>
+
+    <h2 id="cosa-sono">Prima di tutto: cosa sono e come funzionano</h2>
+
+    <p>Ozempic, Wegovy e Mounjaro appartengono a una classe di farmaci chiamati <strong>agonisti del recettore GLP-1</strong> — GLP-1 è un ormone intestinale che il corpo rilascia naturalmente dopo aver mangiato per segnalare sazietà al cervello e regolare l'insulina.</p>
+
+    <p>Questi farmaci mimano questo ormone, amplificandone l'effetto. Il risultato è che la fame cala drasticamente — quello che nel gergo scientifico si chiama "spegnere il food noise" — e si mangia meno, quasi senza sforzo.</p>
+
+    <div class="farmaco-card">
+      <h3>Ozempic (semaglutide)</h3>
+      <div class="principio">Principio attivo: Semaglutide — iniezione settimanale</div>
+      <p>Nato come farmaco per il diabete di tipo 2. Approvato dall'EMA per questa indicazione. L'uso per il dimagrimento in persone senza diabete è considerato "off-label" in Italia — ma avviene largamente. Ha reso la Novo Nordisk una delle aziende più valutate al mondo.</p>
+      <span class="costo">💸 Costo: 230-300€/mese — non rimborsato SSN per obesità</span>
+    </div>
+
+    <div class="farmaco-card">
+      <h3>Wegovy (semaglutide ad alto dosaggio)</h3>
+      <div class="principio">Principio attivo: Semaglutide 2,4mg — iniezione settimanale</div>
+      <p>È Ozempic, ma a dosi più alte — specificamente sviluppato e approvato per il trattamento dell'obesità. Negli studi clinici ha mostrato perdite di peso medie del 15% in 68 settimane. Indicato per chi ha obesità o sovrappeso con comorbidità. Richiede ricetta specialistica.</p>
+      <span class="costo">💸 Costo: 280-380€/mese — non rimborsato SSN per sovrappeso senza diabete</span>
+    </div>
+
+    <div class="farmaco-card">
+      <h3>Mounjaro / Zepbound (tirzepatide)</h3>
+      <div class="principio">Principio attivo: Tirzepatide — doppio agonista GLP-1 e GIP — iniezione settimanale</div>
+      <p>Il più recente e più potente della categoria. Agisce su due recettori invece di uno — GLP-1 e GIP — producendo perdite di peso fino al 21% in 72 settimane. I risultati sono paragonabili alla chirurgia bariatrica. Ancora più costoso e meno disponibile di Ozempic e Wegovy.</p>
+      <span class="costo">💸 Costo: 350-500€/mese — fuori prontuario SSN</span>
+    </div>
+
+    <div class="box-semplice">
+      <h4>&#128161; In parole semplici</h4>
+      <p>Questi farmaci spengono chimicamente la fame. Non accelerano il metabolismo, non bruciano grasso in modo attivo. Fanno mangiare meno — e questo, nel tempo, porta a dimagrire. È una semplificazione, ma è quella corretta. Il problema è che il corpo reagisce a questa "silenziazione" della fame in modi che non sempre vengono comunicati con chiarezza.</p>
+    </div>
+
+    <h2 id="funzionano">Funzionano davvero? Sì — ma i numeri vanno letti bene</h2>
+
+    <p>La risposta è sì. Le evidenze sono solide.</p>
+
+    <div class="stat-block">
+      <div class="stat-item">
+        <div class="numero">~15%</div>
+        <div class="descrizione">di perdita di peso media con Wegovy (semaglutide) in 68 settimane — trial STEP-1</div>
+      </div>
+      <div class="stat-item">
+        <div class="numero">~21%</div>
+        <div class="descrizione">di perdita di peso media con Mounjaro (tirzepatide) alle dosi più alte — trial SURMOUNT</div>
+      </div>
+      <div class="stat-item">
+        <div class="numero">15kg</div>
+        <div class="descrizione">perdita media su una persona di 100kg con Wegovy — un risultato reale e significativo</div>
+      </div>
+    </div>
+
+    <p>Sono numeri che fanno capire perché questi farmaci abbiano creato tanto entusiasmo. E l'entusiasmo è comprensibile — per chi soffre di obesità grave, sono strumenti con un'efficacia paragonabile alla chirurgia bariatrica, ma senza l'invasività.</p>
+
+    <p>Ma ecco dove la storia si complica.</p>
+
+    <h2 id="muscolo">Il problema nascosto: non stai perdendo solo grasso</h2>
+
+    <p>Questa è la parte che quasi nessuno comunica con chiarezza — e che nella mia esperienza è la più importante da capire prima di iniziare.</p>
+
+    <p>Quando si perde peso rapidamente mangiando molto meno, il corpo non brucia solo grasso. Brucia anche <strong>massa muscolare</strong>. E con questi farmaci — che riducono drasticamente l'apporto calorico e proteico — questa perdita di muscolo può essere sostanziale.</p>
+
+    <div class="box-scienza">
+      <h4>&#128300; I dati sulla perdita muscolare (revisione sistematica 2024, meta-analisi su 1.541 soggetti con semaglutide)</h4>
+      <p>Una revisione sistematica del 2024 su 1.541 soggetti trattati con semaglutide ha rilevato che la perdita di massa magra (che include muscolo scheletrico) rappresentava tra il 25% e il 39% del peso totale perso. Il trial STEP-1 ha confermato che circa un terzo del peso perso era massa magra. In termini concreti: se perdi 15kg, tra 4 e 6 di questi potrebbero essere muscolo — non grasso. (Wilding JPH et al., NEJM 2021; revisione sistematica su GLP-1 e composizione corporea, 2024)</p>
+    </div>
+
+    <p>Perché è un problema? Perché il muscolo è il motore del tuo metabolismo. Meno muscolo significa metabolismo basale più basso — il tuo corpo brucia meno calorie anche a riposo. E questo crea le condizioni perfette per il rimbalzo di peso alla sospensione.</p>
+
+    <div class="box-semplice">
+      <h4>&#128161; In parole semplici</h4>
+      <p>Immagina di avere un motore da 1.600 cilindrate e di diventare, durante la terapia, un motore da 1.200. Il farmaco ti fa mangiare poco, quindi non te ne accorgi. Ma quando smetti il farmaco, hai ancora un motore da 1.200 — e torni a mangiare come prima. Il risultato è quasi matematico.</p>
+    </div>
+
+    <h2 id="rimbalzo">Il rimbalzo di peso: i dati che le case farmaceutiche non pubblicizzano</h2>
+
+    <p>Questo è il punto che ha sorpreso anche molti medici quando i dati a lungo termine sono emersi.</p>
+
+    <div class="box-scienza">
+      <h4>&#128300; Trial STEP-1 extension e studio Università di Cambridge (eClinicalMedicine, 2024)</h4>
+      <p>Nel trial STEP-1 extension, dopo 68 settimane di trattamento con semaglutide e sospensione successiva, i pazienti avevano recuperato il 60-70% del peso perso entro un anno. Le proiezioni statistiche dei ricercatori di Cambridge pubblicato su eClinicalMedicine indicano che nel tempo i pazienti tendono a recuperare fino al 75% del peso inizialmente perso. Il meccanismo è biologico: alla sospensione, il corpo torna ai suoi meccanismi precedenti di regolazione dell'appetito — che ora si ritrovano su un metabolismo più lento per la perdita muscolare.</p>
+    </div>
+
+    <p>Questo ha portato le principali linee guida internazionali a una conclusione scomoda ma onesta: <strong>questi farmaci vanno considerati terapie croniche</strong> — non cicli temporanei. Come la pressione alta o il diabete. Chi inizia, nella maggior parte dei casi, deve continuare indefinitamente per mantenere i risultati.</p>
+
+    <p>Il che significa: <strong>800-1.500€ al mese per tutta la vita</strong>, se non si interviene sul resto.</p>
+
+    <h2 id="effetti-collaterali">Gli effetti collaterali — quelli comuni e quelli meno discussi</h2>
+
+    <h3>Effetti gastrointestinali — i più frequenti</h3>
+    <p>Nausea, vomito, diarrea, stipsi, dolore addominale, gonfiore. Si verificano nella maggior parte dei pazienti, soprattutto nella fase iniziale di aumento del dosaggio. Per molti sono lievi e transitori. Per circa il 10-15% sono sufficientemente intensi da portare alla sospensione del farmaco.</p>
+
+    <h3>Effetti rari ma documentati</h3>
+    <p>Calcoli biliari (documentati nei trial con frequenza aumentata rispetto alla media), pancreatite acuta, insufficienza renale acuta in soggetti già predisposti. Casi rari ma segnalati alle autorità regolatorie.</p>
+
+    <h3>La "Ozempic personality" — l'effetto sull'umore</h3>
+    <p>Questo è il punto che mi ha fatto riflettere di più — e che risponde a una domanda che mi viene posta spesso da chi conosce persone che usano questi farmaci: <em>"è diventata molto nervosa — può dipendere dal farmaco?"</em></p>
+
+    <p>La risposta è: probabilmente sì, ma il meccanismo è più complesso di quanto sembri.</p>
+
+    <p>Sui social è emerso un fenomeno chiamato <strong>"Ozempic personality"</strong>: umore grigio, apatia, mancanza di entusiasmo, minor interesse per le cose che prima davano piacere. Non una vera depressione — come ha spiegato la psicologa clinica Sera Lavelle a Vox — ma <em>"una scintilla che manca"</em>.</p>
+
+    <div class="box-scienza">
+      <h4>&#128300; Il meccanismo neurologico (neuroscienza dei recettori GLP-1)</h4>
+      <p>I recettori GLP-1 sono presenti non solo nell'intestino ma anche nelle aree cerebrali che regolano il desiderio e la ricompensa — ippocampo, amigdala, nucleus accumbens. Il farmaco riduce il "wanting" (il desiderio di qualcosa) più del "liking" (il piacere che se ne trae). In altre parole, spegne la spinta a cercare gratificazioni — non solo quella del cibo. Per alcune persone questo si traduce in una riduzione generale dell'entusiasmo, della motivazione, della reattività emotiva. In chi aveva un rapporto emotivo molto forte con il cibo, può creare un vuoto che si manifesta come irritabilità o umore alterato. (Fonte: Il Post, marzo 2026; neuroscienziato Kent Berridge, distinzione wanting/liking)</p>
+    </div>
+
+    <p>D'altro canto, grandi studi mostrano che nella media della popolazione i GLP-1 riducono — non aumentano — depressione e ansia. Uno studio pubblicato su The Lancet Psychiatry su quasi 100.000 persone ha mostrato una riduzione del 44% dei ricoveri per depressione e del 38% per ansia.</p>
+
+    <p>La realtà è che <strong>l'effetto sull'umore è molto individuale</strong>. Chi ha un rapporto sano con il cibo e buona resilienza emotiva può non notare nulla. Chi invece utilizzava il cibo come valvola di sfogo emotiva può vivere un disorientamento significativo — e manifestarlo come irritabilità, nervosismo o apatia.</p>
+
+    <div class="box-semplice">
+      <h4>&#128161; In parole semplici</h4>
+      <p>Se il cibo era uno dei tuoi principali strumenti di piacere o consolazione, il farmaco spegne anche quello. Non perché sei "dipendente dal cibo" in senso negativo — ma perché il cervello è abituato a usarlo come regolatore emotivo. Toglierlo senza un'alternativa può creare un vuoto che si manifesta come umore alterato. Non è debolezza — è neurobiologia.</p>
+    </div>
+
+    <h2 id="costo">Il costo reale — quello che devi calcolare prima di iniziare</h2>
+
+    <p>Il costo mensile del farmaco è solo la punta dell'iceberg.</p>
+
+    <div class="box-verde">
+      <h4>Il conto completo che quasi nessuno fa prima di iniziare</h4>
+      <ul>
+        <li><strong>Farmaco mensile</strong> — Wegovy 280-380€, Ozempic off-label 230-300€, Mounjaro 350-500€. Non rimborsati dal SSN per sovrappeso o obesità senza diabete.</li>
+        <li><strong>Visita specialistica iniziale</strong> — necessaria per la prescrizione. 150-300€ in regime privato.</li>
+        <li><strong>Follow-up periodici</strong> — ogni 3-6 mesi. 100-200€ a visita.</li>
+        <li><strong>Esami del sangue di controllo</strong> — glicemia, funzionalità renale, lipasi pancreatica. 50-100€ periodicamente.</li>
+        <li><strong>Durata prevista</strong> — se il farmaco va considerato terapia cronica, il calcolo è semplice: 280-380€ x 12 mesi = 3.360-4.560€ l'anno. A vita.</li>
+        <li><strong>Costo del rimbalzo</strong> — se si sospende senza un piano strutturato, si recupera la maggior parte del peso. Il costo fisico, psicologico e metabolico di questo ciclo è difficile da quantificare ma reale.</li>
+      </ul>
+    </div>
+
+    <h2 id="alternativa">Esiste un'alternativa? Sì — ma richiede onestà</h2>
+
+    <p>Non voglio venderti l'idea che esiste una pillola magica naturale che fa le stesse cose di Ozempic senza effetti collaterali. Non è vero — e non sarei onesto a dirtelo.</p>
+
+    <p>Ma voglio dirti questo: i risultati che si ottengono con questi farmaci sono raggiungibili anche senza — se si sa come fare. Non in 3 mesi, forse. Ma in modo stabile, senza rimbalzo, senza perdita di muscolo, senza 400€ al mese.</p>
+
+    <p>Il percorso che funziona combina tre elementi che la scienza supporta con solidità:</p>
+
+    <div class="box-verde">
+      <h4>Le strategie con basi scientifiche reali</h4>
+      <ul>
+        <li><strong>Alimentazione proteica strutturata</strong> — le proteine saziano come nessun altro macronutriente, stabilizzano la glicemia, preservano il muscolo durante il dimagrimento e riducono naturalmente il food noise. È il modo più potente di ridurre la fame senza farmaci.</li>
+        <li><strong>Allenamento con i pesi</strong> — aumenta la massa muscolare, che è il principale "bruciagrassi" passivo del corpo. Più muscolo = metabolismo più alto = meno probabilità di rimbalzo a lungo termine.</li>
+        <li><strong>Integrazione mirata sulle carenze</strong> — molte persone hanno un food noise e una difficoltà a dimagrire legate a carenze specifiche: magnesio, zinco, vitamine del gruppo B, omega-3. Correggerle cambia la chimica del cervello in modo naturale.</li>
+        <li><strong>Supporto sulla resistenza insulinica</strong> — come abbiamo visto nell'articolo dedicato, migliorare la sensibilità insulinica riduce le voglie di zuccheri, stabilizza l'energia e facilita l'utilizzo dei grassi come fonte energetica.</li>
+        <li><strong>Costanza nel tempo</strong> — questo è il vero "farmaco" che i GLP-1 cercano di sostituire. Non c'è scorciatoia, ma con il metodo giusto i risultati arrivano — e rimangono.</li>
+      </ul>
+    </div>
+
+    <p>Se stai valutando questi farmaci — o li stai già usando — la mia proposta non è "smetti subito". È: costruiamo insieme un percorso che funzioni, con o senza il farmaco, e che non ti lasci dipendente da una spesa mensile indefinita o dal rischio di rimbalzo.</p>
+
+    <div class="box-attenzione">
+      <h4>⚠️ Questo articolo è informativo</h4>
+      <p>Non sono un medico e questo articolo non costituisce consulenza medica. Chi usa questi farmaci per indicazioni cliniche precise — diabete di tipo 2, obesità grave con comorbidità — lo fa con la supervisione di uno specialista, e questa è la strada corretta. Le informazioni qui contenute sono tratte da studi peer-reviewed e fonti scientifiche verificabili — non da opinioni personali.</p>
+    </div>
+
+    <!-- CONDIVIDI -->
+    <div class="condividi-box">
+      <h4>&#128279; Conosci qualcuno che sta valutando questi farmaci?</h4>
+      <p>Condividi — le informazioni complete fanno sempre la differenza.</p>
+      <div class="condividi-btns">
+        <a href="https://wa.me/?text=Articolo%20su%20Ozempic%20e%20Wegovy%3A%20https://www.movimentoesalute.eu/articolo-ozempic-wegovy-farmaci-dimagranti.html" target="_blank" class="share-btn share-btn-wa">&#128172; WhatsApp</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.movimentoesalute.eu/articolo-ozempic-wegovy-farmaci-dimagranti.html" target="_blank" class="share-btn share-btn-fb">Facebook</a>
+        <button class="share-btn share-btn-copy" onclick="navigator.clipboard.writeText('https://www.movimentoesalute.eu/articolo-ozempic-wegovy-farmaci-dimagranti.html'); this.textContent='&#10003; Copiato!'">&#128279; Copia link</button>
+      </div>
+    </div>
+
+    <!-- AUTORE -->
+    <div class="box-autore">
+      <img src="carlo.jpg" alt="Carlo Barbieri" class="autore-foto">
+      <div class="autore-info">
+        <h4>Carlo Barbieri</h4>
+        <p>Infermiere di sala operatoria e personal trainer qualificato. Ho visto da vicino come la promessa di soluzioni rapide si scontri con la realtà biologica — e quanto faccia la differenza avere un percorso strutturato invece di una dipendenza farmacologica indefinita.</p>
+      </div>
+    </div>
+
+    <!-- CTA FINALE -->
+    <div class="cta-articolo">
+      <h3>Vuoi dimagrire senza dipendere da un farmaco?</h3>
+      <p>Scrivimi su WhatsApp — parliamo della tua situazione specifica e costruiamo un percorso che funzioni davvero, nel tempo.</p>
+      <a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="btn-cta-light">Scopri i prodotti →</a>
+      <a href="https://wa.me/393357547386" target="_blank" class="btn-cta-wa">&#128172; Scrivimi su WhatsApp</a>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="articolo-sidebar">
+    <div class="sidebar-card">
+      <h4>In questo articolo</h4>
+      <ul class="indice">
+        <li><a href="#cosa-sono">Cosa sono e come funzionano</a></li>
+        <li><a href="#funzionano">Funzionano davvero?</a></li>
+        <li><a href="#muscolo">La perdita di muscolo</a></li>
+        <li><a href="#rimbalzo">Il rimbalzo di peso</a></li>
+        <li><a href="#effetti-collaterali">Effetti collaterali e umore</a></li>
+        <li><a href="#costo">Il costo reale</a></li>
+        <li><a href="#alternativa">L'alternativa</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h4>Un percorso alternativo</h4>
+      <p>Alimentazione proteica, integrazione mirata, allenamento progressivo. Risultati stabili, senza rimbalzo, senza 400€ al mese.</p>
+      <a href="https://wa.me/393357547386" target="_blank" class="btn-sidebar-wa">&#128172; Scrivimi su WhatsApp</a>
+    </div>
+    <div class="sidebar-card">
+      <h4>Leggi anche</h4>
+      <p>La resistenza insulinica — il meccanismo che questi farmaci aggrediscono, e come lavorarci in modo naturale.</p>
+      <a href="articolo-resistenza-insulinica.html" class="btn-sidebar">Resistenza insulinica →</a>
+    </div>
+  </aside>
+</div>
+
+<div class="social-follow">
+  <div class="social-follow-text">Contenuti nuovi ogni settimana &mdash; <span>seguimi sui social</span></div>
+  <div class="social-links">
+    <a href="https://www.instagram.com/carlo_gas_barbieri?igsh=MXNxdDdsbGtka3d1Zg%3D%3D&utm_source=qr" target="_blank" class="social-btn social-btn-ig">&#128247; Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61578385565022&mibextid=wwXIfr" target="_blank" class="social-btn social-btn-fb">&#128279; Facebook</a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Movimento &amp; Salute &middot; <a href="#">Privacy Policy</a> &middot; <a href="#">Contatti</a></p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">I contenuti di questo sito hanno scopo informativo e non sostituiscono il parere medico.</p>
+</footer>
+
+<script>
+function toggleNav() {
+  var panel = document.getElementById('msPanel');
+  var btn   = document.getElementById('msBtn');
+  var ov    = document.getElementById('msOverlay');
+  var open  = !panel.classList.contains('open');
+  panel.classList.toggle('open', open);
+  btn.classList.toggle('open', open);
+  ov.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function toggleAcc(btn) {
+  btn.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
