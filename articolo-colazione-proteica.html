@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La colazione che stai facendo ti sta sabotando | Movimento e Salute</title>
+  <meta name="description" content="Cappuccino e brioche ogni mattina? Stai avviando un picco glicemico che ti darà fame alle 10, ti farà cercare dolci e ti porterà ad accumulare grasso. La scienza spiega cosa mangiare davvero a colazione.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.movimentoesalute.eu/articolo-colazione-proteica.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:title" content="La colazione che stai facendo ti sta sabotando">
+  <meta property="og:description" content="Cappuccino e brioche ogni mattina? Stai avviando un picco glicemico che ti darà fame alle 10. La scienza spiega cosa cambia con una colazione proteica — e cosa uso io ogni mattina.">
+  <meta property="og:image" content="https://www.movimentoesalute.eu/articolo-colazione-proteica.jpg">
+  <meta property="og:url" content="https://www.movimentoesalute.eu/articolo-colazione-proteica.html">
+  <meta property="og:type" content="article">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --verde:#2D6A4F; --verde-chiaro:#52B788; --verde-pallido:#D8F3DC; --arancio:#E07A00; --arancio-pallido:#FEF3C7; --oro:#D97706; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; background:#FAF7F2; }
+    body { font-family:'DM Sans',sans-serif; background:#FAF7F2!important; color:#1A1A1A; overflow-x:hidden; line-height:1.8; }
+    /* NAV */
+    .ms-nav { position:fixed; top:0; left:0; right:0; z-index:9000; display:flex; justify-content:space-between; align-items:center; padding:1rem 5%; background:rgba(250,247,242,0.97); backdrop-filter:blur(12px); border-bottom:1px solid rgba(45,106,79,0.1); font-family:'DM Sans',sans-serif; }
+    .ms-logo { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:#2D6A4F; text-decoration:none; }
+    .ms-logo span { color:#E07A00; }
+    .ms-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:6px; z-index:9100; }
+    .ms-hamburger span { display:block; width:24px; height:2px; background:#2D6A4F; border-radius:2px; transition:all 0.3s; }
+    .ms-hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+    .ms-hamburger.open span:nth-child(2) { opacity:0; }
+    .ms-hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+    .ms-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:8800; }
+    .ms-overlay.open { display:block; }
+    .ms-panel { display:none; position:fixed; top:0; right:0; bottom:0; width:min(320px,88vw); background:#fff; z-index:9100; overflow-y:auto; -webkit-overflow-scrolling:touch; flex-direction:column; box-shadow:-4px 0 24px rgba(0,0,0,0.18); }
+    .ms-panel.open { display:flex; }
+    .ms-panel-header { display:flex; justify-content:space-between; align-items:center; padding:1.1rem 1.2rem; border-bottom:2px solid #f0f0f0; position:sticky; top:0; background:white; z-index:1; flex-shrink:0; }
+    .ms-panel-logo { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#2D6A4F; }
+    .ms-panel-logo span { color:#E07A00; }
+    .ms-close { background:none; border:none; font-size:1.3rem; color:#555; cursor:pointer; padding:4px 8px; }
+    .ms-panel-list { list-style:none; margin:0; padding:0; flex:1; }
+    .ms-panel-list > li { border-bottom:1px solid #f0f0f0; }
+    .ms-panel-list > li > a { display:block; padding:1rem 1.2rem; font-size:1rem; font-weight:600; color:#1A1A1A; text-decoration:none; }
+    .ms-acc-btn { width:100%; text-align:left; background:none; border:none; padding:1rem 1.2rem; font-size:1rem; font-weight:600; color:#1A1A1A; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-family:'DM Sans',sans-serif; }
+    .ms-acc-btn.ms-acc-cat { padding:0.85rem 1.2rem 0.85rem 1.8rem; font-size:0.95rem; color:#2D6A4F; background:#F8F8F8; }
+    .ms-acc-arrow { font-size:0.7rem; transition:transform 0.25s; flex-shrink:0; margin-left:6px; }
+    .ms-acc.open > .ms-acc-btn .ms-acc-arrow { transform:rotate(180deg); }
+    .ms-acc-sub { list-style:none; margin:0; padding:0; display:none; background:#F8F8F8; }
+    .ms-acc.open > .ms-acc-sub { display:block; }
+    .ms-acc-sub > li { border-top:1px solid #ebebeb; }
+    .ms-acc-sub > li > a { display:block; padding:0.75rem 1.2rem 0.75rem 2.2rem; font-size:0.9rem; font-weight:400; color:#333; text-decoration:none; line-height:1.4; }
+    .ms-panel-cta { display:block; margin:1rem 1.2rem 1.5rem; padding:0.9rem; background:#E07A00; color:white; border-radius:50px; text-align:center; font-weight:600; font-size:0.95rem; text-decoration:none; }
+    .ms-desktop-menu { display:none; align-items:center; gap:0.3rem; }
+    .ms-desktop-menu > a { padding:0.5rem 0.9rem; border-radius:8px; text-decoration:none; color:#444; font-size:0.88rem; font-weight:500; transition:background 0.2s; white-space:nowrap; font-family:'DM Sans',sans-serif; }
+    .ms-desktop-menu > a:hover { background:#f0f0f0; color:#2D6A4F; }
+    .ms-nav-cta { background:#E07A00!important; color:white!important; padding:0.55rem 1.2rem!important; border-radius:50px!important; }
+    .ms-dd { position:relative; }
+    .ms-dd-trigger { padding:0.5rem 0.9rem; border-radius:8px; text-decoration:none; color:#444; font-size:0.88rem; font-weight:500; cursor:pointer; white-space:nowrap; font-family:'DM Sans',sans-serif; display:block; }
+    .ms-dd-trigger:hover { background:#f0f0f0; color:#2D6A4F; }
+    .ms-dd-panel { display:none; position:absolute; top:calc(100% + 8px); left:50%; transform:translateX(-50%); background:white; border-radius:16px; box-shadow:0 12px 40px rgba(0,0,0,0.14); padding:1.2rem; min-width:600px; border:1px solid rgba(0,0,0,0.06); z-index:9200; flex-direction:row; gap:1.5rem; }
+    .ms-dd:hover .ms-dd-panel, .ms-dd-panel:hover { display:flex; }
+    .ms-dd-col { display:flex; flex-direction:column; gap:0.1rem; flex:1; }
+    .ms-dd-head { margin-bottom:0.3rem; }
+    .ms-dd-head a { font-size:0.82rem; font-weight:700; color:#2D6A4F; text-decoration:none; text-transform:uppercase; letter-spacing:0.5px; }
+    .ms-dd-col > a { font-size:0.85rem; color:#333; text-decoration:none; padding:0.35rem 0.5rem; border-radius:6px; transition:background 0.15s; font-family:'DM Sans',sans-serif; }
+    .ms-dd-col > a:hover { background:#f5f5f5; color:#2D6A4F; }
+    @media (min-width:901px) { .ms-hamburger{display:none!important;} .ms-panel{display:none!important;} .ms-overlay{display:none!important;} .ms-desktop-menu{display:flex;} }
+    @media (max-width:900px) { .ms-hamburger{display:flex;} .ms-desktop-menu{display:none!important;} }
+    /* ARTICOLO */
+    .hero-articolo { background:linear-gradient(135deg,#431407,#9A3412,#EA580C); padding:10rem 5% 5rem; position:relative; overflow:hidden; }
+    .hero-articolo::before { content:''; position:absolute; top:20%; right:10%; width:300px; height:300px; background:radial-gradient(circle,rgba(251,191,36,0.15) 0%,transparent 70%); border-radius:50%; }
+    .categoria-badge { display:inline-block; background:rgba(255,255,255,0.1); color:#FED7AA; font-size:0.75rem; font-weight:500; letter-spacing:2px; text-transform:uppercase; padding:0.4rem 1rem; border-radius:50px; margin-bottom:1.5rem; }
+    .hero-articolo h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.5rem); font-weight:900; color:white; line-height:1.15; max-width:800px; margin-bottom:1.5rem; }
+    .hero-articolo h1 em { font-style:italic; color:#FED7AA; }
+    .meta-articolo { display:flex; gap:2rem; align-items:center; flex-wrap:wrap; color:rgba(255,255,255,0.55); font-size:0.85rem; }
+    .articolo-wrapper { display:grid; grid-template-columns:1fr 300px; gap:4rem; max-width:1100px; margin:0 auto; padding:5rem 5%; }
+    .articolo-corpo h2 { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,2.5vw,2rem); font-weight:900; color:#1A1A1A; line-height:1.2; margin:3rem 0 1.2rem; padding-top:1rem; border-top:2px solid var(--arancio-pallido); }
+    .articolo-corpo h3 { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--oro); margin:2rem 0 0.8rem; }
+    .articolo-corpo p { font-size:1.05rem; color:#444; line-height:1.85; margin-bottom:1.4rem; }
+    .articolo-corpo strong { color:#1A1A1A; font-weight:600; }
+    .citazione { border-left:4px solid var(--arancio); padding:1.5rem 2rem; margin:2.5rem 0; background:white; border-radius:0 16px 16px 0; box-shadow:0 4px 20px rgba(0,0,0,0.05); }
+    .citazione p { font-family:'Playfair Display',serif; font-size:1.15rem; font-style:italic; color:#1A1A1A!important; line-height:1.6; margin:0!important; }
+    .citazione cite { display:block; margin-top:0.8rem; font-size:0.82rem; color:var(--arancio); font-style:normal; font-weight:500; }
+    .box-scienza { background:#431407; border-radius:16px; padding:2rem; margin:2rem 0; }
+    .box-scienza h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#FED7AA; margin-bottom:1rem; }
+    .box-scienza p { font-size:0.92rem; color:rgba(255,255,255,0.78); line-height:1.7; margin:0!important; }
+    .box-semplice { background:var(--arancio-pallido); border-radius:16px; padding:2rem; margin:2rem 0; }
+    .box-semplice h4 { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; color:var(--oro); margin-bottom:0.8rem; }
+    .box-semplice p { font-size:0.95rem; color:#451a03; line-height:1.7; margin:0!important; }
+    .box-verde { background:var(--verde-pallido); border-radius:16px; padding:2rem; margin:2rem 0; }
+    .box-verde h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:var(--verde); margin-bottom:1rem; }
+    .box-verde ul { list-style:none; }
+    .box-verde ul li { padding:0.6rem 0; font-size:0.95rem; color:#333; display:flex; align-items:flex-start; gap:0.8rem; line-height:1.6; border-bottom:1px solid rgba(45,106,79,0.1); }
+    .box-verde ul li:last-child { border-bottom:none; }
+    .box-verde ul li::before { content:'✓'; color:var(--verde); font-weight:700; flex-shrink:0; margin-top:2px; }
+    .confronto { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:2rem 0; }
+    .confronto-col { border-radius:16px; padding:1.8rem; }
+    .confronto-col.negativo { background:#FEE2E2; border:2px solid #FECACA; }
+    .confronto-col.positivo { background:var(--verde-pallido); border:2px solid #A7F3D0; }
+    .confronto-col h4 { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; margin-bottom:1rem; }
+    .confronto-col.negativo h4 { color:#B91C1C; }
+    .confronto-col.positivo h4 { color:var(--verde); }
+    .confronto-col ul { list-style:none; }
+    .confronto-col ul li { padding:0.4rem 0; font-size:0.9rem; color:#333; display:flex; gap:0.6rem; align-items:flex-start; line-height:1.5; }
+    .confronto-col.negativo ul li::before { content:'✗'; color:#B91C1C; font-weight:700; flex-shrink:0; }
+    .confronto-col.positivo ul li::before { content:'✓'; color:var(--verde); font-weight:700; flex-shrink:0; }
+    .ciclo-box { background:white; border:2px solid var(--arancio-pallido); border-radius:16px; padding:2rem; margin:2rem 0; text-align:center; }
+    .ciclo-box .titolo { font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--arancio); font-weight:600; margin-bottom:1.5rem; }
+    .ciclo-step { display:inline-block; background:linear-gradient(135deg,#9A3412,#EA580C); color:white; padding:0.5rem 1rem; border-radius:8px; font-size:0.85rem; margin:3px; }
+    .ciclo-freccia { color:var(--arancio); font-size:1.2rem; margin:3px; }
+    .stat-block { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin:2rem 0; }
+    .stat-item { background:white; border:1px solid var(--arancio-pallido); border-radius:14px; padding:1.5rem 1rem; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+    .stat-item .numero { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:900; color:var(--arancio); line-height:1; }
+    .stat-item .descrizione { font-size:0.8rem; color:#666; margin-top:0.5rem; line-height:1.4; }
+    .box-mia-colazione { background:linear-gradient(135deg,#14532D,#2D6A4F); border-radius:20px; padding:2.5rem; margin:2rem 0; }
+    .box-mia-colazione h3 { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:900; color:white; margin-bottom:0.5rem; }
+    .box-mia-colazione .sottotitolo { color:#86EFAC; font-size:0.9rem; margin-bottom:1.5rem; }
+    .colazione-ingredienti { list-style:none; margin:0 0 1.5rem; padding:0; }
+    .colazione-ingredienti li { display:flex; align-items:flex-start; gap:0.8rem; padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.85); font-size:0.95rem; line-height:1.5; }
+    .colazione-ingredienti li:last-child { border-bottom:none; }
+    .colazione-ingredienti li span { color:#86EFAC; font-weight:700; flex-shrink:0; font-size:1.1rem; }
+    .colazione-ingredienti li strong { color:#86EFAC; }
+    .colazione-perche { background:rgba(255,255,255,0.08); border-radius:12px; padding:1.2rem 1.5rem; }
+    .colazione-perche p { color:rgba(255,255,255,0.75); font-size:0.88rem; line-height:1.7; margin:0!important; }
+    .articolo-sidebar { position:sticky; top:100px; height:fit-content; }
+    .sidebar-card { background:white; border-radius:20px; padding:2rem; margin-bottom:1.5rem; box-shadow:0 4px 20px rgba(0,0,0,0.06); border:1px solid rgba(224,122,0,0.1); }
+    .sidebar-card h4 { font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; margin-bottom:1rem; }
+    .sidebar-card p { font-size:0.88rem; color:#444; line-height:1.6; margin-bottom:1rem; }
+    .btn-sidebar { display:block; background:var(--verde); color:white; padding:0.8rem 1.2rem; border-radius:50px; text-decoration:none; font-size:0.88rem; font-weight:500; text-align:center; margin-bottom:0.8rem; transition:opacity 0.2s; }
+    .btn-sidebar:hover { opacity:0.88; }
+    .btn-sidebar-wa { display:block; background:#25D366; color:white; padding:0.8rem 1.2rem; border-radius:50px; text-decoration:none; font-size:0.88rem; font-weight:500; text-align:center; }
+    .indice { list-style:none; }
+    .indice li { padding:0.4rem 0; border-bottom:1px solid rgba(0,0,0,0.06); }
+    .indice li:last-child { border-bottom:none; }
+    .indice a { color:var(--arancio); text-decoration:none; font-size:0.88rem; }
+    .indice a:hover { text-decoration:underline; }
+    .box-autore { background:white; border-radius:20px; padding:2.5rem; margin:4rem 0 2rem; display:flex; gap:2rem; align-items:center; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+    .autore-foto { width:80px; height:80px; border-radius:50%; object-fit:cover; object-position:top; flex-shrink:0; border:3px solid var(--arancio-pallido); }
+    .autore-info h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; margin-bottom:0.3rem; }
+    .autore-info p { font-size:0.88rem; color:#444; line-height:1.5; }
+    .cta-articolo { background:linear-gradient(135deg,#431407,#9A3412); border-radius:24px; padding:3rem; text-align:center; margin:2rem 0 4rem; }
+    .cta-articolo h3 { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:900; color:white; margin-bottom:1rem; }
+    .cta-articolo p { color:rgba(255,255,255,0.7); font-size:0.95rem; margin-bottom:1.5rem; }
+    .btn-cta-light { background:white; color:#9A3412; padding:0.9rem 2rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:0.95rem; display:inline-block; margin:0.4rem; }
+    .btn-cta-wa { background:#25D366; color:white; padding:0.9rem 2rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:0.95rem; display:inline-block; margin:0.4rem; }
+    .condividi-box { background:white; border-radius:20px; padding:2rem 2.5rem; margin:2rem 0; box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+    .condividi-box h4 { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; margin-bottom:1rem; }
+    .condividi-box p { font-size:0.88rem; color:#555; margin-bottom:1.2rem; }
+    .condividi-btns { display:flex; gap:0.8rem; flex-wrap:wrap; }
+    .share-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.3rem; border-radius:50px; text-decoration:none; font-size:0.85rem; font-weight:500; transition:transform 0.2s; font-family:'DM Sans',sans-serif; }
+    .share-btn:hover { transform:translateY(-2px); }
+    .share-btn-wa { background:#25D366; color:white; }
+    .share-btn-fb { background:#1877F2; color:white; }
+    .share-btn-copy { background:#f0f0f0; color:#333; cursor:pointer; border:none; }
+    .social-follow { background:#1A1A1A; padding:2.5rem 5%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; }
+    .social-follow-text { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:white; }
+    .social-follow-text span { color:#52B788; font-style:italic; }
+    .social-links { display:flex; gap:1rem; }
+    .social-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.3rem; border-radius:50px; text-decoration:none; font-size:0.85rem; font-weight:500; font-family:'DM Sans',sans-serif; }
+    .social-btn-ig { background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045); color:white; }
+    .social-btn-fb { background:#1877F2; color:white; }
+    footer { background:#1A1A1A; color:rgba(255,255,255,0.5); text-align:center; padding:2rem 5%; font-size:0.82rem; }
+    footer a { color:var(--verde-chiaro); text-decoration:none; }
+    @media (max-width:900px) {
+      .articolo-wrapper { grid-template-columns:1fr; }
+      .articolo-sidebar { position:static; }
+      .box-autore { flex-direction:column; text-align:center; }
+      .stat-block { grid-template-columns:1fr; }
+      .confronto { grid-template-columns:1fr; }
+      .ciclo-step { display:block; margin:4px auto; max-width:220px; }
+      .ciclo-freccia { display:block; transform:rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="ms-nav">
+  <a href="index.html" class="ms-logo">movimento<span>&</span>salute</a>
+  <button class="ms-hamburger" id="msBtn" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="ms-panel" id="msPanel">
+  <div class="ms-panel-header">
+    <span class="ms-panel-logo">movimento<span>&</span>salute</span>
+    <button onclick="toggleNav()" class="ms-close">&#10005;</button>
+  </div>
+  <ul class="ms-panel-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="storia.html">La Mia Storia</a></li>
+    <li class="ms-acc">
+      <button class="ms-acc-btn" onclick="toggleAcc(this)">Blog <span class="ms-acc-arrow">&#9660;</span></button>
+      <ul class="ms-acc-sub">
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#127829; Nutrizione <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-nutrizione.html">Fondamenti di nutrizione</a></li>
+            <li><a href="articolo-piramide-harvard.html">La piramide di Harvard</a></li>
+            <li><a href="articolo-carboidrati-rebound.html">Carboidrati e rebound</a></li>
+            <li><a href="articolo-aloe-tiroide-hashimoto.html">Aloe vera e tiroide</a></li>
+            <li><a href="articolo-omega3-differenze-qualita.html">Omega-3: non tutti uguali</a></li>
+            <li><a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a></li>
+            <li><a href="articolo-colazione-proteica.html">La colazione che ti sta sabotando</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#127947; Movimento <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-allenamento.html">Allenamento over 40</a></li>
+            <li><a href="articolo-movimento-salute-mentale.html">Movimento e salute mentale</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#128564; Sonno <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-sonno.html">Sonno e recupero over 40</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#129504; Abitudini <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-rivincita-40.html">La rivincita dei 40</a></li>
+            <li><a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#127800; Benessere Femminile <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-donne-ormoni-peso.html">Donne, ormoni e peso</a></li>
+            <li><a href="articolo-stanchezza-gonfiore-donne.html">Sempre stanca, sempre gonfia</a></li>
+          </ul>
+        </li>
+        <li class="ms-acc">
+          <button class="ms-acc-btn ms-acc-cat" onclick="toggleAcc(this)">&#129704; Disturbi &amp; Benessere <span class="ms-acc-arrow">&#9654;</span></button>
+          <ul class="ms-acc-sub">
+            <li><a href="articolo-colon-irritabile.html">Colon irritabile</a></li>
+            <li><a href="articolo-resistenza-insulinica.html">Resistenza insulinica</a></li>
+            <li><a href="articolo-ozempic-wegovy-farmaci-dimagranti.html">Ozempic: cosa non ti dicono</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="strumenti.html">Strumenti</a></li>
+    <li><a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="ms-panel-cta">Scopri i Prodotti</a></li>
+  </ul>
+</div>
+<div class="ms-overlay" id="msOverlay" onclick="toggleNav()"></div>
+<div class="ms-desktop-menu">
+  <a href="index.html">Home</a>
+  <a href="storia.html">La Mia Storia</a>
+  <div class="ms-dd">
+    <a href="blog.html" class="ms-dd-trigger">Blog &#9660;</a>
+    <div class="ms-dd-panel">
+      <div class="ms-dd-col">
+        <div class="ms-dd-head"><a href="blog.html">&#127829; Nutrizione</a></div>
+        <a href="articolo-nutrizione.html">Fondamenti di nutrizione</a>
+        <a href="articolo-piramide-harvard.html">La piramide di Harvard</a>
+        <a href="articolo-carboidrati-rebound.html">Carboidrati e rebound</a>
+        <a href="articolo-aloe-tiroide-hashimoto.html">Aloe vera e tiroide</a>
+        <a href="articolo-omega3-differenze-qualita.html">Omega-3: non tutti uguali</a>
+        <a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a>
+        <a href="articolo-colazione-proteica.html">La colazione che ti sabota</a>
+      </div>
+      <div class="ms-dd-col">
+        <div class="ms-dd-head"><a href="blog.html">&#127947; Movimento</a></div>
+        <a href="articolo-allenamento.html">Allenamento over 40</a>
+        <a href="articolo-movimento-salute-mentale.html">Movimento e salute mentale</a>
+        <div class="ms-dd-head" style="margin-top:1rem"><a href="blog.html">&#128564; Sonno</a></div>
+        <a href="articolo-sonno.html">Sonno e recupero over 40</a>
+        <div class="ms-dd-head" style="margin-top:1rem"><a href="blog.html">&#129504; Abitudini</a></div>
+        <a href="articolo-rivincita-40.html">La rivincita dei 40</a>
+        <a href="articolo-food-noise-fame-nervosa.html">Food Noise e fame nervosa</a>
+      </div>
+      <div class="ms-dd-col">
+        <div class="ms-dd-head"><a href="blog.html">&#127800; Benessere Femminile</a></div>
+        <a href="articolo-donne-ormoni-peso.html">Donne, ormoni e peso</a>
+        <a href="articolo-stanchezza-gonfiore-donne.html">Sempre stanca, sempre gonfia</a>
+        <div class="ms-dd-head" style="margin-top:1rem"><a href="blog.html">&#129704; Disturbi &amp; Benessere</a></div>
+        <a href="articolo-colon-irritabile.html">Colon irritabile</a>
+        <a href="articolo-resistenza-insulinica.html">Resistenza insulinica</a>
+        <a href="articolo-ozempic-wegovy-farmaci-dimagranti.html">Ozempic: cosa non ti dicono</a>
+      </div>
+    </div>
+  </div>
+  <a href="strumenti.html">Strumenti</a>
+  <a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="ms-nav-cta">Scopri i Prodotti</a>
+</div>
+
+<!-- HERO -->
+<section class="hero-articolo">
+  <div class="categoria-badge">&#127829; Nutrizione</div>
+  <h1>La colazione che stai facendo <em>ti sta sabotando</em></h1>
+  <div class="meta-articolo">
+    <span>&#9999;&#65039; Carlo Barbieri</span>
+    <span>&#128197; Aprile 2026</span>
+    <span>&#9200; 8 min di lettura</span>
+    <span>&#127991;&#65039; Colazione · Glicemia · Proteine · Metabolismo</span>
+  </div>
+</section>
+
+<div class="articolo-wrapper">
+  <article class="articolo-corpo">
+
+    <p>Cappuccino e brioche. O magari biscotti e succo di frutta. Forse solo un caffè — perché tanto non hai fame la mattina.</p>
+
+    <p>Tre modi diversi di iniziare la giornata. Stesso risultato: energia che dura un'ora, fame che torna presto, voglia di dolci nel pomeriggio.</p>
+
+    <p>Non è colpa tua. È quello che hai mangiato — o non mangiato — a colazione.</p>
+
+    <div class="citazione">
+      <p>Per anni ho fatto colazione come tutti: veloce, dolce, al bar. Pensavo che mangiare poco al mattino fosse una cosa virtuosa. Ho capito tardi che stavo rovinando la mia giornata prima ancora di iniziarla.</p>
+      <cite>— Carlo Barbieri</cite>
+    </div>
+
+    <h2 id="cappuccino">Cosa fa davvero il cappuccino e la brioche al tuo corpo</h2>
+
+    <p>Una brioche normale contiene tra 30 e 45 grammi di zuccheri. Il cappuccino ne aggiunge altri 8-10. In totale: 40-55 grammi di zuccheri semplici in 5 minuti, a stomaco vuoto, dopo 8 ore senza mangiare.</p>
+
+    <p>Il corpo non sa cosa farsene di tanti zuccheri tutti insieme. Li trasforma in glucosio, la glicemia sale velocemente, il pancreas risponde producendo insulina per abbassarla. Se il picco è stato alto, la risposta insulinica tende ad essere eccessiva — e la glicemia scende sotto il normale.</p>
+
+    <p>È quel momento, circa 90 minuti dopo colazione, in cui ti senti stanco e vuoi qualcosa di dolce.</p>
+
+    <div class="ciclo-box">
+      <div class="titolo">Il ciclo glicemico della colazione italiana classica</div>
+      <span class="ciclo-step">Colazione dolce</span>
+      <span class="ciclo-freccia">→</span>
+      <span class="ciclo-step">Picco glicemico rapido</span>
+      <span class="ciclo-freccia">→</span>
+      <span class="ciclo-step">Picco insulinico</span>
+      <span class="ciclo-freccia">→</span>
+      <span class="ciclo-step">Crollo glicemico (10:00)</span>
+      <span class="ciclo-freccia">→</span>
+      <span class="ciclo-step">Fame + stanchezza</span>
+      <span class="ciclo-freccia">→</span>
+      <span class="ciclo-step">Snack dolce</span>
+      <span class="ciclo-freccia">→</span>
+      <span class="ciclo-step">Nuovo picco</span>
+    </div>
+
+    <div class="box-scienza">
+      <h4>&#128300; Come funziona (Journal of Nutrition, revisione sistematica)</h4>
+      <p>Gli zuccheri semplici entrano nel sangue in pochi minuti. La glicemia sale. Il pancreas produce insulina per abbassarla. Se il picco è stato rapido e alto, l'insulina tende a esagerare — e la glicemia scende sotto i livelli normali. Risultato: stanchezza, difficoltà di concentrazione, fame intensa. Una colazione ricca di proteine evita questo meccanismo: stabilizza la glicemia e mantiene la sazietà per ore.</p>
+    </div>
+
+    <div class="box-semplice">
+      <h4>&#128161; In parole ancora più semplici</h4>
+      <p>La brioche non ti dà energia — ti dà un'illusione di energia. Sale in 20 minuti, poi crolla. E quando crolla, il tuo corpo chiede ancora zucchero. Quella voglia di merendina alle 10? Non è debolezza. È la colazione di tre ore prima che ti ha portato lì.</p>
+    </div>
+
+    <h2 id="non-fare">E se non faccio colazione?</h2>
+
+    <p>Saltare la colazione non è automaticamente sbagliato. Il metabolismo non crolla. Il corpo brucia i grassi durante il digiuno — e questo non è un problema.</p>
+
+    <p>Il vero problema è comportamentale: chi salta la colazione arriva a pranzo con troppa fame, sceglie peggio e mangia di più. Spesso recupera con zuccheri veloci a metà mattina — vanificando l'effetto del digiuno.</p>
+
+    <div class="box-scienza">
+      <h4>&#128300; I dati (Journal of Clinical Endocrinology & Metabolism)</h4>
+      <p>Lo stesso pasto fa bruciare 2,5 volte più calorie se consumato a colazione rispetto a cena. La sensibilità all'insulina è al massimo nelle prime ore del mattino. Chi salta la colazione tende a consumare in media 260 kcal extra nel corso della giornata — non perché mangi meno a pranzo, ma perché arriva ai pasti successivi con più fame e sceglie peggio.</p>
+    </div>
+
+    <div class="box-semplice">
+      <h4>&#128161; In parole semplici</h4>
+      <p>Non fare colazione è come partire per un lungo viaggio con il serbatoio vuoto pensando di risparmiare. Funziona per un po'. Poi ti fermi alla prima stazione e fai un pieno disordinato. Il corpo fa esattamente la stessa cosa.</p>
+    </div>
+
+    <h2 id="differenza">La differenza concreta: colazione dolce vs colazione proteica</h2>
+
+    <div class="confronto">
+      <div class="confronto-col negativo">
+        <h4>🥐 Cappuccino + brioche</h4>
+        <ul>
+          <li>Picco glicemico in 20-30 minuti</li>
+          <li>Risposta insulinica elevata</li>
+          <li>Sazietà: 60-90 minuti</li>
+          <li>Crollo energetico alle 10:00</li>
+          <li>Fame intensa a metà mattina</li>
+          <li>Voglia di dolci nel pomeriggio</li>
+          <li>Apporto proteico: quasi zero</li>
+          <li>Vitamine e minerali: scarsi</li>
+        </ul>
+      </div>
+      <div class="confronto-col positivo">
+        <h4>💪 Colazione proteica bilanciata</h4>
+        <ul>
+          <li>Glicemia stabile per ore</li>
+          <li>Risposta insulinica contenuta</li>
+          <li>Sazietà: 3-4 ore</li>
+          <li>Energia costante fino a pranzo</li>
+          <li>Nessun crollo a metà mattina</li>
+          <li>Meno food noise nel pomeriggio</li>
+          <li>Apporto proteico: 15-25g</li>
+          <li>Vitamine e minerali: completi</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stat-block">
+      <div class="stat-item">
+        <div class="numero">30%</div>
+        <div class="descrizione">di riduzione del picco glicemico post-prandiale con colazione proteica vs dolce (studio 2026)</div>
+      </div>
+      <div class="stat-item">
+        <div class="numero">2,5x</div>
+        <div class="descrizione">l'effetto termico del cibo è 2,5 volte superiore a colazione rispetto a cena — stesso pasto, più calorie bruciate</div>
+      </div>
+      <div class="stat-item">
+        <div class="numero">3-4h</div>
+        <div class="descrizione">di sazietà garantita da una colazione proteica con fibre — contro i 60-90 minuti di quella dolce</div>
+      </div>
+    </div>
+
+    <h2 id="come-deve-essere">Cosa deve avere una colazione che funziona</h2>
+
+    <p>Non serve essere nutrizionisti. Bastano quattro cose:</p>
+
+    <div class="box-verde">
+      <h4>Le quattro cose che non devono mancare</h4>
+      <ul>
+        <li><strong>Proteine — almeno 15-20g</strong> — sono quelle che ti tengono sazio davvero. Abbassano l'ormone della fame, stabilizzano la glicemia e richiedono più energia per essere digerite. Il cambiamento più importante che puoi fare a colazione.</li>
+        <li><strong>Fibre</strong> — da frutta intera, avena o verdura. Rallentano l'assorbimento degli zuccheri e tengono a bada la fame. La frutta intera è diversa dal succo: la fibra è quello che conta.</li>
+        <li><strong>Un po' di grassi buoni</strong> — frutta secca, semi, un filo d'olio. Rallentano la digestione e stabilizzano ulteriormente la glicemia. Non servono grandi quantità.</li>
+        <li><strong>Vitamine e minerali</strong> — zinco, magnesio, vitamine del gruppo B. Il corpo li usa per produrre energia e neurotrasmettitori. Una colazione calorica ma povera di questi nutrienti ti lascia stanco anche se hai mangiato.</li>
+      </ul>
+    </div>
+
+    <p>Se hai tempo, uova con pane integrale, yogurt greco con frutta di bosco e noci, avena con proteine in polvere — funzionano tutti. Se invece hai fretta — e la maggior parte di noi ce l'ha — c'è una soluzione più rapida.</p>
+
+    <h2 id="mia-colazione">La mia colazione — come la faccio davvero</h2>
+
+    <p>È composta da due cose separate. Una tazza calda e uno shaker. Si preparano in due minuti in totale.</p>
+
+    <div class="box-mia-colazione">
+      <h3>&#127963; La colazione completa — due gesti, due minuti</h3>
+      <p class="sottotitolo">220 kcal · 30g di proteine · 25 vitamine e minerali · zuccheri quasi zero</p>
+      <ul class="colazione-ingredienti">
+        <li><span>🫖</span><div>
+          <strong>La tazza calda — infuso + aloe vera</strong><br>
+          Mezzo cucchiaino di infuso a base di erbe (tè orange pekoe, tè verde, malva, ibisco, cardamomo, aroma di lampone) sciolto in una tazza di acqua calda. Poi 30ml di aloe vera da bere aggiunti dentro. Questo sostituisce il caffè del mattino — ha caffeina naturale dal tè verde (85mg per razione), scalda, prepara lo stomaco e l'aloe protegge la mucosa intestinale dall'interno. Chi non vuole rinunciare a qualcosa di caldo al mattino, qui lo trova. Senza zuccheri, senza calorie significative.
+        </div></li>
+        <li><span>🥤</span><div>
+          <strong>Lo shaker — Protein Drink Mix + Formula 1 in acqua</strong><br>
+          I due prodotti si mescolano insieme in 300-400ml di acqua fredda. Non latte, non bevanda di soia — acqua. Il latte modifica i valori nutrizionali e appesantisce inutilmente. In acqua è leggero, si digerisce in fretta e i numeri restano esatti: circa 220 kcal totali, 30g di proteine, fibre di avena, antiossidanti da mirtillo e melograno, 25 vitamine e minerali, zuccheri quasi zero.
+        </div></li>
+        <li><span>1️⃣</span><div>
+          <strong>Protein Drink Mix</strong> — 15g di proteine, 108 kcal, 0,3g di zuccheri per porzione. 22 vitamine e minerali. La base proteica che spegne la grelina (l'ormone della fame) per ore.
+        </div></li>
+        <li><span>2️⃣</span><div>
+          <strong>Formula 1</strong> — fibre di avena, mirtillo, papaya e melograno in polvere, altri 16-18g di proteine, 25 vitamine e minerali. Senza glutine, vegan. Disponibile in molti gusti — il mio preferito è fragola e anguria, il più scelto è vaniglia crème.
+        </div></li>
+      </ul>
+      <div class="colazione-perche">
+        <p><strong style="color:#86EFAC;">Il risultato:</strong> hai la tua bevanda calda del mattino (l'infuso con l'aloe), hai il tuo pasto completo (lo shaker), hai 30g di proteine, hai le vitamine e i minerali, hai le fibre. Glicemia stabile fino a pranzo. Fame che non torna prima delle 13. In due minuti, senza sporcare quasi nulla.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin:1.5rem 0 2.5rem;">
+      <a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" style="display:inline-block; background:linear-gradient(135deg,#14532D,#2D6A4F); color:white; padding:1rem 2.5rem; border-radius:50px; text-decoration:none; font-weight:700; font-size:1rem; font-family:'DM Sans',sans-serif; box-shadow:0 4px 20px rgba(45,106,79,0.35);">
+        &#127963; Trova i prodotti nel negozio →
+      </a>
+    </div>
+
+    <!-- CONDIVIDI -->
+    <div class="condividi-box">
+      <h4>&#128279; Conosci qualcuno che fa ancora cappuccino e brioche ogni mattina?</h4>
+      <p>Condividi — potrebbe essere l'articolo che cambia una piccola abitudine con grandi effetti.</p>
+      <div class="condividi-btns">
+        <a href="https://wa.me/?text=Articolo%20sulla%20colazione%20proteica%3A%20https://www.movimentoesalute.eu/articolo-colazione-proteica.html" target="_blank" class="share-btn share-btn-wa">&#128172; WhatsApp</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.movimentoesalute.eu/articolo-colazione-proteica.html" target="_blank" class="share-btn share-btn-fb">Facebook</a>
+        <button class="share-btn share-btn-copy" onclick="navigator.clipboard.writeText('https://www.movimentoesalute.eu/articolo-colazione-proteica.html'); this.textContent='&#10003; Copiato!'">&#128279; Copia link</button>
+      </div>
+    </div>
+
+    <!-- AUTORE -->
+    <div class="box-autore">
+      <img src="carlo.jpg" alt="Carlo Barbieri" class="autore-foto">
+      <div class="autore-info">
+        <h4>Carlo Barbieri</h4>
+        <p>Infermiere di sala operatoria e personal trainer qualificato. Ho cambiato la mia colazione prima di qualsiasi altra cosa — e l'impatto sull'energia, sulla fame e sulla composizione corporea è stato immediato e misurabile.</p>
+      </div>
+    </div>
+
+    <!-- CTA FINALE -->
+    <div class="cta-articolo">
+      <h3>Vuoi iniziare con la colazione giusta?</h3>
+      <p>Scrivimi su WhatsApp — ti aiuto a scegliere il formato più adatto alla tua routine. Oppure scopri subito i prodotti nel negozio.</p>
+      <a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="btn-cta-light">&#127963; Vai al negozio →</a>
+      <a href="https://wa.me/393357547386" target="_blank" class="btn-cta-wa">&#128172; Scrivimi su WhatsApp</a>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="articolo-sidebar">
+    <div class="sidebar-card">
+      <h4>In questo articolo</h4>
+      <ul class="indice">
+        <li><a href="#cappuccino">Il problema del cappuccino e brioche</a></li>
+        <li><a href="#non-fare">Il danno del non fare colazione</a></li>
+        <li><a href="#differenza">Dolce vs proteica: il confronto</a></li>
+        <li><a href="#come-deve-essere">Come deve essere</a></li>
+        <li><a href="#mia-colazione">La mia colazione</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h4>La colazione che uso io</h4>
+      <p>Proteine di qualità, fibre, micronutrienti completi. Pronta in 2 minuti. Glicemia stabile fino a pranzo.</p>
+      <a href="https://gaia-galletti.goherbalife.com/Catalog/Home/Index/it-IT" target="_blank" class="btn-sidebar">Scopri i prodotti →</a>
+      <a href="https://wa.me/393357547386" target="_blank" class="btn-sidebar-wa">&#128172; Scrivimi su WhatsApp</a>
+    </div>
+    <div class="sidebar-card">
+      <h4>Leggi anche</h4>
+      <p>La fame nervosa che arriva dopo la colazione sbagliata — spiegata dalla scienza.</p>
+      <a href="articolo-food-noise-fame-nervosa.html" class="btn-sidebar">Food Noise →</a>
+    </div>
+  </aside>
+</div>
+
+<div class="social-follow">
+  <div class="social-follow-text">Contenuti nuovi ogni settimana &mdash; <span>seguimi sui social</span></div>
+  <div class="social-links">
+    <a href="https://www.instagram.com/carlo_gas_barbieri?igsh=MXNxdDdsbGtka3d1Zg%3D%3D&utm_source=qr" target="_blank" class="social-btn social-btn-ig">&#128247; Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61578385565022&mibextid=wwXIfr" target="_blank" class="social-btn social-btn-fb">&#128279; Facebook</a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Movimento &amp; Salute &middot; <a href="#">Privacy Policy</a> &middot; <a href="#">Contatti</a></p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">I contenuti di questo sito hanno scopo informativo e non sostituiscono il parere medico.</p>
+</footer>
+
+<script>
+function toggleNav() {
+  var panel = document.getElementById('msPanel');
+  var btn   = document.getElementById('msBtn');
+  var ov    = document.getElementById('msOverlay');
+  var open  = !panel.classList.contains('open');
+  panel.classList.toggle('open', open);
+  btn.classList.toggle('open', open);
+  ov.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function toggleAcc(btn) {
+  btn.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
